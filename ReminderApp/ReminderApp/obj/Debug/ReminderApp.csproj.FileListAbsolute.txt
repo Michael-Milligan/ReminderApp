@@ -1,0 +1,15 @@
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\bin\Debug\ReminderApp.exe.config
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\bin\Debug\ReminderApp.exe
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\bin\Debug\ReminderApp.pdb
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\obj\Debug\ReminderApp.csprojAssemblyReference.cache
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\obj\Debug\MainWindow.g.cs
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\obj\Debug\App.g.cs
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\obj\Debug\ReminderApp_MarkupCompile.cache
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\obj\Debug\ReminderApp_MarkupCompile.lref
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\obj\Debug\MainWindow.baml
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\obj\Debug\ReminderApp.g.resources
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\obj\Debug\ReminderApp.Properties.Resources.resources
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\obj\Debug\ReminderApp.csproj.GenerateResource.cache
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\obj\Debug\ReminderApp.csproj.CoreCompileInputs.cache
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\obj\Debug\ReminderApp.exe
+D:\GitHub\ReminderApp\ReminderApp\ReminderApp\obj\Debug\ReminderApp.pdb
