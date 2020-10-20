@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:ReminderApp"
         mc:Ignorable="d"
         Title="ListOfCurrentTasks" Height="300" Width="500">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top"/>
+        <Grid DockPanel.Dock="Bottom">
+            
+        </Grid>
+    </DockPanel>
 </Window>

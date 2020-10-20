@@ -1,5 +1,5 @@
 ﻿ReminderApp
-1.0.0.0
+
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET5_0
 D:\GitHub\ReminderApp\ReminderApp\App.xaml
 2820249979
 
-7-2095400598
+5-1444363313
 193-1231324107
 ListOfCurrentTasks.xaml;MainWindow.xaml;
 
-True
+False
 

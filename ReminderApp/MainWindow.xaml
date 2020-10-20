@@ -6,14 +6,17 @@
         xmlns:local="clr-namespace:ReminderApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="500">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
 
-        <Button Grid.Row="0">List of current tasks</Button>
-        <Button Grid.Row="1">List of completed tasks</Button>
-    </Grid>
+            <Button Grid.Row="0" Click="ListOfCurrentTasks_Click">List of current tasks</Button>
+            <Button Grid.Row="1">List of completed tasks</Button>
+        </Grid>
+    </DockPanel>
 </Window>
