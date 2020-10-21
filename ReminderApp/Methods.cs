@@ -21,14 +21,14 @@ namespace ReminderApp
                 Application.Current.Shutdown();
         }
 
-        public static void BuildTasks(ref Grid CurrentGrid)
-        {
+        //public static void BuildTasks(ref Grid CurrentGrid)
+        //{
             
-        }
+        //}
 
-        public static string[][] GetTasks()
-        {
+        //public static string[][] GetTasks()
+        //{
 
-        }
+        //}
     }
 }
