@@ -6,10 +6,15 @@
         xmlns:local="clr-namespace:ReminderApp"
         mc:Ignorable="d"
         Title="ListOfCurrentTasks" Height="300" Width="500">
-    <DockPanel>
+    <DockPanel x:Name="Panel">
         <Menu DockPanel.Dock="Top"/>
         <Grid DockPanel.Dock="Bottom">
-            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
         </Grid>
     </DockPanel>
 </Window>

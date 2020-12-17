@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ReminderApp
@@ -23,12 +25,22 @@ namespace ReminderApp
 
         //public static void BuildTasks(ref Grid CurrentGrid)
         //{
-            
-        //}
-
-        //public static string[][] GetTasks()
-        //{
 
         //}
+
+        public static string[,] GetCurrentTasks()
+        {
+            TasksContext Context = new TasksContext();
+            DbSet<CurrentTask> CurrentTasks = Context.CurrentTasks;
+            string[,] Results = new string[CurrentTasks.Count(), 4];
+            for (int i = 0; i < Results.Length; ++i)
+            {
+                Results[i, 0] = CurrentTasks.ElementAt(i).Id.ToString();
+                Results[i, 1] = CurrentTasks.ElementAt(i).Task.ToString();
+                Results[i, 2] = CurrentTasks.ElementAt(i).Time.ToString();
+                Results[i, 3] = CurrentTasks.ElementAt(i).Date.ToString();
+            }
+            return Results;
+        }
     }
 }
