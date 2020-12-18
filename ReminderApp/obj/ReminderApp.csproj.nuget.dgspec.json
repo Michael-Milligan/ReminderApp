@@ -42,11 +42,11 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.9, )"
+              "version": "[5.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.9, )"
+              "version": "[5.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer.Design": {
               "target": "Package",
@@ -56,7 +56,15 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.9, )"
+              "version": "[5.0.1, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.22, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[1.2.1, )"
             }
           },
           "imports": [
