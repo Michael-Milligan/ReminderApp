@@ -42,9 +42,21 @@ namespace ReminderApp
                 };
 
                 grid.Children.Add(Id);
+                Grid.SetRow(Id, i + 1);
+                Grid.SetColumn(Id, 0);
+
                 grid.Children.Add(Task);
+                Grid.SetRow(Task, i + 1);
+                Grid.SetColumn(Task, 1);
+
                 grid.Children.Add(Time);
+                Grid.SetRow(Time, i + 1);
+                Grid.SetColumn(Time, 2);
+
                 grid.Children.Add(Date);
+                Grid.SetRow(Date, i + 1);
+                Grid.SetColumn(Date, 3);
+
             }
         }
 

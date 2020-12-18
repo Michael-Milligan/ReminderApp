@@ -32,13 +32,14 @@ namespace ReminderApp
         {
             TasksContext Context = new TasksContext();
             DbSet<CurrentTask> CurrentTasks = Context.CurrentTasks;
-            string[,] Results = new string[CurrentTasks.Count(), 4];
-            for (int i = 0; i < Results.Length; ++i)
+            CurrentTask[] TasksArray = CurrentTasks.ToArray();
+            string[,] Results = new string[TasksArray.Length, 4];
+            for (int i = 0; i < Results.GetLength(0); ++i)
             {
-                Results[i, 0] = CurrentTasks.ElementAt(i).Id.ToString();
-                Results[i, 1] = CurrentTasks.ElementAt(i).Task.ToString();
-                Results[i, 2] = CurrentTasks.ElementAt(i).Time.ToString();
-                Results[i, 3] = CurrentTasks.ElementAt(i).Date.ToString();
+                Results[i, 0] = TasksArray[i].Id.ToString();
+                Results[i, 1] = TasksArray[i].Task.ToString();
+                Results[i, 2] = TasksArray[i].Time.ToString();
+                Results[i, 3] = TasksArray[i].Date.ToString();
             }
             return Results;
         }
