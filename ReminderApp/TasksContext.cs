@@ -1,6 +1,6 @@
 ﻿using System;
+using MySql.Data.EntityFrameworkCore.Extensions;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ReminderApp
 {
@@ -22,7 +22,7 @@ namespace ReminderApp
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(System.Configuration.ConfigurationManager.
+                optionsBuilder.UseMySQL(System.Configuration.ConfigurationManager.
                     ConnectionStrings["TasksConnectionString"].ConnectionString);
             }
         }
