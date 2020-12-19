@@ -50,17 +50,17 @@
               "target": "Package",
               "version": "[5.0.1, )"
             },
-            "MySql.Data": {
+            "System.Data.SQLite": {
               "target": "Package",
-              "version": "[8.0.22, )"
+              "version": "[1.0.113.6, )"
             },
-            "MySql.Data.EntityFrameworkCore": {
+            "System.Data.SQLite.EF6": {
               "target": "Package",
-              "version": "[8.0.22, )"
+              "version": "[1.0.113, )"
             },
-            "MySqlConnector": {
+            "System.Data.SQLite.Linq": {
               "target": "Package",
-              "version": "[1.2.1, )"
+              "version": "[1.0.113, )"
             }
           },
           "imports": [
