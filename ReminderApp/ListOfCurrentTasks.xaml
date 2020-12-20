@@ -10,19 +10,20 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Add" Click="Add_Click"></MenuItem>
         </Menu>
-        <Grid DockPanel.Dock="Bottom">
+        <Grid DockPanel.Dock="Bottom" ShowGridLines="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="6*"/>
-                <ColumnDefinition Width="66*" />
+                <ColumnDefinition Width="50*" />
                 <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="12*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
             </Grid.RowDefinitions>
             <ScrollBar Grid.RowSpan="10" Grid.Column="3" HorizontalAlignment="Right"/>
-            <Label Grid.Row="0" Grid.Column="0">ID</Label>
-            <Label Grid.Row="0" Grid.Column="1">Task</Label>
-            <Label Grid.Row="0" Grid.Column="2">Date_Time</Label>
+            <Label Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center">ID</Label>
+            <Label Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center">Task</Label>
+            <Label Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center">Date_Time</Label>
         </Grid>
     </DockPanel>
 </Window>

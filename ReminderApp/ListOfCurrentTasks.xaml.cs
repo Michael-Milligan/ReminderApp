@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ReminderApp
@@ -23,18 +24,27 @@ namespace ReminderApp
 
                 Label Id = new Label
                 {
-                    Content = Rows[i, 0]
+                    Content = Rows[i, 0],
+                    VerticalContentAlignment = VerticalAlignment.Center
                 };
 
                 Label Task = new Label
                 {
-                    Content = Rows[i, 1]
+                    Content = Rows[i, 1],
+                    VerticalContentAlignment = VerticalAlignment.Center
                 };
 
                 Label Date_Time = new Label
                 {
-                    Content = Rows[i, 3]
+                    Content = Rows[i, 3],
+                    VerticalContentAlignment = VerticalAlignment.Center
                 };
+
+                Button RemoveButton = new Button()
+                {
+                    Content = "Remove"
+                };
+
 
                 grid.Children.Add(Id);
                 Grid.SetRow(Id, i + 1);
@@ -48,6 +58,10 @@ namespace ReminderApp
                 Grid.SetRow(Date_Time, i + 1);
                 Grid.SetColumn(Date_Time, 2);
 
+                grid.Children.Add(RemoveButton);
+                Grid.SetRow(RemoveButton, i + 1);
+                Grid.SetColumn(RemoveButton, 3);
+
             }
         }
 
@@ -55,6 +69,27 @@ namespace ReminderApp
         {
             AddCurrentTaskWindow AddWindow = new AddCurrentTaskWindow();
             AddWindow.ShowDialog();
+        }
+
+        private void Remove_OnClick(object sender, RoutedEventArgs e)
+        {
+            var grid = ((Content as DockPanel).Children[1] as Grid);
+            int Index = grid.Children.IndexOf(sender as Button);
+            int RowIndex = (Index - 3) / 4;
+
+            var Context = new TasksContext();
+            try
+            {
+                Context.CurrentTasks.Remove(Context.CurrentTasks.ToList()[RowIndex]);
+            }
+            catch (System.Exception)
+            {
+                MessageBox.Show("Something gone wrong while deleting from DB", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
+            Context.SaveChanges();
+
+            Content = new ListOfCurrentTasks().Content;
         }
     }
 }
