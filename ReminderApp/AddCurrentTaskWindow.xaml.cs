@@ -22,6 +22,9 @@ namespace ReminderApp
         public AddCurrentTaskWindow()
         {
             InitializeComponent();
+
+            Menu ThisMenu = (Content as DockPanel).Children[0] as Menu;
+            Methods.MakeMenu(ref ThisMenu);
         }
     }
 }

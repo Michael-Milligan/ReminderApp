@@ -20,6 +20,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
+            <ScrollBar Grid.RowSpan="10" Grid.Column="3" HorizontalAlignment="Right"/>
             <Label Grid.Row="0" Grid.Column="0">ID</Label>
             <Label Grid.Row="0" Grid.Column="1">Task</Label>
             <Label Grid.Row="0" Grid.Column="2">Time</Label>
