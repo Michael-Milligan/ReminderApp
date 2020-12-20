@@ -81,7 +81,8 @@ namespace ReminderApp
             var Context = new TasksContext();
             try
             {
-                Context.CurrentTasks.Remove(Context.CurrentTasks.ToList()[RowIndex - 1]);
+                CurrentTask ToRemove = Context.CurrentTasks.ToList()[RowIndex - 1];
+                Context.CurrentTasks.Remove(ToRemove);
             }
             catch (System.Exception)
             {
@@ -89,6 +90,8 @@ namespace ReminderApp
             }
             
             Context.SaveChanges();
+
+            //TODO: Add ToRemove to CompletedTasks table
 
             Application.Current.Windows[0].Content = new ListOfCurrentTasks().Content;
             
