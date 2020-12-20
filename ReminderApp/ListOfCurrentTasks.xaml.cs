@@ -44,6 +44,7 @@ namespace ReminderApp
                 {
                     Content = "Remove"
                 };
+                RemoveButton.Click += Remove_OnClick;
 
 
                 grid.Children.Add(Id);
@@ -80,7 +81,7 @@ namespace ReminderApp
             var Context = new TasksContext();
             try
             {
-                Context.CurrentTasks.Remove(Context.CurrentTasks.ToList()[RowIndex]);
+                Context.CurrentTasks.Remove(Context.CurrentTasks.ToList()[RowIndex - 1]);
             }
             catch (System.Exception)
             {
@@ -89,7 +90,8 @@ namespace ReminderApp
             
             Context.SaveChanges();
 
-            Content = new ListOfCurrentTasks().Content;
+            Application.Current.Windows[0].Content = new ListOfCurrentTasks().Content;
+            
         }
     }
 }
