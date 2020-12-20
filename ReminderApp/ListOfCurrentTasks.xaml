@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="ListOfCurrentTasks" Height="300" Width="500">
     <DockPanel x:Name="Panel">
-        <Menu DockPanel.Dock="Top"/>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Add" Click="Add_Click"></MenuItem>
+        </Menu>
         <Grid DockPanel.Dock="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="6*"/>
@@ -22,7 +24,6 @@
             <Label Grid.Row="0" Grid.Column="1">Task</Label>
             <Label Grid.Row="0" Grid.Column="2">Time</Label>
             <Label Grid.Row="0" Grid.Column="3">Date</Label>
-            <Button>Add</Button>
         </Grid>
     </DockPanel>
 </Window>
