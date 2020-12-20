@@ -34,8 +34,7 @@ namespace ReminderApp
             {
                 Results[i, 0] = TasksArray[i].Id.ToString();
                 Results[i, 1] = TasksArray[i].Task.ToString();
-                Results[i, 2] = TasksArray[i].Time.ToString();
-                Results[i, 3] = TasksArray[i].Date.ToString();
+                Results[i, 3] = TasksArray[i].Date_Time.ToString();
             }
             return Results;
         }

@@ -5,11 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReminderApp"
         mc:Ignorable="d"
-        Title="AddCurrentTaskWindow" Height="450" Width="800">
+        Title="AddCurrentTaskWindow" Height="200" Width="400">
 
     <DockPanel>
-        <Menu DockPanel.Dock="Top"/>
-
         <Grid DockPanel.Dock="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -20,8 +18,15 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Center">Task</Label>
+            <Label Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center">Date (eg. 08/18/2018 07:22:16)</Label>
+
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="TaskBox"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="Date_TimeBox"></TextBox>
+
+            <Button Grid.ColumnSpan="2" Grid.Row="2" Height="35" Width="100" Click="Finish_OnClick">Finish</Button>
         </Grid>
     </DockPanel>
 </Window>

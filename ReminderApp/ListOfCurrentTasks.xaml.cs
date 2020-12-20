@@ -31,12 +31,7 @@ namespace ReminderApp
                     Content = Rows[i, 1]
                 };
 
-                Label Time = new Label
-                {
-                    Content = Rows[i, 2]
-                };
-
-                Label Date = new Label
+                Label Date_Time = new Label
                 {
                     Content = Rows[i, 3]
                 };
@@ -49,20 +44,16 @@ namespace ReminderApp
                 Grid.SetRow(Task, i + 1);
                 Grid.SetColumn(Task, 1);
 
-                grid.Children.Add(Time);
-                Grid.SetRow(Time, i + 1);
-                Grid.SetColumn(Time, 2);
-
-                grid.Children.Add(Date);
-                Grid.SetRow(Date, i + 1);
-                Grid.SetColumn(Date, 3);
+                grid.Children.Add(Date_Time);
+                Grid.SetRow(Date_Time, i + 1);
+                Grid.SetColumn(Date_Time, 2);
 
             }
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            var AddWindow = new AddCurrentTaskWindow();
+            AddCurrentTaskWindow AddWindow = new AddCurrentTaskWindow();
             AddWindow.ShowDialog();
         }
     }

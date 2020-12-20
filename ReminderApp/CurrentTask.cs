@@ -10,8 +10,7 @@ namespace ReminderApp
 
         [StringLength(100)]
         public string Task { get; set; }
-        public TimeSpan Time { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Date_Time { get; set; }
 
         public virtual ICollection<CompletedTask> CompletedTasks { get; set; }
     }

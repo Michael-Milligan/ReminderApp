@@ -3,7 +3,7 @@
   <PropertyGroup />
   <ItemGroup />
   <ItemGroup>
-    <Compile Update="AddCurrentTaskWindow.xaml.cs">
+    <Compile Update="AddTaskWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
