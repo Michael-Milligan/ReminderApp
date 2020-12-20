@@ -14,16 +14,21 @@ namespace ReminderApp
         {
         }
 
-        public virtual DbSet<CompletedTask> CompletedTasks { get; set; }
-        public virtual DbSet<CurrentTask> CurrentTasks { get; set; }
+        public DbSet<CompletedTask> CompletedTasks { get; set; }
+        public DbSet<CurrentTask> CurrentTasks { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                _ = optionsBuilder.UseMySQL(System.Configuration.ConfigurationManager.
-                    ConnectionStrings["TasksConnectionString"].ConnectionString);
+                optionsBuilder.UseSqlite(@"DataSource=Tasks.sqlite;");
             }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CurrentTask>().HasKey(item => item.Id);
+            modelBuilder.Entity<CompletedTask>().HasKey(item => item.TaskId);
         }
     }
 }

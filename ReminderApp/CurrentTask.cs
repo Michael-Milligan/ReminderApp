@@ -13,6 +13,6 @@ namespace ReminderApp
         public TimeSpan Time { get; set; }
         public DateTime Date { get; set; }
 
-        public virtual CompletedTask CompletedTask { get; set; }
+        public virtual ICollection<CompletedTask> CompletedTasks { get; set; }
     }
 }

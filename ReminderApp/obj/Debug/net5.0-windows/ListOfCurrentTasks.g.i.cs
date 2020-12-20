@@ -61,7 +61,7 @@ namespace ReminderApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ReminderApp;V1.0.0.0;component/listofcurrenttasks.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ReminderApp;component/listofcurrenttasks.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ListOfCurrentTasks.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

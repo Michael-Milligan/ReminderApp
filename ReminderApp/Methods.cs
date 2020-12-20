@@ -23,16 +23,12 @@ namespace ReminderApp
                 Application.Current.Shutdown();
         }
 
-        //public static void BuildTasks(ref Grid CurrentGrid)
-        //{
-
-        //}
-
         public static string[,] GetCurrentTasks()
         {
             TasksContext Context = new TasksContext();
             DbSet<CurrentTask> CurrentTasks = Context.CurrentTasks;
             CurrentTask[] TasksArray = CurrentTasks.ToArray();
+
             string[,] Results = new string[TasksArray.Length, 4];
             for (int i = 0; i < Results.GetLength(0); ++i)
             {
