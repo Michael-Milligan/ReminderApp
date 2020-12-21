@@ -31,5 +31,10 @@ namespace ReminderApp
         {
             Content = new ListOfCurrentTasks().Content;
         }
+
+        private void CompletedTasks_Click(object sender, RoutedEventArgs e)
+        {
+            Content = new CompletedTasksWindow().Content;
+        }
     }
 }

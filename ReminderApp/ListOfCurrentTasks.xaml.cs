@@ -91,7 +91,6 @@ namespace ReminderApp
             
             Context.SaveChanges();
 
-            //TODO: Add ToRemove to CompletedTasks table
 
             Application.Current.Windows[0].Content = new ListOfCurrentTasks().Content;
             

@@ -38,5 +38,20 @@ namespace ReminderApp
             }
             return Results;
         }
+
+        public static string[,] GetCompletedTasks()
+        {
+            TasksContext Context = new TasksContext();
+            DbSet<CompletedTask> CompletedTasks = Context.CompletedTasks;
+            CompletedTask[] TasksArray = CompletedTasks.ToArray();
+
+            string[,] Results = new string[TasksArray.Length, 2];
+            for (int i = 0; i < Results.GetLength(0); ++i)
+            {
+                Results[i, 0] = TasksArray[i].TaskId.ToString();
+                Results[i, 1] = TasksArray[i].CompletionDateTime.ToString();
+            }
+            return Results;
+        }
     }
 }
