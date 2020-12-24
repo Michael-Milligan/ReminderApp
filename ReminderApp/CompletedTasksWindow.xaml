@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="CompletedTasksWindow" Height="450" Width="800">
     <DockPanel>
-        <Menu/>
+        <Menu DockPanel.Dock="Top"/>
 
-        <Grid ShowGridLines="True">
+        <Grid ShowGridLines="True" DockPanel.Dock="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
