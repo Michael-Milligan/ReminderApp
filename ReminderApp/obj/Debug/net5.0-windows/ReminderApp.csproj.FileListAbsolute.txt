@@ -43,7 +43,6 @@ D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\EntityFramework.dll
 D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\System.Data.SQLite.dll
 D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
 D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\System.Data.SQLite.EF6.dll
-D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\System.Data.SQLite.Linq.dll
 D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
 D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
 D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll

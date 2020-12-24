@@ -474,7 +474,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.provider.dynamic_cdecl.dll": {}
         }
       },
-      "Stub.System.Data.SQLite.Core.NetStandard/1.0.113.1": {
+      "Stub.System.Data.SQLite.Core.NetStandard/1.0.113.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/System.Data.SQLite.dll": {}
@@ -565,17 +565,17 @@
           }
         }
       },
-      "System.Data.SQLite/1.0.113.6": {
+      "System.Data.SQLite/1.0.113.7": {
         "type": "package",
         "dependencies": {
-          "System.Data.SQLite.Core": "1.0.113.6",
+          "System.Data.SQLite.Core": "1.0.113.7",
           "System.Data.SQLite.EF6": "1.0.113"
         }
       },
-      "System.Data.SQLite.Core/1.0.113.6": {
+      "System.Data.SQLite.Core/1.0.113.7": {
         "type": "package",
         "dependencies": {
-          "Stub.System.Data.SQLite.Core.NetStandard": "1.0.113.1"
+          "Stub.System.Data.SQLite.Core.NetStandard": "1.0.113.2"
         }
       },
       "System.Data.SQLite.EF6/1.0.113": {
@@ -588,15 +588,6 @@
         },
         "runtime": {
           "lib/netstandard2.1/System.Data.SQLite.EF6.dll": {}
-        }
-      },
-      "System.Data.SQLite.Linq/1.0.113": {
-        "type": "package",
-        "compile": {
-          "lib/net46/System.Data.SQLite.Linq.dll": {}
-        },
-        "runtime": {
-          "lib/net46/System.Data.SQLite.Linq.dll": {}
         }
       },
       "System.Diagnostics.DiagnosticSource/5.0.0": {
@@ -1464,10 +1455,10 @@
         "sqlitepclraw.provider.dynamic_cdecl.nuspec"
       ]
     },
-    "Stub.System.Data.SQLite.Core.NetStandard/1.0.113.1": {
-      "sha512": "qFjwuCuZlTz3yT06gaueDJwTykiblNeaLTx3sONXoNlLm2NJwghLvr+W9fvRevKcYcIRiKrq6WJ56QwZJq9fnQ==",
+    "Stub.System.Data.SQLite.Core.NetStandard/1.0.113.2": {
+      "sha512": "yGIM9xFyPHl79HluNTSQarvAOIJ68pmzmlMayVN6Nivu/7TiaHt7WqptolvwmuKdAXei8OzENh9RNdh7d6evjQ==",
       "type": "package",
-      "path": "stub.system.data.sqlite.core.netstandard/1.0.113.1",
+      "path": "stub.system.data.sqlite.core.netstandard/1.0.113.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1481,7 +1472,7 @@
         "runtimes/osx-x64/native/SQLite.Interop.dll",
         "runtimes/win-x64/native/SQLite.Interop.dll",
         "runtimes/win-x86/native/SQLite.Interop.dll",
-        "stub.system.data.sqlite.core.netstandard.1.0.113.1.nupkg.sha512",
+        "stub.system.data.sqlite.core.netstandard.1.0.113.2.nupkg.sha512",
         "stub.system.data.sqlite.core.netstandard.nuspec"
       ]
     },
@@ -1732,25 +1723,25 @@
         "version.txt"
       ]
     },
-    "System.Data.SQLite/1.0.113.6": {
-      "sha512": "fM5nJJjnkh7SlYPLuvAAIm1R6oXFSyM5/iuT0wtJDfUsfi195m+TFjNd5g2/KhGQP+rBd5IECHGW+omVGDNmoA==",
+    "System.Data.SQLite/1.0.113.7": {
+      "sha512": "PQ9cXfM4R2iEztZb5EuO0RvXhK64fYK3GK9NfKIUj/rLcpTAIkxduEid/PJAV1KOAuP7NStCZORNeMYJStHJOA==",
       "type": "package",
-      "path": "system.data.sqlite/1.0.113.6",
+      "path": "system.data.sqlite/1.0.113.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "system.data.sqlite.1.0.113.6.nupkg.sha512",
+        "system.data.sqlite.1.0.113.7.nupkg.sha512",
         "system.data.sqlite.nuspec"
       ]
     },
-    "System.Data.SQLite.Core/1.0.113.6": {
-      "sha512": "8Iyo9b2iG29eYCGjnly6EdF+yw20q83vRTkK9zpJzip5QvQeRSs7rQPmaxg+R2oJKNL8w/6K274F6YHXkEjq5w==",
+    "System.Data.SQLite.Core/1.0.113.7": {
+      "sha512": "2DKMIxfZpIVzdMfx1dj9qvTm+0m0Mx6sN6CZXMQDNytU7Sk/JKo0Ox6mvHAicfHrQgqZbUZMzMMtLXD0kwmFfg==",
       "type": "package",
-      "path": "system.data.sqlite.core/1.0.113.6",
+      "path": "system.data.sqlite.core/1.0.113.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "system.data.sqlite.core.1.0.113.6.nupkg.sha512",
+        "system.data.sqlite.core.1.0.113.7.nupkg.sha512",
         "system.data.sqlite.core.nuspec"
       ]
     },
@@ -1789,32 +1780,6 @@
         "tools/net45/install.ps1",
         "tools/net451/install.ps1",
         "tools/net46/install.ps1"
-      ]
-    },
-    "System.Data.SQLite.Linq/1.0.113": {
-      "sha512": "GTCVFMY9S32O6HsfjIOt8fYaAV+jb3YU9HGD7xd5LpFmPpL23NPjbY92L/hfxOZIQUmuS7SxZZMBTdq45eVvfw==",
-      "type": "package",
-      "path": "system.data.sqlite.linq/1.0.113",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/net20/app.config.transform",
-        "content/net20/web.config.transform",
-        "content/net40/app.config.transform",
-        "content/net40/web.config.transform",
-        "content/net45/app.config.transform",
-        "content/net45/web.config.transform",
-        "content/net451/app.config.transform",
-        "content/net451/web.config.transform",
-        "content/net46/app.config.transform",
-        "content/net46/web.config.transform",
-        "lib/net20/System.Data.SQLite.Linq.dll",
-        "lib/net40/System.Data.SQLite.Linq.dll",
-        "lib/net45/System.Data.SQLite.Linq.dll",
-        "lib/net451/System.Data.SQLite.Linq.dll",
-        "lib/net46/System.Data.SQLite.Linq.dll",
-        "system.data.sqlite.linq.1.0.113.nupkg.sha512",
-        "system.data.sqlite.linq.nuspec"
       ]
     },
     "System.Diagnostics.DiagnosticSource/5.0.0": {
@@ -2104,9 +2069,8 @@
       "Microsoft.EntityFrameworkCore >= 5.0.1",
       "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.1",
-      "System.Data.SQLite >= 1.0.113.6",
-      "System.Data.SQLite.EF6 >= 1.0.113",
-      "System.Data.SQLite.Linq >= 1.0.113"
+      "System.Data.SQLite >= 1.0.113.7",
+      "System.Data.SQLite.EF6 >= 1.0.113"
     ]
   },
   "packageFolders": {
@@ -2164,13 +2128,9 @@
           },
           "System.Data.SQLite": {
             "target": "Package",
-            "version": "[1.0.113.6, )"
+            "version": "[1.0.113.7, )"
           },
           "System.Data.SQLite.EF6": {
-            "target": "Package",
-            "version": "[1.0.113, )"
-          },
-          "System.Data.SQLite.Linq": {
             "target": "Package",
             "version": "[1.0.113, )"
           }
@@ -2196,17 +2156,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Data.SQLite.Linq 1.0.113' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "System.Data.SQLite.Linq",
-      "targetGraphs": [
-        "net5.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }

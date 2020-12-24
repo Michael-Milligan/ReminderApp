@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReminderApp;
 
 namespace ReminderApp.Migrations
 {
     [DbContext(typeof(TasksContext))]
-    partial class TasksContextModelSnapshot : ModelSnapshot
+    [Migration("20201224093045_Something")]
+    partial class Something
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -18,19 +20,19 @@ namespace ReminderApp.Migrations
 
             modelBuilder.Entity("ReminderApp.CompletedTask", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("TaskId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CompletionDateTime")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("TaskId")
+                    b.Property<int>("TaskId1")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                    b.HasKey("TaskId");
 
-                    b.HasIndex("TaskId");
+                    b.HasIndex("TaskId1");
 
                     b.ToTable("CompletedTasks");
                 });
@@ -57,7 +59,7 @@ namespace ReminderApp.Migrations
                 {
                     b.HasOne("ReminderApp.CurrentTask", "Task")
                         .WithMany("CompletedTasks")
-                        .HasForeignKey("TaskId")
+                        .HasForeignKey("TaskId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

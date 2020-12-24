@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="500">
     <DockPanel>
-        <Menu DockPanel.Dock="Top"/>
+        <Menu DockPanel.Dock="Top">
+            <StackPanel Orientation="Vertical">
+                
+            </StackPanel>
+        </Menu>
+            
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>

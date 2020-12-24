@@ -42,8 +42,7 @@ namespace ReminderApp
         public static string[,] GetCompletedTasks()
         {
             TasksContext Context = new TasksContext();
-            DbSet<CompletedTask> CompletedTasks = Context.CompletedTasks;
-            CompletedTask[] TasksArray = CompletedTasks.ToArray();
+            CompletedTask[] TasksArray = Context.CompletedTasks.ToArray();
 
             string[,] Results = new string[TasksArray.Length, 2];
             for (int i = 0; i < Results.GetLength(0); ++i)

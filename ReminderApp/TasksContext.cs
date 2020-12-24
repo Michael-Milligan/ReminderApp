@@ -28,7 +28,7 @@ namespace ReminderApp
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CurrentTask>().HasKey(item => item.Id);
-            modelBuilder.Entity<CompletedTask>().HasKey(item => item.TaskId);
+            modelBuilder.Entity<CompletedTask>().HasKey(item => item.Id);
         }
     }
 }

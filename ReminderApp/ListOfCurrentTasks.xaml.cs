@@ -74,11 +74,11 @@ namespace ReminderApp
 
         private void Remove_OnClick(object sender, RoutedEventArgs e)
         {
-            var grid = ((Content as DockPanel).Children[1] as Grid);
+            Grid grid = ((Content as DockPanel).Children[1] as Grid);
             int Index = grid.Children.IndexOf(sender as Button);
             int RowIndex = (Index - 3) / 4;
 
-            var Context = new TasksContext();
+            TasksContext Context = new TasksContext();
             try
             {
                 CurrentTask ToRemove = Context.CurrentTasks.ToList()[RowIndex - 1];
