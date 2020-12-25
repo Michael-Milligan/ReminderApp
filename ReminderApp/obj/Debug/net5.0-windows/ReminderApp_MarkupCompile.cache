@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\GitHub\ReminderApp\ReminderApp\App.xaml
-4-1548787108
+5410912785
 
-212036010950
-218-2099100885
-AddCurrentTaskWindow.xaml;CompletedTasksWindow.xaml;ListOfCurrentTasks.xaml;MainWindow.xaml;
+221986096833
+219-533799576
+AddCurrentTaskWindow.xaml;CompletedTasksWindow.xaml;ListOfCurrentTasks.xaml;MainWindow.xaml;TimeAlert.xaml;
 
 False
 

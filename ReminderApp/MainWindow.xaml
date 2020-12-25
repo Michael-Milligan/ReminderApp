@@ -8,9 +8,7 @@
         Title="MainWindow" Height="300" Width="500">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <StackPanel Orientation="Vertical">
-                
-            </StackPanel>
+            <MenuItem Header="Invisible mode" Click="Invisible_ModeOn"/>
         </Menu>
             
         <Grid>

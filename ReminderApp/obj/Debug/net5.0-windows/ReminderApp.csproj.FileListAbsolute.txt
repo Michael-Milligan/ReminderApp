@@ -78,3 +78,7 @@ D:\GitHub\ReminderApp\ReminderApp\obj\Debug\net5.0-windows\AddCurrentTaskWindow.
 D:\GitHub\ReminderApp\ReminderApp\obj\Debug\net5.0-windows\AddCurrentTaskWindow.baml
 D:\GitHub\ReminderApp\ReminderApp\obj\Debug\net5.0-windows\CompletedTasksWindow.g.cs
 D:\GitHub\ReminderApp\ReminderApp\obj\Debug\net5.0-windows\CompletedTasksWindow.baml
+D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\NAudio.dll
+D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\beep.mp3
+D:\GitHub\ReminderApp\ReminderApp\obj\Debug\net5.0-windows\TimeAlert.g.cs
+D:\GitHub\ReminderApp\ReminderApp\obj\Debug\net5.0-windows\TimeAlert.baml
