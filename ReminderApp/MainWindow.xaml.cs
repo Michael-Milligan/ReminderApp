@@ -32,10 +32,11 @@ namespace ReminderApp
             Menu ThisMenu = (Content as DockPanel).Children[0] as Menu;
             Methods.MakeMenu(ref ThisMenu);
 
-            DispatcherTimer Timer = new DispatcherTimer(new TimeSpan(0, 0, 5), DispatcherPriority.Normal, CheckIfItsTime, Dispatcher);
+            Timer CheckingTimer = new Timer(CheckIfItsTime, null, 0, 1000*5);
+            
         }
 
-        public void CheckIfItsTime(object Sender, EventArgs Args)
+        public static void CheckIfItsTime(object Sender)
         {
             TasksContext Context = new TasksContext();
             CurrentTask[] CurrentTasks = Context.CurrentTasks.ToArray();
