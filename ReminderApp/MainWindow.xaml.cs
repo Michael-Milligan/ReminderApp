@@ -32,22 +32,45 @@ namespace ReminderApp
             Menu ThisMenu = (Content as DockPanel).Children[0] as Menu;
             Methods.MakeMenu(ref ThisMenu);
 
-            Timer CheckingTimer = new Timer(CheckIfItsTime, null, 0, 1000*5);
-            
+            Timer CheckingTimer = new Timer(CheckIfItsTime, DateTime.Now, 0, 1000*60);
+            //CheckIfItsTime(DateTime.Now);
         }
 
-        public static void CheckIfItsTime(object Sender)
+        public static void CheckIfItsTime(object Object)
         {
-            TasksContext Context = new TasksContext();
-            CurrentTask[] CurrentTasks = Context.CurrentTasks.ToArray();
-            IEnumerable<DateTime> Times = CurrentTasks.Select(item => item.Date_Time);
-
-            if (Times.Contains(DateTime.Now))
+            try
             {
-                TimeAlert Alert = new TimeAlert(CurrentTasks.
-                    Where(item => item.Date_Time == DateTime.Now).First());
-                Alert.Show();
+                DateTime Now = DateTime.Now;
+                TasksContext Context = new TasksContext();
+                CurrentTask[] CurrentTasks = Context.CurrentTasks.ToArray();
+                IEnumerable<DateTime> Times = CurrentTasks.Select(item => item.Date_Time);
+
+                foreach (DateTime time in Times)
+                {
+                    if (CompareTimes(Now, time))
+                        Alert(CurrentTasks.
+                            Where(item => CompareTimes(time, Now)).ToArray()[0]);
+                }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.StackTrace, e.Message);
+            }
+        }
+
+        private static void Alert(CurrentTask Task)
+        {
+            TimeAlert Alert = new TimeAlert(Task);
+            Alert.Show();
+        }
+
+        private static bool CompareTimes(DateTime First, DateTime Second)
+        {
+            return First.Year == Second.Year &&
+                First.Month == Second.Month &&
+                First.Day == Second.Day &&
+                First.Hour == Second.Hour &&
+                First.Minute == Second.Minute;
         }
 
         private void ListOfCurrentTasks_Click(object sender, RoutedEventArgs e)

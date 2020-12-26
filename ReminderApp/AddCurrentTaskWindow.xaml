@@ -21,7 +21,7 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Center">Task</Label>
-            <Label Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center">Date (eg. 08/18/2018 07:22:16)</Label>
+            <Label Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center">Date (eg. 18.08.2018 07:22:16)</Label>
 
             <TextBox Grid.Row="0" Grid.Column="1" x:Name="TaskBox"></TextBox>
             <TextBox Grid.Row="1" Grid.Column="1" x:Name="Date_TimeBox"></TextBox>
