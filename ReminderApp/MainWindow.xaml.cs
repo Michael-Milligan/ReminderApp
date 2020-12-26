@@ -32,30 +32,33 @@ namespace ReminderApp
             Menu ThisMenu = (Content as DockPanel).Children[0] as Menu;
             Methods.MakeMenu(ref ThisMenu);
 
-            Timer CheckingTimer = new Timer(CheckIfItsTime, DateTime.Now, 0, 1000*60);
-            //CheckIfItsTime(DateTime.Now);
+            Thread AlertThread = new Thread(CheckIfItsTime);
+            AlertThread.Start();
         }
 
-        public static void CheckIfItsTime(object Object)
+        public static void CheckIfItsTime()
         {
             try
             {
-                DateTime Now = DateTime.Now;
                 TasksContext Context = new TasksContext();
                 CurrentTask[] CurrentTasks = Context.CurrentTasks.ToArray();
                 IEnumerable<DateTime> Times = CurrentTasks.Select(item => item.Date_Time);
 
-                foreach (DateTime time in Times)
+                while (true)
                 {
-                    if (CompareTimes(Now, time))
-                        Alert(CurrentTasks.
-                            Where(item => CompareTimes(time, Now)).ToArray()[0]);
+                    foreach (DateTime time in Times)
+                    {
+                        if (CompareTimes(DateTime.Now, time))
+                        {
+                            CurrentTask temp = CurrentTasks.
+                                Where(item => CompareTimes(time, DateTime.Now)).First();
+                            Alert(temp);
+                            throw new FormatException();
+                        }
+                    }
                 }
             }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.StackTrace, e.Message);
-            }
+            catch (FormatException e) { }
         }
 
         private static void Alert(CurrentTask Task)
