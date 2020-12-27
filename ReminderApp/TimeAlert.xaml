@@ -10,7 +10,19 @@
         <Menu DockPanel.Dock="Top"/>
 
         <Grid DockPanel.Dock="Bottom">
-            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="66*"/>
+                <RowDefinition Height="33*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Name="TaskDescription"></Label>
+            <Button Grid.Column="0" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Name="DoneButton" Click="DoneButton_Click">Done!</Button>
+            <Button Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Name="LateButton" Click="LateButton_Click">Remind in 10 mins</Button>
         </Grid>
     </DockPanel>
 </Window>

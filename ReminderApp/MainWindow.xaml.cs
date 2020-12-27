@@ -1,21 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Threading;
-using NAudio;
-using NAudio.Wave;
 
 namespace ReminderApp
 {
@@ -32,7 +20,11 @@ namespace ReminderApp
             Menu ThisMenu = (Content as DockPanel).Children[0] as Menu;
             Methods.MakeMenu(ref ThisMenu);
 
-            Thread AlertThread = new Thread(CheckIfItsTime);
+            Thread AlertThread = new Thread(CheckIfItsTime)
+            {
+                IsBackground = true
+            };
+            AlertThread.SetApartmentState(ApartmentState.STA);
             AlertThread.Start();
         }
 
@@ -40,6 +32,7 @@ namespace ReminderApp
         {
             try
             {
+                DateTime Now = DateTime.Now;
                 TasksContext Context = new TasksContext();
                 CurrentTask[] CurrentTasks = Context.CurrentTasks.ToArray();
                 IEnumerable<DateTime> Times = CurrentTasks.Select(item => item.Date_Time);
@@ -48,10 +41,10 @@ namespace ReminderApp
                 {
                     foreach (DateTime time in Times)
                     {
-                        if (CompareTimes(DateTime.Now, time))
+                        if (CompareTimes(Now, time))
                         {
                             CurrentTask temp = CurrentTasks.
-                                Where(item => CompareTimes(time, DateTime.Now)).First();
+                                Where(item => CompareTimes(time, Now)).First();
                             Alert(temp);
                             throw new FormatException();
                         }
@@ -65,6 +58,7 @@ namespace ReminderApp
         {
             TimeAlert Alert = new TimeAlert(Task);
             Alert.Show();
+            Alert.MakeAlert();
         }
 
         private static bool CompareTimes(DateTime First, DateTime Second)
