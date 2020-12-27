@@ -26,6 +26,18 @@ namespace ReminderApp
             };
             AlertThread.SetApartmentState(ApartmentState.STA);
             AlertThread.Start();
+
+            Thread AThread = new Thread(Fn)
+            {
+                IsBackground = true
+            };
+            AThread.SetApartmentState(ApartmentState.STA);
+            AThread.Start();
+        }
+
+        public static void Fn()
+        {
+            new Window().Show();
         }
 
         public static void CheckIfItsTime()
