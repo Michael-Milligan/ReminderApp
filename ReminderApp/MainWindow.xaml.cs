@@ -37,13 +37,13 @@ namespace ReminderApp
         {
             try
             {
-                DateTime Now = DateTime.Now;
                 TasksContext Context = new TasksContext();
                 CurrentTask[] CurrentTasks = Context.CurrentTasks.ToArray();
                 IEnumerable<DateTime> Times = CurrentTasks.Select(item => item.Date_Time);
 
                 while (Times.Any() == true)
                 {
+                    DateTime Now = DateTime.Now;
                     foreach (DateTime time in Times)
                     {
                         if (CompareTimes(Now, time))
