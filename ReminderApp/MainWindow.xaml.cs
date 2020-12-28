@@ -49,7 +49,7 @@ namespace ReminderApp
                         if (CompareTimes(Now, time))
                         {
                             CurrentTask temp = CurrentTasks.
-                                Where(item => CompareTimes(time, Now)).First();
+                                Where(item => CompareTimes(time, item.Date_Time)).First();
                             Application.Current.Dispatcher.Invoke(() => Alert(temp));
                             throw new FormatException();
                         }
