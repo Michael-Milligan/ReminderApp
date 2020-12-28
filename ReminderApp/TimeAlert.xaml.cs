@@ -38,13 +38,14 @@ namespace ReminderApp
             public class LoopStream : WaveStream
             {
                 WaveStream sourceStream;
+                TimeAlert ThisWindow = Application.Current.Windows[0] as TimeAlert;
 
                 /// <summary>
                 /// Creates a new Loop stream
                 /// </summary>
                 /// <param name="sourceStream">The stream to read from. Note: the Read method of this stream should return 0 when it reaches the end
                 /// or else we will not loop to the start again.</param>
-                public LoopStream(WaveStream sourceStream)
+            public LoopStream(WaveStream sourceStream)
                 {
                     this.sourceStream = sourceStream;
                     this.EnableLooping = true;
@@ -95,6 +96,7 @@ namespace ReminderApp
                                 break;
                             }
                             // loop
+                            if(!ThisWindow.NoMore)
                             sourceStream.Position = 0;
                         }
                         totalBytesRead += bytesRead;
@@ -104,13 +106,13 @@ namespace ReminderApp
             }
 
             private WaveOut waveOut;
-            LoopStream loop;
+            bool NoMore = false;
             public void MakeAlert()
             {
                 if (waveOut == null)
                 {
                     Mp3FileReader reader = new Mp3FileReader(@"beep.mp3");
-                    loop = new LoopStream(reader);
+                    LoopStream loop = new LoopStream(reader);
                     waveOut = new WaveOut();
                     waveOut.Init(loop);
                     waveOut.Play();
@@ -136,6 +138,7 @@ namespace ReminderApp
             });
             Context.SaveChanges();
             Application.Current.Windows[0].Content = new MainWindow().Content;
+            NoMore = true;
         }
 
         private void LateButton_Click(object sender, RoutedEventArgs e)
