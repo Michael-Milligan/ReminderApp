@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,8 +13,6 @@ namespace ReminderApp
     /// </summary>
     public partial class MainWindow : Window
     {
-
-
         public MainWindow()
         {
             InitializeComponent();
@@ -27,12 +26,6 @@ namespace ReminderApp
             AlertThread.SetApartmentState(ApartmentState.STA);
             AlertThread.Start();
 
-            Thread AThread = new Thread(Fn)
-            {
-                IsBackground = true
-            };
-            AThread.SetApartmentState(ApartmentState.STA);
-            AThread.Start();
         }
 
         public static void Fn()
@@ -49,7 +42,7 @@ namespace ReminderApp
                 CurrentTask[] CurrentTasks = Context.CurrentTasks.ToArray();
                 IEnumerable<DateTime> Times = CurrentTasks.Select(item => item.Date_Time);
 
-                while (true)
+                while (Times.Any() == true)
                 {
                     foreach (DateTime time in Times)
                     {
@@ -57,7 +50,7 @@ namespace ReminderApp
                         {
                             CurrentTask temp = CurrentTasks.
                                 Where(item => CompareTimes(time, Now)).First();
-                            Alert(temp);
+                            Application.Current.Dispatcher.Invoke(() => Alert(temp));
                             throw new FormatException();
                         }
                     }
@@ -66,10 +59,11 @@ namespace ReminderApp
             catch (FormatException e) { }
         }
 
-        private static void Alert(CurrentTask Task)
+
+        public static void Alert(CurrentTask Task)
         {
             TimeAlert Alert = new TimeAlert(Task);
-            Alert.Show();
+            Application.Current.Windows[0].Content = Alert.Content;
             Alert.MakeAlert();
         }
 

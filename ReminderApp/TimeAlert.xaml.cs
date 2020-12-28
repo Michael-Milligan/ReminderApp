@@ -1,6 +1,7 @@
 ﻿using NAudio.Wave;
 using System;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -38,6 +39,8 @@ namespace ReminderApp
             while (!IsClosed)
             {
                 waveOut.Play();
+                Thread.Sleep(2);
+                waveOut.Stop();
             }
             if (IsClosed)
             {
