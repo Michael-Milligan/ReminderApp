@@ -1,0 +1,8 @@
+{
+  "Id": "ReplenishReactorRods",
+  "DisplayName": "Replenish ReactorRods",
+  "Author": "Cookie",
+  "Version": "1.0.0",
+  "Enable": true,
+  "AssemblyName": "Replenish ReactorRods.dll"
+}

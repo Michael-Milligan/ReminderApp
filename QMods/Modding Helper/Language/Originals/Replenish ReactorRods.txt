@@ -1,0 +1,2 @@
+﻿ReplenishReactorRod:Recharged Reactor Rod
+Tooltip_ReplenishReactorRod:Takes Depleted Reactor Rod and makes them new again

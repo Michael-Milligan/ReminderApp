@@ -1,0 +1,11 @@
+﻿# -------------------------------------------------------------------- #
+# This config file can be edited in-game through the Mods options menu #
+#             This config file was built using EasyMarkup              #
+# -------------------------------------------------------------------- #
+
+UpgradedVehiclesOptions: 
+(
+    SeamothBonusSpeed: Normal;
+    ExosuitBonusSpeed: Normal;
+);
+

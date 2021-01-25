@@ -1,0 +1,11 @@
+﻿# MoreCyclopsUpgrades v5.1.2 #
+# This config file can be edited in-game through the Mods options menu #
+ModConfig: 
+(
+    AuxConsoleEnabled: True;
+    ChallengeMode: 0;
+    ChargerIcons: 3;
+    EnableDebugLogs: False;
+    EnergyDisplay: 0;
+    ShowThermometer: True;
+);

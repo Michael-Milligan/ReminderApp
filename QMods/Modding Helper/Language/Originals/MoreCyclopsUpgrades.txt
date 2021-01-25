@@ -1,0 +1,3 @@
+﻿AuxCyUpgradeConsole:Auxiliary Upgrade Console
+Tooltip_AuxCyUpgradeConsole:A secondary upgrade console to connect a greater number of upgrades to your Cyclops.
+CyUpgradeOnHover:Use Auxiliary Cyclop Upgrade Console

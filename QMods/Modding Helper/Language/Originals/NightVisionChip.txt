@@ -1,0 +1,2 @@
+﻿NightVisionChip:Night Vision HUD
+Tooltip_NightVisionChip:Adds night vision capabilities to your scuba HUD.

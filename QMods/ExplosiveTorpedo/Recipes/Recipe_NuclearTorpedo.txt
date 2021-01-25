@@ -1,0 +1,4 @@
+CraftAmount:1
+-----
+Titanium:1
+ReactorRod:1

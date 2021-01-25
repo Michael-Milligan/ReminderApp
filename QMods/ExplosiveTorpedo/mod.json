@@ -1,0 +1,11 @@
+{
+  "Id": "ExplosiveTorpedo",
+  "DisplayName": "Explosive Torpedo",
+  "Author": "Anomaex",
+  "Version": "2.0.4",
+  "Requires": [ ],
+  "Enable": true,
+  "AssemblyName": "ExplosiveTorpedo.dll",
+  "EntryMethod": "ExplosiveTorpedo.QPatch.Patch",
+  "Config": {}
+}

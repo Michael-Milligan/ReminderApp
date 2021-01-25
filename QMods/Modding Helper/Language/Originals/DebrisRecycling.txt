@@ -1,0 +1,21 @@
+﻿DebrisRecycling.idsOptions.craftConfig.dynamicTitaniumRecipe:Dynamic recipe for titanium
+DebrisRecycling.idsOptions.craftConfig.dynamicTitaniumRecipe.tooltip:<size=19>Dynamic recipe for titanium includes all scrap in the inventory.\n<color=yellow>Restart the game to apply changes.</color></size>
+DebrisRecycling.idsOptions.Name:Debris Recycling
+DebrisRecycling.idsOptions.addDebrisToScannerRoom:Show debris in the Scanner Room
+DebrisRecycling.idsOptions.addDebrisToScannerRoom.tooltip:<size=19><color=yellow>Restart the game to apply changes.</color></size>
+DebrisRecycling.idsOptions.customObjects.hotkeysEnabled:Allow to add custom debris
+DebrisRecycling.idsOptions.customObjects.hotkeysEnabled.tooltip:<size=19>Allows to mark most of the objects as salvageab-\nle debris.\nTo mark an object point the <b>Habitat Builder</b> to it and press the corresponding hotkey.\nDeconstructing some of the objects can cause various bugs. <color=yellow>Use at your own risk!</color></size>
+DebrisRecycling.idsOptions.customObjects.hotkey:	Mark object as debris
+DebrisRecycling.idsOptions.customObjects.hotkey.tooltip:<size=19>Press to add an object to the <b>permanent</b> custom list in the <b>prefabs_config.json</b>.</size>
+DebrisRecycling.idsOptions.customObjects.hotkeyTemp:	Mark object as debris (temp.)
+DebrisRecycling.idsOptions.customObjects.hotkeyTemp.tooltip:<size=19>Press to add an object to the <b>temporary</b> custom list in the <b>prefabs_config.json</b> (cleared at the beginning of each game session).</size>
+ScrapMetalSmall:Small piece of salvage
+SalvageableDebrisDR:Salvageable debris
+DebrisRecycling.ids_salvageableDebris:Salvageable debris
+DebrisRecycling.ids_tryMoveObject:Try to move object
+DebrisRecycling.ids_customDebrisAdded:<color=#adf8ffff><b>{0}</b></color> is added as salvageable debris
+DebrisRecycling.idsOptions.dbsCargoClosed.enabled:Deconstruct closed crates
+DebrisRecycling.idsOptions.dbsLockers.enabled:Deconstruct lockers
+DebrisRecycling.idsOptions.dbsFurniture.enabled:Deconstruct furniture
+DebrisRecycling.idsOptions.dbsCustom.enabled:Deconstruct custom objects
+DebrisRecycling.idsOptions.dbsCustomTemp.enabled:Deconstruct temporary custom objects

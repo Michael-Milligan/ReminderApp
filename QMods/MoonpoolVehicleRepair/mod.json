@@ -1,0 +1,12 @@
+{
+  "Id": "MoonpoolVehicleRepair",
+  "DisplayName": "Moonpool Vehicle Repair",
+  "Author": "AHK1221",
+  "updater":"Cookie",
+  "Version": "1.1.5",
+  "Enable": true,
+  "AssemblyName": "MoonpoolVehicleRepair.dll",
+  "EntryMethod": "MoonpoolVehicleRepair.Main.Patch",
+  "Config": {
+  }
+}

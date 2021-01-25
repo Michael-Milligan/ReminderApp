@@ -1,0 +1,20 @@
+{
+  "craftConfig": {
+    "dynamicTitaniumRecipe": true,
+    "titaniumPerBigScrap": 4,
+    "titaniumPerSmallScrap": 1,
+    "_noBulk": false
+  },
+  "addDebrisToScannerRoom": true,
+  "customObjects": {
+    "addToOptionsMenu": false,
+    "defaultResourceCount": 1,
+    "hotkeysEnabled": false,
+    "hotkey": "PageUp",
+    "hotkeyTemp": "PageDown"
+  },
+  "deconstructValidStaticObjects": true,
+  "patchStaticObjects": true,
+  "extraPowerConsumption": false,
+  "fixLandscapeCollisions": true
+}
