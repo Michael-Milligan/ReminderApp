@@ -1,9 +1,0 @@
-{
-  "Id": "SeaglideSprinting",
-  "DisplayName": "Seaglide Sprinting",
-  "Author": "Gurrenm4",
-  "Version": "1.0.0",
-  "Enable": true,
-  "Game": "Subnautica",
-  "AssemblyName": "Seaglide Sprinting.dll"
-}

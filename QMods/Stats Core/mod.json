@@ -1,9 +1,0 @@
-{
-  "Id": "StatsCore",
-  "DisplayName": "Stats Core",
-  "Author": "Gurrenm4",
-  "Version": "1.0.1",
-  "Enable": true,
-  "Game": "Subnautica",
-  "AssemblyName": "Stats Core.dll"
-}

@@ -1,6 +1,0 @@
-﻿Autosorter:Autosort Locker
-Tooltip_Autosorter:Small, wall-mounted smart-locker that automatically transfers items into linked Autosort Receptacles.
-AutosortTarget:Autosort Receptacle
-Tooltip_AutosortTarget:Wall locker linked to an Autosorter that receives sorted items.
-AutosortTargetStanding:Standing Autosort Receptacle
-Tooltip_AutosortTargetStanding:Large locker linked to an Autosorter that receives sorted items.

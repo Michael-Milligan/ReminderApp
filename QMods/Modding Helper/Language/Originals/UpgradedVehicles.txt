@@ -1,9 +1,0 @@
-﻿WorkbenchMenu_HullArmor:Armor Modules
-SpeedModule:Speed Boost Module
-Tooltip_SpeedModule:Allows small vehicle engines to go into overdrive, adding greater speeds but at the cost of higher energy consumption rates.
-HullArmorMk2:Hull Reinforcement Mk II
-Tooltip_HullArmorMk2:An upgrade containing nanites improving and maintaining the inner structure of the hull.\nEquivalent to 2 regular Hull Reinforcements
-HullArmorMk3:Hull Reinforcement Mk III
-Tooltip_HullArmorMk3:An upgrade containing nanites improving and maintaining the inner structure of the hull.\nEquivalent to 3 regular Hull Reinforcements
-HullArmorMk4:Hull Reinforcement Mk IV
-Tooltip_HullArmorMk4:An upgrade containing nanites improving and maintaining the inner structure of the hull.\nEquivalent to 4 regular Hull Reinforcements

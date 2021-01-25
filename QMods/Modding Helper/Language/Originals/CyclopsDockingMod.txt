@@ -1,2 +1,0 @@
-﻿CyclopsHatchConnector:Cyclops docking hatch
-Tooltip_CyclopsHatchConnector:A module for mooring the Cyclops to a base. Allows quick base/Cyclops transitions and recharges Cyclops powercells.

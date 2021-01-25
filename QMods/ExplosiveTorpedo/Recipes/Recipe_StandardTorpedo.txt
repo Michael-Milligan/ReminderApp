@@ -1,4 +1,0 @@
-CraftAmount:2
------
-Titanium:1
-Lithium:1

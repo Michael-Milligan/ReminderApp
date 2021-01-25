@@ -1,9 +1,0 @@
-﻿StandardTorpedo:Standard torpedo
-Tooltip_StandardTorpedo:A dangerous thing is in the hands of a madman!
-CyclopsFabricatorMenu_ETModTorpedoes:Torpedoes
-StandardHomingTorpedo:Standard homing torpedo
-Tooltip_StandardHomingTorpedo:It shoots right at the target, for snipers.
-NuclearTorpedo:Nuclear torpedo
-Tooltip_NuclearTorpedo:Be careful not to drop it...
-NuclearHomingTorpedo:Nuclear homing torpedo
-Tooltip_NuclearHomingTorpedo:Exterminator...
