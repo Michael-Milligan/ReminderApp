@@ -82,3 +82,7 @@ D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\NAudio.dll
 D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\beep.mp3
 D:\GitHub\ReminderApp\ReminderApp\obj\Debug\net5.0-windows\TimeAlert.g.cs
 D:\GitHub\ReminderApp\ReminderApp\obj\Debug\net5.0-windows\TimeAlert.baml
+D:\GitHub\ReminderApp\ReminderApp\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\Prism.dll
+D:\GitHub\ReminderApp\ReminderApp\bin\Debug\net5.0-windows\Prism.Wpf.dll

@@ -4,11 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReminderApp"
+        xmlns:models="clr-namespace:ReminderApp.Models"
+        xmlns:vms="clr-namespace:ReminderApp.VMs"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="500">
+
+    <Window.DataContext>
+        <vms:MainVM/>
+    </Window.DataContext>
+    
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Invisible mode" Click="Invisible_ModeOn"/>
+            <MenuItem Header="Invisible mode" Command="{Binding SwitchToInvisibleMode}"/>
         </Menu>
             
         <Grid>
@@ -18,8 +25,8 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button Grid.Row="0" Click="ListOfCurrentTasks_Click">List of current tasks</Button>
-            <Button Grid.Row="1" Click="CompletedTasks_Click">List of completed tasks</Button>
+            <Button Grid.Row="0" Command="{Binding SwitchToCurrentTasks}">List of current tasks</Button>
+            <Button Grid.Row="1" Command="{Binding SwitchToCompletedTasks}">List of completed tasks</Button>
         </Grid>
     </DockPanel>
 </Window>

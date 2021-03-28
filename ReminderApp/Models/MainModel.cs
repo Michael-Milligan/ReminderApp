@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,14 +8,8 @@ using System.Windows;
 
 namespace ReminderApp.Models
 {
-    class MainModel
+    class MainModel: BindableBase
     {
-        MainWindow window;
-        public MainModel(MainWindow window)
-        {
-            this.window = window;
-        }
-
         public static void Fn()
         {
             new MainWindow().Show();
@@ -63,24 +58,24 @@ namespace ReminderApp.Models
                 First.Minute == Second.Minute;
         }
 
-        private void ListOfCurrentTasks_Click(object sender, RoutedEventArgs e)
+        public static void ListOfCurrentTasks_Click()
         {
-            window.Content = new ListOfCurrentTasks().Content;
+            Application.Current.Windows[0].Content = new ListOfCurrentTasks().Content;
         }
 
-        private void CompletedTasks_Click(object sender, RoutedEventArgs e)
+        public static void CompletedTasks_Click()
         {
-            window.Content = new CompletedTasksWindow().Content;
+            Application.Current.Windows[0].Content = new CompletedTasksWindow().Content;
         }
 
-        private void Invisible_ModeOn(object sender, RoutedEventArgs e)
+        public static void Invisible_ModeOn()
         {
-            window.Height = 0;
-            window.Width = 0;
-            window.WindowStyle = WindowStyle.None;
-            window.ShowInTaskbar = false;
-            window.ShowActivated = false;
-            window.WindowState = WindowState.Minimized;
+            Application.Current.Windows[0].Height = 0;
+            Application.Current.Windows[0].Width = 0;
+            Application.Current.Windows[0].WindowStyle = WindowStyle.None;
+            Application.Current.Windows[0].ShowInTaskbar = false;
+            Application.Current.Windows[0].ShowActivated = false;
+            Application.Current.Windows[0].WindowState = WindowState.Minimized;
         }
     }
 }

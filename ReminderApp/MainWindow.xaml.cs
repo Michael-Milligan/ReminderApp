@@ -18,7 +18,7 @@ namespace ReminderApp
         public MainWindow()
         {
             InitializeComponent();
-            var model = new MainModel(this);
+            var model = new MainModel();
             Menu ThisMenu = (Content as DockPanel).Children[0] as Menu;
             Methods.MakeMenu(ref ThisMenu);
 
