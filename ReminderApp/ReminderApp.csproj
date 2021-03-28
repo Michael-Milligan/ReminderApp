@@ -26,7 +26,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
     </None>
     <None Update="Tasks.sqlite">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

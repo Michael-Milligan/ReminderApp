@@ -2136,7 +2136,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "D:\\SDK\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2147,8 +2148,12 @@
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "D:\\GitHub\\ReminderApp\\ReminderApp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\SDK\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2219,7 +2224,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
