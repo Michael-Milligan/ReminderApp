@@ -13,25 +13,25 @@
     </Window.DataContext>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="{DynamicResource ActionsMenuItem}">
-                <MenuItem Header="{DynamicResource ExitMenuItem}" Command="{Binding ExitCommand}"/>
+            <MenuItem Header="{DynamicResource ActionsMenuHeader}">
+                <MenuItem Header="{DynamicResource ActionsMenuExitTab}" Command="{Binding ExitCommand}"/>
             </MenuItem>
-            <MenuItem Header="{DynamicResource LanguagesTabName}">
-                <MenuItem x:Name="en" Header="{DynamicResource EnTabName}" Command="{Binding SwitchToLanguageCommand}" CommandParameter="en"/>
-                <MenuItem x:Name="ru" Header="{DynamicResource RuTabName}" Command="{Binding SwitchToLanguageCommand}" CommandParameter="ru"/>
+            <MenuItem Header="{DynamicResource LanguagesMenuHeader}">
+                <MenuItem x:Name="en" Header="{DynamicResource LanguagesMenuEn}" Command="{Binding SwitchToLanguageCommand}" CommandParameter="en"/>
+                <MenuItem x:Name="ru" Header="{DynamicResource LanguagesMenuRu}" Command="{Binding SwitchToLanguageCommand}" CommandParameter="ru"/>
             </MenuItem>
         </Menu>
 
         <TabControl>
-            <TabItem Header="{DynamicResource MainTabName}">
+            <TabItem Header="{DynamicResource TabsMainTab}">
                 
             </TabItem>
 
-            <TabItem Header="{DynamicResource CurrentTasksTabName}">
+            <TabItem Header="{DynamicResource TabsCurrentTasksTab}">
 
             </TabItem>
 
-            <TabItem Header="{DynamicResource CompletedTasksTabName}">
+            <TabItem Header="{DynamicResource TabsCompletedTasksTab}">
 
             </TabItem>
         </TabControl>

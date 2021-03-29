@@ -2,14 +2,14 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:s="clr-namespace:System;assembly=mscorlib">
 
-		<s:String x:Key="ActionsMenuItem">Действия</s:String>
-		<s:String x:Key="ExitMenuItem">Выйти</s:String>
-	
-		<s:String x:Key="LanguagesTabName">Выбор языка</s:String>
-		<s:String x:Key="EnTabName">Английский</s:String>
-		<s:String x:Key="RuTabName">Русский</s:String>
+    <s:String x:Key="ActionsMenuHeader">Действия</s:String>
+    <s:String x:Key="ActionsMenuExitTab">Выйти</s:String>
 
-		<s:String x:Key="MainTabName">Главная страница</s:String>
-		<s:String x:Key="CurrentTasksTabName">Текущие задачи</s:String>
-		<s:String x:Key="CompletedTasksTabName">Выполненные задачи</s:String>
+    <s:String x:Key="LanguagesMenuHeader">Выбор языка</s:String>
+    <s:String x:Key="LanguagesMenuEn">Английский</s:String>
+    <s:String x:Key="LanguagesMenuRu">Русский</s:String>
+
+    <s:String x:Key="TabsMainTab">Главная страница</s:String>
+    <s:String x:Key="TabsCurrentTasksTab">Текущие задачи</s:String>
+    <s:String x:Key="TabsCompletedTasksTab">Выполненные задачи</s:String>
 </ResourceDictionary>
