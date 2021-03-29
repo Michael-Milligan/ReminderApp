@@ -24,7 +24,9 @@
 
         <TabControl>
             <TabItem Header="{DynamicResource TabsMainTab}">
-                
+                <StackPanel Orientation="Vertical" Margin="50">
+                    <Button Command="" Content="{DynamicResource MainTabSettings}" Width="300"/>
+                </StackPanel>
             </TabItem>
 
             <TabItem Header="{DynamicResource TabsCurrentTasksTab}">

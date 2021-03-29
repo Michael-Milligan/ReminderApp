@@ -10,6 +10,12 @@
     <s:String x:Key="LanguagesMenuRu">Русский</s:String>
 
     <s:String x:Key="TabsMainTab">Главная страница</s:String>
+    <s:String x:Key="MainTabSettings">Настройки</s:String>
+
     <s:String x:Key="TabsCurrentTasksTab">Текущие задачи</s:String>
+    
+    
     <s:String x:Key="TabsCompletedTasksTab">Выполненные задачи</s:String>
+    
+    
 </ResourceDictionary>
