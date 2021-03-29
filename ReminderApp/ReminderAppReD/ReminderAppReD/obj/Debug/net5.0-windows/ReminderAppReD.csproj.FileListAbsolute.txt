@@ -22,9 +22,8 @@ D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\bin\Debug\net5.0-windows\Microsoft.Xaml.Behaviors.dll
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\bin\Debug\net5.0-windows\Prism.dll
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\bin\Debug\net5.0-windows\Prism.Wpf.dll
-D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Resources\lang.baml
-D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\App.baml
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\MainView.baml
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.csproj.CopyComplete
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Resources\lang.ru-ru.baml
+D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Resources\lang.en-us.baml
