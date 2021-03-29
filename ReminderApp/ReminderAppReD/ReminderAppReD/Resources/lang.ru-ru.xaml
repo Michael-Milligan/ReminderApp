@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+		<s:String x:Key="ActionsMenuItem">Действия</s:String>
+		<s:String x:Key="ExitMenuItem">Выйти</s:String>
+	
+		<s:String x:Key="LanguagesTabName">Выбор языка</s:String>
+		<s:String x:Key="EnTabName">Английский</s:String>
+		<s:String x:Key="RuTabName">Русский</s:String>
+
+		<s:String x:Key="MainTabName">Главная страница</s:String>
+		<s:String x:Key="CurrentTasksTabName">Текущие задачи</s:String>
+		<s:String x:Key="CompletedTasksTabName">Выполненные задачи</s:String>
+</ResourceDictionary>
