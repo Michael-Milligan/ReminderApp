@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReminderAppReD"
         xmlns:vms="clr-namespace:ReminderAppReD.VMs"
+        xmlns:views="clr-namespace:ReminderAppReD.Views"
         mc:Ignorable="d"
         Title="Reminder App ReD" Height="450" Width="800">
 
@@ -15,6 +16,7 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="{DynamicResource ActionsMenuHeader}">
                 <MenuItem Header="{DynamicResource ActionsMenuExitTab}" Command="{Binding ExitCommand}"/>
+                <MenuItem Header="{DynamicResource ActionsMenuAddCurrentTaskTab}" Command="{Binding AddCurrentTaskCommand}"/>
             </MenuItem>
             <MenuItem Header="{DynamicResource LanguagesMenuHeader}">
                 <MenuItem x:Name="en" Header="{DynamicResource LanguagesMenuEn}" Command="{Binding SwitchToLanguageCommand}" CommandParameter="en"/>
@@ -23,14 +25,8 @@
         </Menu>
 
         <TabControl>
-            <TabItem Header="{DynamicResource TabsMainTab}">
-                <StackPanel Orientation="Vertical" Margin="50">
-                    <Button Command="" Content="{DynamicResource MainTabSettings}" Width="300"/>
-                </StackPanel>
-            </TabItem>
-
             <TabItem Header="{DynamicResource TabsCurrentTasksTab}">
-
+                <views:CurrentTasksTab></views:CurrentTasksTab>
             </TabItem>
 
             <TabItem Header="{DynamicResource TabsCompletedTasksTab}">

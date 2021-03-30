@@ -15,13 +15,19 @@ using System.Windows.Shapes;
 namespace ReminderAppReD.Views
 {
     /// <summary>
-    /// Interaction logic for Settings.xaml
+    /// Interaction logic for AddCurrentTaskView.xaml
     /// </summary>
-    public partial class Settings : Window
+    public partial class AddCurrentTaskView : Window
     {
-        public Settings()
+        public AddCurrentTaskView()
         {
             InitializeComponent();
+        }
+
+
+        public AddCurrentTaskView(ref CurrentTask toAdd)
+        {
+
         }
     }
 }

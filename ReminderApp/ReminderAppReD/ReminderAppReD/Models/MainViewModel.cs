@@ -12,6 +12,7 @@ namespace ReminderAppReD.Models
     class MainViewModel
     {
         public readonly static List<CultureInfo> languages = new List<CultureInfo>();
+        public static CurrentTask toAdd = new CurrentTask();
         public static void Exit()
         {
             Application.Current.Shutdown();
@@ -30,6 +31,10 @@ namespace ReminderAppReD.Models
             {
                 (item as MenuItem).IsChecked = (item as MenuItem).Name == name;
             }
+        }
+        public static void AddCurrentTask()
+        {
+
         }
     }
 }

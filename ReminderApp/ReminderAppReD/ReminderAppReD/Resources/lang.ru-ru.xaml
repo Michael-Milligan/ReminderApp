@@ -4,6 +4,7 @@
 
     <s:String x:Key="ActionsMenuHeader">Действия</s:String>
     <s:String x:Key="ActionsMenuExitTab">Выйти</s:String>
+    <s:String x:Key="ActionsMenuAddCurrentTaskTab">Новая задача</s:String>
 
     <s:String x:Key="LanguagesMenuHeader">Выбор языка</s:String>
     <s:String x:Key="LanguagesMenuEn">Английский</s:String>
