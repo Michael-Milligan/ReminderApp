@@ -14,8 +14,11 @@
     
     <s:String x:Key="TabsCurrentTasksTab">Current tasks</s:String>
     
-    
     <s:String x:Key="TabsCompletedTasksTab">Completed tasks</s:String>
+
+    <s:String x:Key="ACTVNameLabel">Enter the task name: </s:String>
+    <s:String x:Key="ACTVDateLabel">Date of the task: </s:String>
+    <s:String x:Key="ACTVSendButton">Send</s:String>
     
     
 </ResourceDictionary>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReminderAppReD.Views;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace ReminderAppReD.Models
         }
         public static void AddCurrentTask()
         {
-
+            new AddCurrentTaskView().Show();
         }
     }
 }

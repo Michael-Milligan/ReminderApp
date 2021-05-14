@@ -3,10 +3,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vms="clr-namespace:ReminderAppReD.VMs"
+        xmlns:views="clr-namespace:ReminderAppReD.Views"
         xmlns:local="clr-namespace:ReminderAppReD.Views"
         mc:Ignorable="d"
-        Title="AddCurrentTaskView" Height="450" Width="800">
+        Title="AddCurrentTaskView" Height="200" Width="400">
+    <Window.DataContext>
+        <vms:MainViewVM></vms:MainViewVM>
+    </Window.DataContext>
+    
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         
+        <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource ACTVNameLabel}"></Label>
+        <Label Grid.Row="1" Grid.Column="0" Content="{DynamicResource ACTVDateLabel}"></Label>
+
+        <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" x:Name="NameTextBox"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="DateTextBox"></TextBox>
+
+        <Button Grid.Column="1" Grid.Row="2" Content="{DynamicResource ACTVSendButton}"></Button>
     </Grid>
 </Window>

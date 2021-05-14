@@ -66,3 +66,5 @@ D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\CurrentTasksTab.baml
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\bin\Debug\net5.0-windows\Humanizer.dll
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\AddCurrentTaskView.g.cs
+D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\AddCurrentTaskView.baml
