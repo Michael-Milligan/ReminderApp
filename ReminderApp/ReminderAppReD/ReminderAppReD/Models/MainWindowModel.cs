@@ -10,7 +10,7 @@ using System.Windows.Controls;
 
 namespace ReminderAppReD.Models
 {
-    class MainViewModel
+    class MainWindowModel
     {
         public readonly static List<CultureInfo> languages = new List<CultureInfo>();
         public static CurrentTask toAdd = new CurrentTask();

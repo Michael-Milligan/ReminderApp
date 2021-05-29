@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\AddCurrentTaskView.xaml.cs">
+    <Compile Update="Views\AddCurrentTaskWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\CurrentTasksTab.xaml.cs">
@@ -18,13 +18,13 @@
     <Page Update="Resources\lang.en-us.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\AddCurrentTaskView.xaml">
+    <Page Update="Views\AddCurrentTaskWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\CurrentTasksTab.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\MainView.xaml">
+    <Page Update="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

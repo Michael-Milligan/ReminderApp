@@ -23,11 +23,5 @@ namespace ReminderAppReD.Views
         {
             InitializeComponent();
         }
-
-
-        public AddCurrentTaskView(ref CurrentTask toAdd)
-        {
-
-        }
     }
 }

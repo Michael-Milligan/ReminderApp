@@ -7,9 +7,9 @@ namespace ReminderAppReD
 {
     public partial class CompletedTask
     {
-        public long? TaskId { get; set; }
-        public byte[] CompletionDateTime { get; set; }
-        public long Id { get; set; }
+        public int TaskId { get; set; }
+        public DateTime CompletionDateTime { get; set; }
+        public int Id { get; set; }
 
         public virtual CurrentTask Task { get; set; }
     }

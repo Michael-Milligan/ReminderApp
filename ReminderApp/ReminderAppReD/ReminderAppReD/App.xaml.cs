@@ -17,9 +17,9 @@ namespace ReminderAppReD
     {
         public App()
         {
-            MainViewModel.languages.Clear();
-            MainViewModel.languages.Add(new CultureInfo("en-US"));
-            MainViewModel.languages.Add(new CultureInfo("ru-RU"));
+            MainWindowModel.languages.Clear();
+            MainWindowModel.languages.Add(new CultureInfo("en-US"));
+            MainWindowModel.languages.Add(new CultureInfo("ru-RU"));
 
             language = ReminderAppReD.Properties.Settings.Default.defaultLanguage;
         }

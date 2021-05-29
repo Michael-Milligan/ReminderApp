@@ -39,7 +39,9 @@ namespace ReminderAppReD
                     .IsRequired()
                     .HasColumnType("DATETIME");
 
-                entity.Property(e => e.TaskId).HasColumnName("TaskID");
+                entity.Property(e => e.TaskId)
+                .IsRequired()
+                .HasColumnName("TaskID");
 
                 entity.HasOne(d => d.Task)
                     .WithMany(p => p.CompletedTasks)

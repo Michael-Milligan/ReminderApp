@@ -10,7 +10,7 @@
         Title="Reminder App ReD" Height="450" Width="800">
 
     <Window.DataContext>
-        <vms:MainViewVM></vms:MainViewVM>
+        <vms:MainWindowVM></vms:MainWindowVM>
     </Window.DataContext>
     <DockPanel>
         <Menu DockPanel.Dock="Top">

@@ -12,9 +12,9 @@ namespace ReminderAppReD
             CompletedTasks = new HashSet<CompletedTask>();
         }
 
-        public long Id { get; set; }
-        public byte[] Task { get; set; }
-        public byte[] DateTime { get; set; }
+        public int Id { get; set; }
+        public string Task { get; set; }
+        public DateTime DateTime { get; set; }
 
         public virtual ICollection<CompletedTask> CompletedTasks { get; set; }
     }

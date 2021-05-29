@@ -18,11 +18,9 @@ D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\ref\ReminderAppReD.dll
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.pdb
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.genruntimeconfig.cache
-D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\MainView.g.cs
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\bin\Debug\net5.0-windows\Microsoft.Xaml.Behaviors.dll
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\bin\Debug\net5.0-windows\Prism.dll
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\bin\Debug\net5.0-windows\Prism.Wpf.dll
-D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\MainView.baml
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.csproj.CopyComplete
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Resources\lang.ru-ru.baml
@@ -66,5 +64,7 @@ D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\CurrentTasksTab.baml
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\bin\Debug\net5.0-windows\Humanizer.dll
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Design.dll
-D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\AddCurrentTaskView.g.cs
-D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\AddCurrentTaskView.baml
+D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\AddCurrentTaskWindow.g.cs
+D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\MainWindow.g.cs
+D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\AddCurrentTaskWindow.baml
+D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\MainWindow.baml

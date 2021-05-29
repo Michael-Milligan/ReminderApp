@@ -9,14 +9,14 @@
         mc:Ignorable="d"
         Title="AddCurrentTaskView" Height="200" Width="400">
     <Window.DataContext>
-        <vms:MainViewVM></vms:MainViewVM>
+        <vms:MainWindowVM></vms:MainWindowVM>
     </Window.DataContext>
     
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="45"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
