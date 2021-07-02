@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ReminderAppReD
+namespace ReminderAppReD.DB
 {
     public partial class CurrentTask
     {

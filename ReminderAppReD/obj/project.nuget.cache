@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x6lgmoTOJmS/Fv3R3g5koBTY7FEH9oaqYIHWAV+r69YL4xEhNFBqj9XvmiqEhGVm++V7WPRtg16Iugmr7EfIxQ==",
+  "dgSpecHash": "FGfB10H4SnFgZVCOM4P4oz6y++cManaLTvBoJcRu1c/e210CaZRa7FBOOVI4ew25jSd1Z9TG5VSKJfaUUPQ2Vw==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\ReminderApp\\ReminderApp\\ReminderAppReD\\ReminderAppReD\\ReminderAppReD.csproj",
+  "projectFilePath": "D:\\GitHub\\ReminderApp\\ReminderAppReD\\ReminderAppReD.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

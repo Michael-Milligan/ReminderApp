@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace ReminderAppReD
+namespace ReminderAppReD.DB
 {
     public partial class TasksContext : DbContext
     {

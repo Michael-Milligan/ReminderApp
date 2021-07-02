@@ -1223,11 +1223,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\ReminderApp\\ReminderApp\\ReminderAppReD\\ReminderAppReD\\ReminderAppReD.csproj",
+      "projectUniqueName": "D:\\GitHub\\ReminderApp\\ReminderAppReD\\ReminderAppReD.csproj",
       "projectName": "ReminderAppReD",
-      "projectPath": "D:\\GitHub\\ReminderApp\\ReminderApp\\ReminderAppReD\\ReminderAppReD\\ReminderAppReD.csproj",
+      "projectPath": "D:\\GitHub\\ReminderApp\\ReminderAppReD\\ReminderAppReD.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\ReminderApp\\ReminderApp\\ReminderAppReD\\ReminderAppReD\\obj\\",
+      "outputPath": "D:\\GitHub\\ReminderApp\\ReminderAppReD\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\SDK\\NuGetPackages"
