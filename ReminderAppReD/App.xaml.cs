@@ -33,7 +33,7 @@ namespace ReminderAppReD
             set
             {
                 _ = value ?? throw new ArgumentNullException(nameof(value));
-                if (value.Name == language.Name) return;
+                //if (value.Name == language.Name) return;
 
                 System.Threading.Thread.CurrentThread.CurrentUICulture = value;
 

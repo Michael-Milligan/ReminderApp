@@ -8,7 +8,10 @@ namespace ReminderAppReD.Models
         public static void AddNewTask(string TaskText, DateTime TaskTime)
         {
             TasksContext context = new TasksContext();
-            context.CurrentTasks.Add(new CurrentTask(TaskText, TaskTime));
+            CurrentTask newTask = new CurrentTask();
+            newTask.Task = TaskText;
+            newTask.DateTime = TaskTime;
+            context.CurrentTasks.Add(newTask);
             context.SaveChanges();
         }
     }

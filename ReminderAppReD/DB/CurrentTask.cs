@@ -7,7 +7,7 @@ namespace ReminderAppReD.DB
 {
     public partial class CurrentTask
     {
-        public CurrentTask(string TaskName, DateTime DateTime)
+        public CurrentTask()
         {
             CompletedTasks = new HashSet<CompletedTask>();
         }

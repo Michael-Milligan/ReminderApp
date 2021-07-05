@@ -1,4 +1,5 @@
-﻿using ReminderAppReD.Views;
+﻿using ReminderAppReD.DB;
+using ReminderAppReD.Views;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -13,7 +14,6 @@ namespace ReminderAppReD.Models
     class MainWindowModel
     {
         public readonly static List<CultureInfo> languages = new List<CultureInfo>();
-        public static CurrentTask toAdd = new CurrentTask();
         public static void Exit()
         {
             Application.Current.Shutdown();

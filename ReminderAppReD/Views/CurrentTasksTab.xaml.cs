@@ -19,9 +19,20 @@ namespace ReminderAppReD.Views
             {
                 TabGrid.RowDefinitions.Add(new RowDefinition());
 
-                Label TaskName = new Label();
-                TaskName.Content = Tasks[i].Task;
+                Label TaskIdLabel = new Label();
+                TaskIdLabel.Content = Tasks[i].Id;
+                Grid.SetColumn(TaskIdLabel, 0);
+                Grid.SetRow(TaskIdLabel, i + 1);
 
+                Label TaskNameLabel = new Label();
+                TaskNameLabel.Content = Tasks[i].Task;
+                Grid.SetColumn(TaskNameLabel, 1);
+                Grid.SetRow(TaskNameLabel, i + 1);
+
+                Label TaskDateTimeLabel = new Label();
+                TaskDateTimeLabel.Content = Tasks[i].DateTime.ToString();
+                Grid.SetColumn(TaskDateTimeLabel, 2);
+                Grid.SetRow(TaskDateTimeLabel, i + 1);
             }
         }
     }

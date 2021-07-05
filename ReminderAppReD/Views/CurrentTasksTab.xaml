@@ -13,5 +13,12 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" x:Name="CurrentTaskTabTaskIdLabel"></Label>
+        <Label Grid.Row="0" Grid.Column="1" x:Name="CurrentTaskTabTaskDescLabel"></Label>
+        <Label Grid.Row="0" Grid.Column="2" x:Name="CurrentTaskTabTaskDateLabel"></Label>
     </Grid>
 </UserControl>

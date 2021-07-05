@@ -70,7 +70,7 @@ namespace ReminderAppReD.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ReminderAppReD;V1.0.0.0;component/views/addcurrenttaskwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ReminderAppReD;component/views/addcurrenttaskwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AddCurrentTaskWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
