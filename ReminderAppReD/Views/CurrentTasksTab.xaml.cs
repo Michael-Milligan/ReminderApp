@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Controls;
 
+
 namespace ReminderAppReD.Views
 {
     /// <summary>
