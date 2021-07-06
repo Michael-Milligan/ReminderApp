@@ -2,6 +2,7 @@
 using ReminderAppReD.Views;
 using ReminderAppReD.Models;
 using System;
+using System.Linq;
 using System.Windows;
 
 namespace ReminderAppReD.VMs
@@ -10,13 +11,12 @@ namespace ReminderAppReD.VMs
     {
         public DelegateCommand SendCommand { get; set; } = new DelegateCommand(() => 
         { 
-            string TaskName = (Application.Current.Windows[2] as AddCurrentTaskView).NameTextBox.Text;
-            string TaskDate = (Application.Current.Windows[2] as AddCurrentTaskView).DateTextBox.Text;
+            string TaskName = (Application.Current.Windows[1] as AddCurrentTaskView).NameTextBox.Text;
+            string TaskDate = (Application.Current.Windows[1] as AddCurrentTaskView).DateTextBox.Text;
             try
             {
                 DateTime time = DateTime.Parse(TaskDate);
                 AddCurrentTaskWindowModel.AddNewTask(TaskName, time);
-                Application.Current.Windows[2].Close();
             }
             catch (FormatException)
             {

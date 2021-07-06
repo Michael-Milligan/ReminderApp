@@ -26,7 +26,7 @@
 
         <TabControl>
             <TabItem Header="{DynamicResource TabsCurrentTasksTab}">
-                <views:CurrentTasksTab></views:CurrentTasksTab>
+                <views:CurrentTasksTab TabIndex="0" x:Name="CurrentTasksTab"></views:CurrentTasksTab>
             </TabItem>
 
             <TabItem Header="{DynamicResource TabsCompletedTasksTab}">

@@ -1,20 +1,21 @@
 ﻿using ReminderAppReD.DB;
-using ReminderAppReD.Models;
+using ReminderAppReD.Views;
 using ReminderAppReD.VMs;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
-
-namespace ReminderAppReD.Views
+namespace ReminderAppReD
 {
-    /// <summary>
-    /// Interaction logic for CurrentTasksTab.xaml
-    /// </summary>
-    public partial class CurrentTasksTab : UserControl
+    class Methods
     {
-        public CurrentTasksTab()
+        public static void RefreshCurrentTasksGrid()
         {
-            InitializeComponent();
+            Grid TabGrid = (Application.Current.Windows[0] as MainWindow).CurrentTasksTab.Content as Grid;
+            for (int i = 3; i < TabGrid.Children.Count; ++i)
+            {
+                TabGrid.Children.RemoveAt(i);
+            }
 
             TasksContext Context = new TasksContext();
             CurrentTask[] Tasks = Context.CurrentTasks.ToArray();
