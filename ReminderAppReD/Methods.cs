@@ -16,6 +16,8 @@ namespace ReminderAppReD
             {
                 TabGrid.Children.RemoveAt(i);
             }
+            TabGrid.RowDefinitions.Clear();
+            TabGrid.RowDefinitions.Add(new RowDefinition());
 
             TasksContext Context = new TasksContext();
             CurrentTask[] Tasks = Context.CurrentTasks.ToArray();
