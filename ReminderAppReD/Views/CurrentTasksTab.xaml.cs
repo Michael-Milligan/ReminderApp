@@ -18,7 +18,8 @@ namespace ReminderAppReD.Views
 
             TasksContext Context = new TasksContext();
             CurrentTask[] Tasks = Context.CurrentTasks.ToArray();
-            for (int i = 0; i < Tasks.Length; ++i)
+            int i = 0;
+            for (; i < Tasks.Length; ++i)
             {
                 TabGrid.RowDefinitions.Add(new RowDefinition());
 
@@ -42,6 +43,8 @@ namespace ReminderAppReD.Views
                 Grid.SetColumn(RemoveButton, 2);
                 Grid.SetRow(RemoveButton, i + 1);
             }
+
+            Methods.AddScrollViewer(ref TabGrid, 2, 1, 1, i);
         }
     }
 }

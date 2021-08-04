@@ -1,6 +1,7 @@
 ﻿ using ReminderAppReD.DB;
 using ReminderAppReD.Views;
 using ReminderAppReD.VMs;
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,18 +13,19 @@ namespace ReminderAppReD
         public static void RefreshCurrentTasksGrid()
         {
             Grid TabGrid = (Application.Current.Windows[0] as MainWindow).CurrentTasksTab.Content as Grid;
-            for (int i = 3; i < TabGrid.Children.Count; ++i)
+            for (int j = 3; j < TabGrid.Children.Count; ++j)
             {
-                TabGrid.Children.RemoveAt(i);
+                TabGrid.Children.RemoveAt(j);
             }
             TabGrid.RowDefinitions.Clear();
-            TabGrid.RowDefinitions.Add(new RowDefinition());
+            TabGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(30, GridUnitType.Pixel) });
 
             TasksContext Context = new TasksContext();
             CurrentTask[] Tasks = Context.CurrentTasks.ToArray();
-            for (int i = 0; i < Tasks.Length; ++i)
+            int i = 0;
+            for (; i < Tasks.Length; ++i)
             {
-                TabGrid.RowDefinitions.Add(new RowDefinition());
+                TabGrid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
 
                 Label TaskNameLabel = new Label();
                 TaskNameLabel.Content = Tasks[i].Task;
@@ -45,6 +47,20 @@ namespace ReminderAppReD
                 Grid.SetColumn(RemoveButton, 2);
                 Grid.SetRow(RemoveButton, i + 1);
             }
+
+            AddScrollViewer(ref TabGrid, 2, 1, 1, i);
+        }
+
+        public static void AddScrollViewer(ref Grid grid, int column, int row, int columnSpan = 1, int rowSpan = 1)
+        {
+            _ = grid ?? throw new ArgumentNullException(nameof(grid));
+            
+            ScrollViewer scroll = new();
+            grid.Children.Add(scroll);
+            Grid.SetColumn(scroll, column);
+            Grid.SetColumnSpan(scroll, columnSpan);
+            Grid.SetRow(scroll, row);
+            Grid.SetRowSpan(scroll, rowSpan);
         }
     }
 }
