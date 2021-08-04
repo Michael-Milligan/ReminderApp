@@ -13,13 +13,16 @@ namespace ReminderAppReD.VMs
 {
     class CurrentTasksTabVM
     {
-        public static DelegateCommand<object> RemoveCommand { get; set; } = new DelegateCommand<object>((object parameter) =>
+        public static DelegateCommand<object> RemoveCommand { get; set; } = 
+            new DelegateCommand<object>((object parameter) =>
         {
             int i = (int)parameter;
 
-            Grid TabGrid = (Application.Current.Windows[0] as MainWindow).CurrentTasksTab.Content as Grid;
+            Grid TabGrid = (Application.Current.Windows[0] as MainWindow).CurrentTasksTab.Content 
+            as Grid;
 
-            CurrentTasksTabModel.RemoveTask(Convert.ToString((TabGrid.Children[3 * i + 3] as Label).Content));
+            CurrentTasksTabModel.RemoveTask(Convert.ToString((TabGrid.Children[3 * i + 3] as Label).
+                Content));
         });
     }
 }

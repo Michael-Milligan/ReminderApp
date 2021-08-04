@@ -68,7 +68,6 @@ D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\MainWindow.g.cs
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\AddCurrentTaskWindow.baml
 D:\GitHub\ReminderApp\ReminderApp\ReminderAppReD\ReminderAppReD\obj\Debug\net5.0-windows\Views\MainWindow.baml
-D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.csprojAssemblyReference.cache
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\Resources\lang.en-us.baml
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\Resources\lang.ru-ru.baml
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\Views\AddCurrentTaskWindow.g.cs
@@ -138,3 +137,4 @@ D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.csp
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.csproj.CopyComplete
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.genruntimeconfig.cache
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Debug\net5.0-windows\DB\Tasks.sqlite
+D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.csproj.AssemblyReference.cache
