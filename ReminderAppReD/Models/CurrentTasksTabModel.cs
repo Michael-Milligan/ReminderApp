@@ -22,5 +22,10 @@ namespace ReminderAppReD.Models
             Methods.RefreshCurrentTasksGrid();
             
         }
+
+        public static void ScrollFocusLost()
+        {
+
+        }
     }
 }
