@@ -138,3 +138,5 @@ D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.csp
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.genruntimeconfig.cache
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Debug\net5.0-windows\DB\Tasks.sqlite
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.csproj.AssemblyReference.cache
+D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\Views\AlertWindow.g.cs
+D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\Views\AlertWindow.baml

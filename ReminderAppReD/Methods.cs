@@ -1,6 +1,5 @@
-﻿ using ReminderAppReD.DB;
+﻿using ReminderAppReD.DB;
 using ReminderAppReD.Models;
-using ReminderAppReD.Views;
 using ReminderAppReD.VMs;
 using System;
 using System.Linq;

@@ -10,6 +10,9 @@
     <Compile Update="Views\AddCurrentTaskWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\AlertWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\CurrentTasksTab.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,6 +22,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\AddCurrentTaskWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AlertWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\CurrentTasksTab.xaml">

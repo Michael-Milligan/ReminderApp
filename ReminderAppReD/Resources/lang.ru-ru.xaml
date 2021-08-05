@@ -23,5 +23,9 @@
     <s:String x:Key="ACTVDateLabel">Дата начала выполнения</s:String>
     <s:String x:Key="ACTVSendButton">Отправить</s:String>
 
-
+    <s:String x:Key="AlertWindowMessageLabel">Время приступать к запланированному заданию</s:String>
+    <s:String x:Key="AlertWindowTaskNameLabel">Задача:</s:String>
+    <s:String x:Key="AlertWindowTaskDateLabel">Время начала:</s:String>
+    <s:String x:Key="AlertWindowPostponeButtonContent">Отложить на(время в минутах)</s:String>
+    <s:String x:Key="AlertWindowDoneButtonContent">Готово</s:String>
 </ResourceDictionary>
