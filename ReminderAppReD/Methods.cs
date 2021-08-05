@@ -54,24 +54,26 @@ namespace ReminderAppReD
         public static void AddScrollViewer(ref Grid grid, int column, int row, int columnSpan = 1, int rowSpan = 1)
         {
             _ = grid ?? throw new ArgumentNullException(nameof(grid));
-            
+
+            grid.ColumnDefinitions.Add(new() { Width = new GridLength(15, GridUnitType.Pixel) });
+
             ScrollViewer scroll = new();
-            scroll.GotFocus += OnFocusGot;
-            scroll.LostFocus += OnFocusLost;
+            scroll.MouseEnter += OnMouseEnter;
+            scroll.MouseLeave += OnMouseLeave;
 
             grid.Children.Add(scroll);
-            Grid.SetColumn(scroll, column);
+            Grid.SetColumn(scroll, column + 1);
             Grid.SetColumnSpan(scroll, columnSpan);
             Grid.SetRow(scroll, row);
             Grid.SetRowSpan(scroll, rowSpan);
         }
 
-        public static void OnFocusGot(object sender, RoutedEventArgs args)
+        public static void OnMouseEnter(object sender, RoutedEventArgs args)
         {
-            (sender as ScrollViewer).Visibility = Visibility.Visible; 
+            (sender as ScrollViewer).Visibility = Visibility.Visible;
         }
 
-        public static void OnFocusLost(object sender, RoutedEventArgs args)
+        public static void OnMouseLeave(object sender, RoutedEventArgs args)
         {
             (sender as ScrollViewer).Visibility = Visibility.Hidden;
         }
