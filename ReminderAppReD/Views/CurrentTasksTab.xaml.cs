@@ -13,6 +13,7 @@ namespace ReminderAppReD.Views
     /// </summary>
     public partial class CurrentTasksTab : UserControl
     {
+        public bool isInitialised = false;
         public CurrentTasksTab()
         {
             InitializeComponent();
@@ -47,6 +48,7 @@ namespace ReminderAppReD.Views
             }
 
             Methods.AddScrollViewer(ref TabGrid, 2, 1, 1, i);
+            isInitialised = true;
         }
     }
 }

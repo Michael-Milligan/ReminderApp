@@ -56,7 +56,7 @@ namespace ReminderAppReD
         {
             _ = grid ?? throw new ArgumentNullException(nameof(grid));
 
-            grid.ColumnDefinitions.Add(new() { Width = new GridLength(15, GridUnitType.Pixel) });
+            if (grid.ColumnDefinitions.Count < 4) grid.ColumnDefinitions.Add(new() { Width = new GridLength(15, GridUnitType.Pixel) });
 
             ScrollViewer scroll = new();
             scroll.MouseEnter += CurrentTasksTabModel.OnMouseEnter;
