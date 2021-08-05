@@ -21,7 +21,7 @@ namespace ReminderAppReD.Views
             int i = 0;
             for (; i < Tasks.Length; ++i)
             {
-                TabGrid.RowDefinitions.Add(new RowDefinition());
+                TabGrid.RowDefinitions.Add(new() { Height = System.Windows.GridLength.Auto });
 
                 Label TaskNameLabel = new Label();
                 TaskNameLabel.Content = Tasks[i].Task;
