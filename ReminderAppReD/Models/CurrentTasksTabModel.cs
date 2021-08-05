@@ -20,12 +20,16 @@ namespace ReminderAppReD.Models
             Context.SaveChanges();
 
             Methods.RefreshCurrentTasksGrid();
-            
         }
 
-        public static void ScrollFocusLost()
+        public static void OnMouseEnter(object sender, RoutedEventArgs args)
         {
+            (sender as ScrollViewer).Opacity = 1;
+        }
 
+        public static void OnMouseLeave(object sender, RoutedEventArgs args)
+        {
+            (sender as ScrollViewer).Opacity = 0;
         }
     }
 }

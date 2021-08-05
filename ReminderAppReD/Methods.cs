@@ -1,4 +1,5 @@
 ﻿ using ReminderAppReD.DB;
+using ReminderAppReD.Models;
 using ReminderAppReD.Views;
 using ReminderAppReD.VMs;
 using System;
@@ -58,24 +59,14 @@ namespace ReminderAppReD
             grid.ColumnDefinitions.Add(new() { Width = new GridLength(15, GridUnitType.Pixel) });
 
             ScrollViewer scroll = new();
-            scroll.MouseEnter += OnMouseEnter;
-            scroll.MouseLeave += OnMouseLeave;
+            scroll.MouseEnter += CurrentTasksTabModel.OnMouseEnter;
+            scroll.MouseLeave += CurrentTasksTabModel.OnMouseLeave;
 
             grid.Children.Add(scroll);
             Grid.SetColumn(scroll, column + 1);
             Grid.SetColumnSpan(scroll, columnSpan);
             Grid.SetRow(scroll, row);
             Grid.SetRowSpan(scroll, rowSpan);
-        }
-
-        public static void OnMouseEnter(object sender, RoutedEventArgs args)
-        {
-            (sender as ScrollViewer).Opacity = 1;
-        }
-
-        public static void OnMouseLeave(object sender, RoutedEventArgs args)
-        {
-            (sender as ScrollViewer).Opacity = 0;
         }
     }
 }
