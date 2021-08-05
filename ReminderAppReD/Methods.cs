@@ -70,12 +70,12 @@ namespace ReminderAppReD
 
         public static void OnMouseEnter(object sender, RoutedEventArgs args)
         {
-            (sender as ScrollViewer).Visibility = Visibility.Visible;
+            (sender as ScrollViewer).Opacity = 1;
         }
 
         public static void OnMouseLeave(object sender, RoutedEventArgs args)
         {
-            (sender as ScrollViewer).Visibility = Visibility.Hidden;
+            (sender as ScrollViewer).Opacity = 0;
         }
     }
 }
