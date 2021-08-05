@@ -6,11 +6,8 @@
         xmlns:local="clr-namespace:ReminderAppReD.Views"
         xmlns:vms="clr-namespace:ReminderAppReD.VMs"
         mc:Ignorable="d"
-        Title="AlertWindow" Height="450" Width="800">
-    <Window.DataContext>
-        <vms:AlertWindowVM></vms:AlertWindowVM>
-    </Window.DataContext>
-    
+        Title="AlertWindow" Height="300" Width="540">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -29,11 +26,12 @@
 
         <Label Grid.Row="1" Grid.Column="0" Content="{DynamicResource AlertWindowTaskNameLabel}"></Label>
         <Label Grid.Row="2" Grid.Column="0" Content="{DynamicResource AlertWindowTaskDateLabel}"></Label>
-        
-        
 
-        <Button Grid.Row="3" Grid.Column="0" Content="{DynamicResource AlertWindowPostponeButtonContent}" Command="PostponeCommand"></Button>
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="{Binding taskName}"></Label>
+        <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="{Binding taskDate}"></Label>
+
+        <Button Grid.Row="3" Grid.Column="0" DataContext="vms:AlertWindowVM" Content="{DynamicResource AlertWindowPostponeButtonContent}" Command="PostponeCommand" CommandParameter="{Binding postponeTime.text}"></Button>
         <TextBox Grid.Row="3" Grid.Column="1" x:Name="postponeTime"></TextBox>
-        <Button Grid.Row="3" Grid.Column="2" Content="{DynamicResource AlertWindowDoneButtonContent}" Command="DoneCommand" CommandParameter="{Binding }"></Button>
+        <Button Grid.Row="3" Grid.Column="2" DataContext="vms:AlertWindowVM" Content="{DynamicResource AlertWindowDoneButtonContent}" Command="DoneCommand" CommandParameter="{Binding taskName}"></Button>
     </Grid>
 </Window>
