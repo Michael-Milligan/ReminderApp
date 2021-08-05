@@ -16,6 +16,7 @@
     <s:String x:Key="CurrentTaskTabTaskIdLabel">ID</s:String>
     <s:String x:Key="CurrentTaskTabTaskDescLabel">Описание</s:String>
     <s:String x:Key="CurrentTaskTabTaskDateLabel">Дата и время</s:String>
+    <s:String x:Key="CurrentTaskTabRemoveButtonContent">Убрать</s:String>
 
     <s:String x:Key="TabsCompletedTasksTab">Выполненные задачи</s:String>
 

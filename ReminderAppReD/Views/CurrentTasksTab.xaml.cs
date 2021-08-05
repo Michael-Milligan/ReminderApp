@@ -2,6 +2,7 @@
 using ReminderAppReD.Models;
 using ReminderAppReD.VMs;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
 
@@ -36,7 +37,8 @@ namespace ReminderAppReD.Views
                 Grid.SetRow(TaskDateTimeLabel, i + 1);
 
                 Button RemoveButton = new Button();
-                RemoveButton.Content = "Remove";
+                RemoveButton.Content = Application.Current.Resources.MergedDictionaries[0]["CurrentTaskTabRemoveButtonContent"];
+                //RemoveButton.Content = "Remove";
                 RemoveButton.Command = CurrentTasksTabVM.RemoveCommand;
                 RemoveButton.CommandParameter = i;
                 TabGrid.Children.Add(RemoveButton);
