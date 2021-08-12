@@ -1,5 +1,7 @@
 using NUnit.Framework;
 using ReminderAppReD;
+using System;
+using System.Collections.Generic;
 
 namespace Tests
 {
@@ -29,7 +31,7 @@ namespace Tests
         [Test]
         public void ScheduleConstructorTest()
         {
-            Schedule schedule = new("*.9.*/2 1-5 10:00:00.000");
+            Schedule schedule = new("*.9.1,2,3-5,10-20/3 1-5 10:00:00.000");
 
             Assert.AreEqual(0, schedule.milliseconds[0]);
             Assert.AreEqual(0, schedule.seconds[0]);
@@ -37,29 +39,20 @@ namespace Tests
             Assert.AreEqual(10, schedule.hours[0]);
 
             Assert.AreEqual(5, schedule.weekDays.Count);
-            Assert.AreEqual(15, schedule.days.Count);
+            Assert.AreEqual(new List<int>(){ 1, 2, 3, 4, 5, 10, 13, 16, 19 }, schedule.days);
             Assert.AreEqual(9, schedule.months[0]);
             Assert.AreEqual(100, schedule.years.Count);
         }
 
         [Test]
-        public void ScheduleNearestEventTest()
-        {
-
-        }
-
-        [Test]
-        public void ScheduleNearestPrevEventTest()
-        {
-
-        }
-
-        [Test]
         public void ScheduleNextEventTest()
         {
+            Schedule schedule = new("*.9.1,2,3-5,10-20/4 1-5 10:00:00.000");
 
+            Assert.AreEqual(Convert.ToDateTime("10:00:00.0 AM 14.08.2021"), schedule.NextEvent(DateTime.Now));
         }
 
+        [Test]
         public void SchedulePrevEventTest()
         {
 
