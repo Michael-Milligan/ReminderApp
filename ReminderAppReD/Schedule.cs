@@ -175,39 +175,31 @@ namespace ReminderAppReD
         /// <returns>Следующий момент времени в расписании</returns>
         public DateTime NextEvent(DateTime t1)
         {
-            int millisecond = Next(t1.Millisecond, in milliseconds),
-                second = Next(t1.Second, in seconds),
-                minute = Next(t1.Minute, in minutes),
-                hour = Next(t1.Hour, in hours),
-
-                day = Next(t1.Day, in days),
-                month = Next(t1.Month, in months),
-                year = Next(t1.Year, in years),
-                weekDay = (int)(new DateTime(year, month, day).DayOfWeek);
-
             //Look, I know the complexity here is enormous: O(n^7), but to be honest, most of the events would be in 1 or 2 cycles of the year cycle:
             //we look for the year and other parameters of the DateTime after our, so even if in the whole our year there wouldn't be any events, there will be one in the next
             //one with, I presume, more than 80% probability. Also, there would be small amount of cycling, because, usually users don't want to be notified every millisecond
             //or second, so the complexity is reduced to O(n^5), while presuming there would be at least one event by one-two years the complexity falls to acceptable O(n^4).
             //Finally, let's remember that the possible size of each parameter is limited to double-digit number, which gives us really small amount of cycles and time:
             //60 mins * 24 hours * 31 days(somewhere even less) * 12 months * 10 years ~ 5,356,800 which is not that much;
+            
+            //Same logic would be for PrevEvent function
 
-            for (int _year = 0; _year < years.Last(); _year = Next(_year, in years))
+            for (int year = 0; year < years.Last(); year = Next(year, in years))
             {
-                for (int _month = 0; _month < months.Last(); _month = Next(_month, in months))
+                for (int month = 0; month < months.Last(); month = Next(month, in months))
                 {
-                    for (int _day = 0; _day < days.Last(); _day = Next(_day, in days))
+                    for (int day = 0; day < days.Last(); day = Next(day, in days))
                     {
-                        if (_day > DateTime.DaysInMonth(_year, _month)) continue;
-                        for (int _hour = 0; _hour < hours.Last(); _hour = Next(_hour, in hours))
+                        if (day > DateTime.DaysInMonth(year, month)) continue;
+                        for (int hour = 0; hour < hours.Last(); hour = Next(hour, in hours))
                         {
-                            for (int _minute = 0; _minute < minutes.Last(); _minute = Next(_minute, in minutes))
+                            for (int minute = 0; minute < minutes.Last(); minute = Next(minute, in minutes))
                             {
-                                for (int _second = 0; _second < seconds.Last(); _second = Next(_second, in seconds))
+                                for (int second = 0; second < seconds.Last(); second = Next(second, in seconds))
                                 {
-                                    for (int _millisecond = 0; _millisecond < milliseconds.Last(); _millisecond = Next(_millisecond, in milliseconds))
+                                    for (int millisecond = 0; millisecond < milliseconds.Last(); millisecond = Next(millisecond, in milliseconds))
                                     {
-                                        DateTime time = new(_year, _month, _day, _hour, _minute, _second, _millisecond);
+                                        DateTime time = new(year, month, day, hour, minute, second, millisecond);
                                         if (IsValid(time))
                                         {
                                             return time;
