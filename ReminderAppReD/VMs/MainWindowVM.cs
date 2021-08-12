@@ -7,6 +7,7 @@ namespace ReminderAppReD.VMs
 {
     class MainWindowVM
     {
+        readonly MainWindowModel model = new();
         public DelegateCommand ExitCommand { get; set; } = new DelegateCommand(() => { MainWindowModel.Exit(); });
         public DelegateCommand<string> SwitchToLanguageCommand { get; set; } = new DelegateCommand<string>((name) => 
         { MainWindowModel.SwitchTo(name); });

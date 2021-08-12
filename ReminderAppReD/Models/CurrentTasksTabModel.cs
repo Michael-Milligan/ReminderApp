@@ -22,12 +22,12 @@ namespace ReminderAppReD.Models
             Methods.RefreshCurrentTasksGrid();
         }
 
-        public static void OnMouseEnter(object sender, RoutedEventArgs args)
+        public void OnMouseEnter(object sender, RoutedEventArgs args)
         {
             (sender as ScrollViewer).Opacity = 1;
         }
 
-        public static void OnMouseLeave(object sender, RoutedEventArgs args)
+        public void OnMouseLeave(object sender, RoutedEventArgs args)
         {
             (sender as ScrollViewer).Opacity = 0;
         }

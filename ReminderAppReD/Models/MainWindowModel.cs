@@ -13,7 +13,7 @@ namespace ReminderAppReD.Models
 {
     class MainWindowModel
     {
-        public readonly static List<CultureInfo> languages = new List<CultureInfo>();
+        public readonly List<CultureInfo> languages = new List<CultureInfo>();
         public static void Exit()
         {
             Application.Current.Shutdown();
@@ -36,6 +36,22 @@ namespace ReminderAppReD.Models
         public static void AddCurrentTask()
         {
             new AddCurrentTaskView().Show();
+        }
+
+        public int alertTaskId { get; private set; }
+        public void CheckForTasksTime(object sender, EventArgs args)
+        {
+            TasksContext context = new TasksContext();
+            CurrentTask[] tasks = context.CurrentTasks.ToArray();
+
+            try
+            {
+                alertTaskId = tasks.Where(item => item.DateTime < DateTime.Now).First().Id;
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

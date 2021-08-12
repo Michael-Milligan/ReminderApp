@@ -13,6 +13,7 @@ namespace ReminderAppReD.VMs
 {
     class CurrentTasksTabVM
     {
+        readonly CurrentTasksTabModel model = new();
         public static DelegateCommand<object> RemoveCommand { get; set; } = 
             new DelegateCommand<object>((object parameter) =>
         {
