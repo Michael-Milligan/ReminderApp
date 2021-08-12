@@ -187,7 +187,7 @@ namespace ReminderAppReD
 
             //Look, I know the complexity here is enormous: O(n^7), but to be honest, most of the events would be in 1 or 2 cycles of the year cycle:
             //we look for the year and other parameters of the DateTime after our, so even if in the whole our year there wouldn't be any events, there will be one in the next
-            //one with, I presume, more than 80% probability. Also, there would be small amount of cycling, because, usually users doesn't want to be notified every millisecond
+            //one with, I presume, more than 80% probability. Also, there would be small amount of cycling, because, usually users don't want to be notified every millisecond
             //or second, so the complexity is reduced to O(n^5), while presuming there would be at least one event by one-two years the complexity falls to acceptable O(n^4).
             //Finally, let's remember that the possible size of each parameter is limited to double-digit number, which gives us really small amount of cycles and time:
             //60 mins * 24 hours * 31 days(somewhere even less) * 12 months * 10 years ~ 5,356,800 which is not that much;
