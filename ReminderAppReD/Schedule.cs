@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Media;
 
 namespace ReminderAppReD
 {
@@ -142,31 +140,6 @@ namespace ReminderAppReD
             listToFill.Sort();
         }
 
-        #region Nearest
-
-        /// <summary>
-        /// Возвращает следующий ближайший к заданному времени момент в расписании или
-        /// само заданное время, если оно есть в расписании.
-        /// </summary>
-        /// <param name="t1">Заданное время</param>
-        /// <returns>Ближайший момент времени в расписании</returns>
-        public DateTime NearestEvent(DateTime t1)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Возвращает предыдущий ближайший к заданному времени момент в расписании или
-        /// само заданное время, если оно есть в расписании.
-        /// </summary>
-        /// <param name="t1">Заданное время</param>
-        /// <returns>Ближайший момент времени в расписании</returns>
-        public DateTime NearestPrevEvent(DateTime t1)
-        {
-            throw new NotImplementedException();
-        }
-        #endregion
-
         private class Time
         {
             private Schedule schedule;
@@ -276,27 +249,11 @@ namespace ReminderAppReD
             }
         }
 
-        private int Prev(int data, in List<int> listToSearch)
-        {
-            int i = 0;
-            while (listToSearch[i++] < data) { }
-            return listToSearch[i - 1];
-        }
 
         private bool IsValid(DateTime time) {
                 return milliseconds.Contains(time.Millisecond) && seconds.Contains(time.Second) &&
             minutes.Contains(time.Minute) && hours.Contains(time.Hour) && days.Contains(time.Day) && months.Contains(time.Month) &&
             years.Contains(time.Year) && weekDays.Contains((int)time.DayOfWeek);
-        }
-
-        /// <summary>
-        /// Возвращает предыдущий момент времени в расписании.
-        /// </summary>
-        /// <param name="t1">Время, от которого нужно отступить</param>
-        /// <returns>Предыдущий момент времени в расписании</returns>
-        public DateTime PrevEvent(DateTime t1)
-        {
-            throw new NotImplementedException();
         }
     }
 }
