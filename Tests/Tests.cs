@@ -49,7 +49,7 @@ namespace Tests
         {
             Schedule schedule = new("*.9.1,2,3-5,10-20/4 1-5 10:00:00.000");
 
-            Assert.AreEqual(Convert.ToDateTime("10:00:00.0 AM 14.08.2021"), schedule.NextEvent(DateTime.Now));
+            Assert.AreEqual(Convert.ToDateTime("09/01/2021 10:00:00.0 AM"), schedule.NextEvent(DateTime.Now));
         }
 
         [Test]

@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.31521.260
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReminderAppReD", "ReminderAppReD\ReminderAppReD.csproj", "{4A716F2D-EC0F-4EDE-9D93-62BC183B47C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{3F72A7A2-87A0-4E4D-8F25-121B37E64735}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{3F72A7A2-87A0-4E4D-8F25-121B37E64735}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "debug", "debug\debug.csproj", "{C44B8C57-2841-4ECB-8915-DCC98F0A3D2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{3F72A7A2-87A0-4E4D-8F25-121B37E64735}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F72A7A2-87A0-4E4D-8F25-121B37E64735}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F72A7A2-87A0-4E4D-8F25-121B37E64735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C44B8C57-2841-4ECB-8915-DCC98F0A3D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44B8C57-2841-4ECB-8915-DCC98F0A3D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44B8C57-2841-4ECB-8915-DCC98F0A3D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44B8C57-2841-4ECB-8915-DCC98F0A3D2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

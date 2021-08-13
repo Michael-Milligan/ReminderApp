@@ -106,7 +106,7 @@ namespace ReminderAppReD
         {
             if (data.Contains(','))
             {
-                foreach(string part in  data.Split())
+                foreach(string part in  data.Split(','))
                 {
                     FillList(part, ref listToFill, beginNumber, defaultCapacity);
                 }
@@ -122,15 +122,9 @@ namespace ReminderAppReD
                 for (int i = beginNumber; i < defaultCapacity; i += increase)
                     listToFill.Add(i);
             }
-            else if (data.Contains('-'))
-            {
-                int[] boundaries = data.Split('-').Select(item => Convert.ToInt32(item)).ToArray();
-                listToFill.AddRange(Enumerable.Range(boundaries[0], boundaries[1] - boundaries[0] + 1));
-            }
-
             else if (data.Contains('-') && data.Contains('/'))
             {
-                Regex regex = new(@"(\d+)-(\d+)/(/d+)");
+                Regex regex = new(@"(\d+)-(\d+)/(\d+)");
                 MatchCollection matches = regex.Matches(data);
                 int[] boundaries = new int[3] { Convert.ToInt32(matches[0].Groups[1].Value), 
                     Convert.ToInt32(matches[0].Groups[2].Value),
@@ -138,6 +132,11 @@ namespace ReminderAppReD
 
                 for (int i = boundaries[0]; i < boundaries[1]; i += boundaries[2])
                     listToFill.Add(i);
+            }
+            else if (data.Contains('-'))
+            {
+                int[] boundaries = data.Trim().Split('-').Select(item => Convert.ToInt32(item)).ToArray();
+                listToFill.AddRange(Enumerable.Range(boundaries[0], boundaries[1] - boundaries[0] + 1));
             }
             else listToFill.Add(Convert.ToInt32(data));
             listToFill.Sort();
@@ -168,6 +167,38 @@ namespace ReminderAppReD
         }
         #endregion
 
+        private class Time
+        {
+            private Schedule schedule;
+            public int millisecond { get; set; }
+            int _second;
+            int _minute;
+            int _hour;
+
+            int _day;
+            int _month;
+            int _year;
+
+            public int second { get { return _second; } set { _second = value; millisecond = schedule.milliseconds[0]; } }
+            public int minute { get { return _minute; } set { _minute = value; second = schedule.seconds[0]; } }
+            public int hour { get { return _hour; } set { _hour = value;  minute = schedule.minutes[0]; } }
+            public int day { get { return _day; } set { _day = value; hour = schedule.hours[0]; } }
+            public int month { get { return _month; } set { _month = value; day = schedule.days[0]; } }
+            public int year { get { return _year; } set { _year = value; month = schedule.months[0];} }
+
+            public Time(Schedule schedule)
+            {
+                millisecond = 0;
+                _second = 0;
+                _minute = 0;
+                _hour = 0;
+                _day = 0;
+                _month = 0;
+                _year = 0;
+                this.schedule = schedule;
+            }
+        }
+
         /// <summary>
         /// Возвращает следующий момент времени в расписании.
         /// </summary>
@@ -175,41 +206,57 @@ namespace ReminderAppReD
         /// <returns>Следующий момент времени в расписании</returns>
         public DateTime NextEvent(DateTime t1)
         {
-            //Look, I know the complexity here is enormous: O(n^7), but to be honest, most of the events would be in 1 or 2 cycles of the year cycle:
-            //we look for the year and other parameters of the DateTime after our, so even if in the whole our year there wouldn't be any events, there will be one in the next
-            //one with, I presume, more than 80% probability. Also, there would be small amount of cycling, because, usually users don't want to be notified every millisecond
-            //or second, so the complexity is reduced to O(n^5), while presuming there would be at least one event by one-two years the complexity falls to acceptable O(n^4).
-            //Finally, let's remember that the possible size of each parameter is limited to double-digit number, which gives us really small amount of cycles and time:
-            //60 mins * 24 hours * 31 days(somewhere even less) * 12 months * 10 years ~ 5,356,800 which is not that much;
-            
+            //Look, I know the complexity here is enormous: O(n^7), but:
+            //1) for each parameter with count one we reduce the complexity by one degree of n, so complexity is equal to O(n^k), where k - number of parameters with non single parameter,
+            //2) the bigger count of the parameters means the greatest possibility of meeting the event,
+            //3) the smaller one means, the calculations would be easier by reducing cycle number(maybe even by degree of n)
+
             //Same logic would be for PrevEvent function
 
-            for (int year = 0; year < years.Last(); year = Next(year, in years))
+            Time time = new(this);
+
+            time.year = t1.Year;
+            time.month = t1.Month;
+            time.day = t1.Day;
+            time.hour = t1.Hour;
+            time.minute = t1.Minute;
+            time.second = t1.Second;
+            time.millisecond = Next(t1.Millisecond, milliseconds);
+            
+            for (; time.year <= years.Last(); time.year = Next(time.year, in years))
             {
-                for (int month = 0; month < months.Last(); month = Next(month, in months))
+                for (; time.month <= months.Last(); time.month = Next(time.month, in months))
                 {
-                    for (int day = 0; day < days.Last(); day = Next(day, in days))
+                    for (; time.day <= days.Last(); time.day = Next(time.day, in days))
                     {
-                        if (day > DateTime.DaysInMonth(year, month)) continue;
-                        for (int hour = 0; hour < hours.Last(); hour = Next(hour, in hours))
+                        if (time.day > DateTime.DaysInMonth(time.year, time.month)) continue;
+                        if (!weekDays.Contains((int)new DateTime(time.year, time.month, time.day).DayOfWeek)) continue;
+                        for (; time.hour <= hours.Last(); time.hour = Next(time.hour, in hours))
                         {
-                            for (int minute = 0; minute < minutes.Last(); minute = Next(minute, in minutes))
+                            for (; time.minute <= minutes.Last(); time.minute = Next(time.minute, in minutes))
                             {
-                                for (int second = 0; second < seconds.Last(); second = Next(second, in seconds))
+                                for (; time.second <= seconds.Last(); time.second = Next(time.second, in seconds))
                                 {
-                                    for (int millisecond = 0; millisecond < milliseconds.Last(); millisecond = Next(millisecond, in milliseconds))
+                                    for (; time.millisecond <= milliseconds.Last(); time.millisecond = Next(time.millisecond, in milliseconds))
                                     {
-                                        DateTime time = new(year, month, day, hour, minute, second, millisecond);
-                                        if (IsValid(time))
+                                        DateTime result = new(time.year, time.month, time.day, time.hour, time.minute, time.second, time.millisecond);
+                                        if (IsValid(result))
                                         {
-                                            return time;
+                                            return result;
                                         }
+                                        if (milliseconds.Count != 1) break;
                                     }
+                                    if (seconds.Count != 1) break;
                                 }
+                                if (minutes.Count != 1) break;
                             }
+                            if (hours.Count != 1) break;
                         }
+                        if (days.Count != 1) break;
                     }
+                    if (months.Count != 1) break;
                 }
+                if (years.Count != 1) break;
             }
             throw new Exception("Next event couldn't be found");
         }
@@ -217,8 +264,16 @@ namespace ReminderAppReD
         private int Next(int data, in List<int> listToSearch)
         {
             int i = 0;
-            while (listToSearch[i++] < data) { }
-            return listToSearch[i];
+            try
+            {
+                while (listToSearch[i++] < data) { }
+                return listToSearch[i];
+
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return listToSearch[0];
+            }
         }
 
         private int Prev(int data, in List<int> listToSearch)
