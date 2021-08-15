@@ -3,6 +3,7 @@ using ReminderAppReD.Views;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,13 +47,23 @@ namespace ReminderAppReD.Models
 
             try
             {
-                alertTask = tasks.Where(item => item.schedule.NextEvent(DateTime.Now) <= DateTime.Now).First();
-                new AlertWindow(alertTask.task.Id, alertTask.schedule.NextEvent(DateTime.Now));
+                alertTask = tasks.Where(item => CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now)).First();
+                new AlertWindow(alertTask.task.Id, alertTask.schedule.NextEvent(DateTime.Now)).Show();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                File.AppendAllText("D:\\1.txt", e.Message + "\n" + e.StackTrace);
             }
+        }
+
+        private bool CompareDates(DateTime time1, DateTime time2)
+        {
+            return time1.Year == time2.Year &&
+                time1.Month == time2.Month &&
+                time1.Day == time2.Day &&
+                time1.Hour == time2.Hour &&
+                Math.Abs(time1.Minute - time2.Minute) < 10;
+
         }
     }
 }

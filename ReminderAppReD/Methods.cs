@@ -13,9 +13,11 @@ namespace ReminderAppReD
         public static void RefreshCurrentTasksGrid()
         {
             Grid TabGrid = (Application.Current.Windows[0] as MainWindow).CurrentTasksTab.Content as Grid;
-            for (int j = 3; j < TabGrid.Children.Count; ++j)
+            int count = TabGrid.Children.Count;
+            for (int j = 2; j < count; ++j)
             {
-                TabGrid.Children.RemoveAt(j);
+                //we will delete item after item after headers until there are only headers left 
+                TabGrid.Children.RemoveAt(2);
             }
             TabGrid.RowDefinitions.Clear();
             TabGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(30, GridUnitType.Pixel) });

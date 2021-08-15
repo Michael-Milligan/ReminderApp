@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -79,8 +80,8 @@ namespace ReminderAppReD
         /// </param>
         public Schedule(string scheduleString)
         {
-            Regex date = new(@"^(.+)\.(.+)\.(.+)\s.*\s");
-            Regex time = new(@"\s.*\s(.+):(.+):(.+)\.(.+)$");
+            Regex date = new(@"^(.+)\.(.+)\.([^\s]+)\s.*\s?");
+            Regex time = new(@"\s.*\s?([^s]+):(.+):(.+)\.(.+)$");
             Regex weekDay = new(@"\s(.*)\s");
             MatchCollection dateMatches = date.Matches(scheduleString);
             MatchCollection timeMatches = time.Matches(scheduleString);
@@ -91,7 +92,8 @@ namespace ReminderAppReD
             FillList(dateMatches[0].Groups[2].Value, ref months, 1, 12);
             FillList(dateMatches[0].Groups[3].Value, ref days, 1, 31);
 
-            FillList(weekDayMatches[0].Groups[1].Value, ref weekDays, 1, 7);
+            if(weekDayMatches.Count != 0) FillList(weekDayMatches[0].Groups[1].Value, ref weekDays, 1, 7);
+            else FillList("*", ref weekDays, 1, 7);
 
             FillList(timeMatches[0].Groups[1].Value, ref hours, 0, 24);
             FillList(timeMatches[0].Groups[2].Value, ref minutes, 0, 60);
@@ -102,43 +104,50 @@ namespace ReminderAppReD
 
         private void FillList(string data, ref List<int> listToFill, int beginNumber, int defaultCapacity)
         {
+            object locker = 0;
             if(data == "" || data == null) FillList("*", ref listToFill, beginNumber, defaultCapacity);
             if (data.Contains(','))
             {
-                foreach(string part in  data.Split(','))
+                foreach (string part in data.Split(','))
                 {
                     FillList(part, ref listToFill, beginNumber, defaultCapacity);
                 }
             }
             else if (data == "*")
-            { 
-                if(beginNumber == 0) listToFill.AddRange(Enumerable.Range(beginNumber, defaultCapacity + 1).ToList());
-                else listToFill.AddRange(Enumerable.Range(beginNumber, defaultCapacity).ToList());
+            {
+                if (beginNumber == 0) lock (locker)
+                    { listToFill.AddRange(Enumerable.Range(beginNumber, defaultCapacity + 1).ToList()); }
+                else lock (locker) { listToFill.AddRange(Enumerable.Range(beginNumber, defaultCapacity).ToList()); }
             }
             else if (data.Contains('*') && data.Contains('/'))
             {
                 int increase = Convert.ToInt32(new Regex(@"\*/(\d+)").Match(data).Groups[1].Value);
                 for (int i = beginNumber; i < defaultCapacity; i += increase)
-                    listToFill.Add(i);
+                {
+                    lock (locker) { listToFill.Add(i); }
+                }
             }
             else if (data.Contains('-') && data.Contains('/'))
             {
                 Regex regex = new(@"(\d+)-(\d+)/(\d+)");
                 MatchCollection matches = regex.Matches(data);
-                int[] boundaries = new int[3] { Convert.ToInt32(matches[0].Groups[1].Value), 
+                int[] boundaries = new int[3] { Convert.ToInt32(matches[0].Groups[1].Value),
                     Convert.ToInt32(matches[0].Groups[2].Value),
                     Convert.ToInt32(matches[0].Groups[3].Value) };
 
                 for (int i = boundaries[0]; i < boundaries[1]; i += boundaries[2])
-                    listToFill.Add(i);
+                    lock (locker) { listToFill.Add(i); }
             }
             else if (data.Contains('-'))
             {
                 int[] boundaries = data.Trim().Split('-').Select(item => Convert.ToInt32(item)).ToArray();
-                listToFill.AddRange(Enumerable.Range(boundaries[0], boundaries[1] - boundaries[0] + 1));
+                lock (locker) { listToFill.AddRange(Enumerable.Range(boundaries[0], boundaries[1] - boundaries[0] + 1)); }
             }
-            else listToFill.Add(Convert.ToInt32(data));
-            listToFill.Sort();
+            else lock (locker) { listToFill.Add(Convert.ToInt32(data)); }
+            lock (locker)
+            {
+                listToFill.Sort();
+            }
         }
 
         private class Time
@@ -204,7 +213,11 @@ namespace ReminderAppReD
                     for (; time.day <= days.Last(); time.day = Next(time.day, in days))
                     {
                         if (time.day > DateTime.DaysInMonth(time.year, time.month)) continue;
-                        if (!weekDays.Contains((int)new DateTime(time.year, time.month, time.day).DayOfWeek)) continue;
+                        if (!weekDays.Contains((int)new DateTime(time.year, time.month, time.day).DayOfWeek))
+                        {
+                            if (days.Count == 1) throw new Exception("Next event couldn't be found with current schedule");
+                            continue; 
+                        }
                         for (; time.hour <= hours.Last(); time.hour = Next(time.hour, in hours))
                         {
                             for (; time.minute <= minutes.Last(); time.minute = Next(time.minute, in minutes))
@@ -246,6 +259,7 @@ namespace ReminderAppReD
             }
             catch (ArgumentOutOfRangeException)
             {
+                //TODO: fix this shit 
                 return listToSearch[0];
             }
         }

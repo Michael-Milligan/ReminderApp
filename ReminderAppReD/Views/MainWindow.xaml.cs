@@ -16,7 +16,7 @@ namespace ReminderAppReD
         {
             InitializeComponent();
 
-            DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 1, 0), DispatcherPriority.Background, 
+            DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 5, 0), DispatcherPriority.Background, 
                 (sender, args) => { Thread thread = new(new MainWindowModel().CheckForTasksTime); 
                     thread.Start(); } , Application.Current.Dispatcher);
             timer.Start();
