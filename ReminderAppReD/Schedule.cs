@@ -102,6 +102,7 @@ namespace ReminderAppReD
 
         private void FillList(string data, ref List<int> listToFill, int beginNumber, int defaultCapacity)
         {
+            if(data == "" || data == null) FillList("*", ref listToFill, beginNumber, defaultCapacity);
             if (data.Contains(','))
             {
                 foreach(string part in  data.Split(','))

@@ -14,7 +14,7 @@ namespace ReminderAppReD.DB
 
         public int Id { get; set; }
         public string Task { get; set; }
-        public DateTime DateTime { get; set; }
+        public string DateTime { get; set; }
 
         public virtual ICollection<CompletedTask> CompletedTasks { get; set; }
     }

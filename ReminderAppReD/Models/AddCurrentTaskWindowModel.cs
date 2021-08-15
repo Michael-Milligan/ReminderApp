@@ -10,7 +10,7 @@ namespace ReminderAppReD.Models
 {
     class AddCurrentTaskWindowModel
     {
-        public static void AddNewTask(string TaskText, DateTime TaskTime)
+        public static void AddNewTask(string TaskText, string TaskTime)
         {
             TasksContext Context = new TasksContext();
             CurrentTask newTask = new CurrentTask();

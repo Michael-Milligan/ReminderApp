@@ -11,7 +11,7 @@ namespace ReminderAppReD.VMs
         {
             AlertWindowModel.PostponeAlert(ChecknConvert(text));
         });
-        public static DelegateCommand<string> DoneCommand { get; set; } = new((taskName) => { AlertWindowModel.Done(taskName); });
+        public static DelegateCommand<int> DoneCommand { get; set; } = new((taskId) => { AlertWindowModel.Done(taskId); });
 
         public static int ChecknConvert(string text)
         {

@@ -22,7 +22,7 @@ namespace ReminderAppReD.VMs
             Grid TabGrid = (Application.Current.Windows[0] as MainWindow).CurrentTasksTab.Content 
             as Grid;
 
-            CurrentTasksTabModel.RemoveTask(Convert.ToString((TabGrid.Children[3 * i + 3] as Label).
+            CurrentTasksTabModel.RemoveTask(Convert.ToString((TabGrid.Children[3 * i + 2] as Label).
                 Content));
         });
     }

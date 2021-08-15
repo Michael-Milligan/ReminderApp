@@ -54,8 +54,8 @@ namespace ReminderAppReD.DB
 
                 entity.Property(e => e.DateTime)
                     .IsRequired()
-                    .HasColumnType("DateTime")
-                    .HasColumnName("Date_Time");
+                    .HasColumnType("String")
+                    .HasColumnName("DateTime");
 
                 entity.Property(e => e.Task)
                     .IsRequired()

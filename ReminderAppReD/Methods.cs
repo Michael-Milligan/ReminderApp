@@ -49,7 +49,7 @@ namespace ReminderAppReD
                 Grid.SetRow(RemoveButton, i + 1);
             }
 
-            AddScrollViewer(ref TabGrid, 2, 1, 1, i);
+            if (i != 0) AddScrollViewer(ref TabGrid, 2, 1, 1, i);
         }
 
         public static void AddScrollViewer(ref Grid grid, int column, int row, int columnSpan = 1, int rowSpan = 1)

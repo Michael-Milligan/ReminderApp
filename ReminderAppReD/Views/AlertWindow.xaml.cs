@@ -8,12 +8,13 @@ namespace ReminderAppReD.Views
     /// </summary>
     public partial class AlertWindow : Window
     {
-        public string taskName;
+        public int taskId;
         public DateTime taskDate;
-        public AlertWindow(string taskName, DateTime taskTime)
+
+        public AlertWindow(int taskId, DateTime taskTime)
         {
             InitializeComponent();
-            this.taskName = taskName;
+            this.taskId = taskId;
             taskDate = taskTime;
         }
     }

@@ -47,7 +47,7 @@ namespace ReminderAppReD.Views
                 Grid.SetRow(RemoveButton, i + 1);
             }
 
-            Methods.AddScrollViewer(ref TabGrid, 2, 1, 1, i);
+            if(i != 0) Methods.AddScrollViewer(ref TabGrid, 2, 1, 1, i);
             isInitialised = true;
         }
     }

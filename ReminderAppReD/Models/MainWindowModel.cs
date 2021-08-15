@@ -38,15 +38,16 @@ namespace ReminderAppReD.Models
             new AddCurrentTaskView().Show();
         }
 
-        public int alertTaskId { get; private set; }
-        public void CheckForTasksTime(object sender, EventArgs args)
+        public CurrentTaskWithSchedule alertTask { get; private set; }
+        public void CheckForTasksTime()
         {
             TasksContext context = new TasksContext();
-            CurrentTask[] tasks = context.CurrentTasks.ToArray();
+            CurrentTaskWithSchedule[] tasks = context.CurrentTasks.Select(item => new CurrentTaskWithSchedule(item, item.DateTime)).ToArray();
 
             try
             {
-                alertTaskId = tasks.Where(item => item.DateTime < DateTime.Now).First().Id;
+                alertTask = tasks.Where(item => item.schedule.NextEvent(DateTime.Now) <= DateTime.Now).First();
+                new AlertWindow(alertTask.task.Id, alertTask.schedule.NextEvent(DateTime.Now));
             }
             catch (Exception)
             {

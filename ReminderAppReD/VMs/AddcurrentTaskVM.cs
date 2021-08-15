@@ -15,8 +15,7 @@ namespace ReminderAppReD.VMs
             string TaskDate = (Application.Current.Windows[1] as AddCurrentTaskView).DateTextBox.Text;
             try
             {
-                DateTime time = DateTime.Parse(TaskDate);
-                AddCurrentTaskWindowModel.AddNewTask(TaskName, time);
+                AddCurrentTaskWindowModel.AddNewTask(TaskName, TaskDate);
             }
             catch (FormatException)
             {
