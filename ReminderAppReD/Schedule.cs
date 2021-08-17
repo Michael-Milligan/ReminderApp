@@ -180,6 +180,42 @@ namespace ReminderAppReD
                 _year = 0;
                 this.schedule = schedule;
             }
+
+            public void IncreaseProperty(string propertyName)
+            {
+                bool overflowBit;
+                switch(propertyName)
+                {
+                    case "millisecond":
+                        (millisecond, overflowBit) = schedule.Next(millisecond, in schedule.milliseconds);
+                        if (overflowBit) IncreaseProperty("second");
+                        break;
+                    case "second":
+                        (second, overflowBit) = schedule.Next(second, in schedule.seconds);
+                        if (overflowBit) IncreaseProperty("minute");
+                        break;
+                    case "minute":
+                        (minute, overflowBit) = schedule.Next(minute, in schedule.minutes);
+                        if (overflowBit) IncreaseProperty("hour");
+                        break;
+                    case "hour":
+                        (hour, overflowBit) = schedule.Next(hour, in schedule.hours);
+                        if (overflowBit) IncreaseProperty("day");
+                        break;
+                    case "day":
+                        (day, overflowBit) = schedule.Next(day, in schedule.days);
+                        if (overflowBit) IncreaseProperty("month");
+                        break;
+                    case "month":
+                        (month, overflowBit) = schedule.Next(month, in schedule.months);
+                        if (overflowBit) IncreaseProperty("year");
+                        break;
+                    case "year":
+                        (year, overflowBit) = schedule.Next(year, in schedule.years);
+                        if (overflowBit) throw new Exception("Next event couldn't be found");
+                        break;
+                }
+            }
         }
 
         /// <summary>
@@ -204,66 +240,65 @@ namespace ReminderAppReD
             time.hour = t1.Hour;
             time.minute = t1.Minute;
             time.second = t1.Second;
-            time.millisecond = Next(t1.Millisecond, milliseconds);
+            time.millisecond = Next(t1.Millisecond, milliseconds).value;
             
-            for (; time.year <= years.Last(); time.year = Next(time.year, in years))
+            bool[] overflowBits = new bool[6]; overflowBits.Initialize();
+
+            while (time.year <= years.Last())
             {
-                for (; time.month <= months.Last(); time.month = Next(time.month, in months))
+                while (time.month <= months.Last())
                 {
-                    for (; time.day <= days.Last(); time.day = Next(time.day, in days))
+                    while (time.day <= days.Last())
                     {
-                        if (time.day > DateTime.DaysInMonth(time.year, time.month)) continue;
+                        if (time.day > DateTime.DaysInMonth(time.year, time.month))
+                            time.IncreaseProperty("day");
                         if (!weekDays.Contains((int)new DateTime(time.year, time.month, time.day).DayOfWeek))
+                            time.IncreaseProperty("day");
+                        while (time.hour <= hours.Last())
                         {
-                            if (days.Count == 1) throw new Exception("Next event couldn't be found with current schedule");
-                            continue; 
-                        }
-                        for (; time.hour <= hours.Last(); time.hour = Next(time.hour, in hours))
-                        {
-                            for (; time.minute <= minutes.Last(); time.minute = Next(time.minute, in minutes))
+                            while (time.minute <= minutes.Last())
                             {
-                                for (; time.second <= seconds.Last(); time.second = Next(time.second, in seconds))
+                                while (time.second <= seconds.Last())
                                 {
-                                    for (; time.millisecond <= milliseconds.Last(); time.millisecond = Next(time.millisecond, in milliseconds))
+                                    while (time.millisecond <= milliseconds.Last())
                                     {
                                         DateTime result = new(time.year, time.month, time.day, time.hour, time.minute, time.second, time.millisecond);
                                         if (IsValid(result))
                                         {
                                             return result;
                                         }
-                                        if (milliseconds.Count != 1) break;
+                                        time.IncreaseProperty("millisecond");
                                     }
-                                    if (seconds.Count != 1) break;
+                                    time.IncreaseProperty("second");
                                 }
-                                if (minutes.Count != 1) break;
+                                time.IncreaseProperty("minute");
                             }
-                            if (hours.Count != 1) break;
+                            time.IncreaseProperty("hour");
                         }
-                        if (days.Count != 1) break;
+                        time.IncreaseProperty("day");
                     }
-                    if (months.Count != 1) break;
+                    time.IncreaseProperty("month");
                 }
-                if (years.Count != 1) break;
+                time.IncreaseProperty("year");
             }
             throw new Exception("Next event couldn't be found");
         }
 
-        private int Next(int data, in List<int> listToSearch)
+        private (int value, bool hasOverflown) Next(int data, in List<int> listToSearch)
         {
             int i = 0;
             try
             {
                 while (listToSearch[i++] < data) { }
-                return listToSearch[i];
+                return (listToSearch[i], false);
 
             }
             catch (ArgumentOutOfRangeException)
             {
-                //TODO: fix this shit 
-                return listToSearch[0];
+
+                return (listToSearch[0], true);
             }
         }
-
 
         private bool IsValid(DateTime time) {
                 return milliseconds.Contains(time.Millisecond) && seconds.Contains(time.Second) &&

@@ -56,6 +56,14 @@ namespace ReminderAppReD.Models
             }
         }
 
+        /// <summary>
+        /// Checks whether the given times are equal in terms of year, month, 
+        /// day and hour parameters while giving 10 minutes of space for minutes 
+        /// parameter
+        /// </summary>
+        /// <param name="time1"></param>
+        /// <param name="time2"></param>
+        /// <returns></returns>
         private bool CompareDates(DateTime time1, DateTime time2)
         {
             return time1.Year == time2.Year &&

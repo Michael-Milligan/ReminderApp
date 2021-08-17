@@ -134,7 +134,6 @@ D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.Gen
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.AssemblyInfoInputs.cache
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.AssemblyInfo.cs
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.csproj.CoreCompileInputs.cache
-D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.csproj.CopyComplete
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.genruntimeconfig.cache
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Debug\net5.0-windows\DB\Tasks.sqlite
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.csproj.AssemblyReference.cache
