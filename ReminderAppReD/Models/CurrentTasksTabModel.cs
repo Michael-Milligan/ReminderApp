@@ -13,6 +13,7 @@ namespace ReminderAppReD.Models
 {
     class CurrentTasksTabModel
     {
+        //TODO: Implement actual MVVM by using notifiable properties
         public static void RemoveTask(string nameToDelete)
         {
             TasksContext Context = new TasksContext();

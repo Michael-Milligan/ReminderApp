@@ -8,7 +8,6 @@ D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\debug.deps.json
 D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\debug.runtimeconfig.json
 D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\debug.runtimeconfig.dev.json
 D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\debug.dll
-D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\ref\debug.dll
 D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\debug.pdb
 D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\Microsoft.Data.Sqlite.dll
 D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\Microsoft.DotNet.PlatformAbstractions.dll
@@ -59,3 +58,4 @@ D:\GitHub\ReminderApp\debug\obj\Debug\net5.0-windows\debug.dll
 D:\GitHub\ReminderApp\debug\obj\Debug\net5.0-windows\ref\debug.dll
 D:\GitHub\ReminderApp\debug\obj\Debug\net5.0-windows\debug.pdb
 D:\GitHub\ReminderApp\debug\obj\Debug\net5.0-windows\debug.genruntimeconfig.cache
+D:\GitHub\ReminderApp\debug\obj\Debug\net5.0-windows\refint\debug.dll

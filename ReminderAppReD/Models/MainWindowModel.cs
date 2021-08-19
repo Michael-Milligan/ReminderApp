@@ -47,13 +47,14 @@ namespace ReminderAppReD.Models
 
             try
             {
-                alertTask = tasks.Where(item => CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now)).First();
-                new AlertWindow(alertTask.task.Id, alertTask.schedule.NextEvent(DateTime.Now)).Show();
+                alertTask = tasks.First(item => CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now));
+                AlertWindow alertWindow = new AlertWindow();
+                alertWindow.Fill(alertTask.task.Id, alertTask.schedule.NextEvent(DateTime.Now));
+                alertWindow.Show();
+                System.Windows.Threading.Dispatcher.Run();
             }
-            catch (Exception e)
-            {
-                File.AppendAllText("D:\\1.txt", e.Message + "\n" + e.StackTrace);
-            }
+            catch (Exception) { }
+            
         }
 
         /// <summary>
@@ -66,11 +67,8 @@ namespace ReminderAppReD.Models
         /// <returns></returns>
         private bool CompareDates(DateTime time1, DateTime time2)
         {
-            return time1.Year == time2.Year &&
-                time1.Month == time2.Month &&
-                time1.Day == time2.Day &&
-                time1.Hour == time2.Hour &&
-                Math.Abs(time1.Minute - time2.Minute) < 10;
+            TimeSpan difference = time1.Subtract(time2);
+            return difference.Days == 0 && difference.Hours == 0 && difference.Minutes < 10;
 
         }
     }

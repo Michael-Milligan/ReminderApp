@@ -8,14 +8,19 @@ namespace ReminderAppReD.Views
     /// </summary>
     public partial class AlertWindow : Window
     {
-        public int taskId;
-        public DateTime taskDate;
+        public int taskId { get; set; }
+        public DateTime taskDate { get; set; }
+        public string postponeTimeProperty { get { return postponeTime.Text; }}
 
-        public AlertWindow(int taskId, DateTime taskTime)
+        public AlertWindow()
         {
             InitializeComponent();
-            this.taskId = taskId;
-            taskDate = taskTime;
+        }
+
+        public void Fill(int _taskId, DateTime _taskTime)
+        {
+            taskId = _taskId;
+            taskDate = _taskTime;
         }
     }
 }

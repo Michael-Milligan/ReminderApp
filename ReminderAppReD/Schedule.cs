@@ -289,7 +289,7 @@ namespace ReminderAppReD
             int i = 0;
             try
             {
-                while (listToSearch[i++] < data) { }
+                while (listToSearch[i] < data) { ++i; }
                 return (listToSearch[i], false);
 
             }

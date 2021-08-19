@@ -1,23 +1,19 @@
 ﻿using Prism.Commands;
 using ReminderAppReD.Models;
+using ReminderAppReD.Views;
 using System;
 using System.Linq;
+using System.Windows;
 
 namespace ReminderAppReD.VMs
 {
     class AlertWindowVM
     {
-        public static DelegateCommand<string> PostponeCommand { get; set; } = new((text) =>
+        static AlertWindow window = Application.Current.Windows.Cast<AlertWindow>().First(item => item.Title == "AlertWindow");
+        public static DelegateCommand PostponeCommand { get; set; } = new(() =>
         {
-            AlertWindowModel.PostponeAlert(ChecknConvert(text));
+            AlertWindowModel.PostponeAlert(Convert.ToInt32(window.postponeTimeProperty));
         });
-        public static DelegateCommand<int> DoneCommand { get; set; } = new((taskId) => { AlertWindowModel.Done(taskId); });
-
-        public static int ChecknConvert(string text)
-        {
-            if (string.IsNullOrEmpty(text)) throw new ArgumentNullException("text");
-            if (!text.All(char.IsDigit)) throw new ArgumentException("There must be an integer number of minutes");
-            return Convert.ToInt32(text);
-        }
+        public static DelegateCommand DoneCommand { get; set; } = new(() => { AlertWindowModel.Done(window.taskId); });
     }
 }

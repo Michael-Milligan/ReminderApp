@@ -22,7 +22,6 @@ D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\Tests.deps.json
 D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\Tests.runtimeconfig.json
 D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\Tests.runtimeconfig.dev.json
 D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\Tests.dll
-D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\ref\Tests.dll
 D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\Tests.pdb
 D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\Microsoft.Data.Sqlite.dll
@@ -143,3 +142,4 @@ D:\GitHub\ReminderApp\Tests\obj\Debug\net5.0-windows\Tests.dll
 D:\GitHub\ReminderApp\Tests\obj\Debug\net5.0-windows\ref\Tests.dll
 D:\GitHub\ReminderApp\Tests\obj\Debug\net5.0-windows\Tests.pdb
 D:\GitHub\ReminderApp\Tests\obj\Debug\net5.0-windows\Tests.genruntimeconfig.cache
+D:\GitHub\ReminderApp\Tests\obj\Debug\net5.0-windows\refint\Tests.dll

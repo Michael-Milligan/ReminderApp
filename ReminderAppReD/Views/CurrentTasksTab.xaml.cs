@@ -18,6 +18,7 @@ namespace ReminderAppReD.Views
         {
             InitializeComponent();
 
+            //TODO: Move logic to Model along with Methods stuff
             TasksContext Context = new TasksContext();
             CurrentTask[] Tasks = Context.CurrentTasks.ToArray();
             int i = 0;

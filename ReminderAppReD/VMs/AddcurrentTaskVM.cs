@@ -11,7 +11,7 @@ namespace ReminderAppReD.VMs
     {
         public DelegateCommand SendCommand { get; set; } = new DelegateCommand(() => 
         {
-            AddCurrentTaskView window = (Application.Current.Windows.Cast<Window>().Where(item => item.Title == "AddCurrentTaskView").First() as AddCurrentTaskView);
+            AddCurrentTaskView window = Application.Current.Windows.Cast<Window>().First(item => item.Title == "AddCurrentTaskView") as AddCurrentTaskView;
             string TaskName = window.NameTextBox.Text;
             string TaskDate = window.DateTextBox.Text;
             try

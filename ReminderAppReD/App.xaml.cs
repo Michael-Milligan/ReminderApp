@@ -1,12 +1,10 @@
 ﻿using ReminderAppReD.Models;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Globalization;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace ReminderAppReD
 {
@@ -15,6 +13,8 @@ namespace ReminderAppReD
     /// </summary>
     public partial class App : Application
     {
+        DispatcherTimer timer;
+
         public App()
         {
             MainWindowModel model= new MainWindowModel();
@@ -23,6 +23,16 @@ namespace ReminderAppReD
             model.languages.Add(new CultureInfo("ru-RU"));
 
             language = ReminderAppReD.Properties.Settings.Default.defaultLanguage;
+
+            timer = new DispatcherTimer(new TimeSpan(0, 5, 0), DispatcherPriority.Background,
+                (sender, args) =>
+                {
+                    Thread thread = new(new MainWindowModel().CheckForTasksTime);
+                    thread.SetApartmentState(ApartmentState.STA);
+                    thread.IsBackground = true;
+                    thread.Start();
+                }, Current.Dispatcher);
+            timer.Start();
         }
 
         public static CultureInfo language

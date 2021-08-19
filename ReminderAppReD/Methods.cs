@@ -10,6 +10,7 @@ namespace ReminderAppReD
 {
     class Methods
     {
+        //TODO: move logic to models with MVVM stuff
         public static void RefreshCurrentTasksGrid()
         {
             Grid TabGrid = (Application.Current.Windows[0] as MainWindow).CurrentTasksTab.Content as Grid;
