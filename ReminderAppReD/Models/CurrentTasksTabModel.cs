@@ -10,7 +10,6 @@ namespace ReminderAppReD.Models
 {
     class CurrentTasksTabModel : BindableBase
     {
-        //TODO: Implement actual MVVM by using notifiable properties
         private ObservableCollection<CurrentTask> _CurrentTasks { get
             {
                 TasksContext Context = new TasksContext();
@@ -35,5 +34,7 @@ namespace ReminderAppReD.Models
         {
             (sender as ScrollViewer).Opacity = 0;
         }
+
+        public void PropertyChangedPublic(string propertyName) => RaisePropertyChanged(propertyName);
     }
 }

@@ -5,40 +5,46 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" x:Name="CurrentTasksTab">
     
-    <UserControl.DataContext>
-        <vms:CurrentTasksTabVM></vms:CurrentTasksTabVM>
-    </UserControl.DataContext>
     <UserControl.Resources>
-        <DataTemplate x:Key="gridTemplate">
-            <StackPanel Margin="5" Orientation="Horizontal">
-                <Label Content="{Binding Path=Task}" x:Name="TaskLabel"/>
-                <Label Content="{Binding Path=DateTime}" x:Name="TaskDate"/>
-                <Button FontSize="16" Command="{Binding RemoveCommand}" 
-                        CommandParameter="{Binding Path=TaskLabel.Text}" x:Name="RemoveButton"/>
-            </StackPanel>
+        <vms:CurrentTasksTabVM x:Key="vm"></vms:CurrentTasksTabVM>
+        <DataTemplate x:Key="gridTemplate" x:Name="DataElementGrid">
+            <Grid ShowGridLines="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="350"></ColumnDefinition>
+                    <ColumnDefinition Width="120"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="{Binding Path=Task}" x:Name="TaskLabel"/>
+                <Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=DateTime}" x:Name="TaskDate"/>
+                <Button Grid.Row="0" Grid.Column="2" Command="{Binding Source={StaticResource vm}, 
+                    Path=RemoveCommand}" 
+                        CommandParameter="{Binding ElementName=DataElementGrid, Path=}}" 
+                        x:Name="RemoveButton" Content="{DynamicResource CurrentTaskTabRemoveButtonContent}"/>
+            </Grid>
         </DataTemplate>
-        <ItemsPanelTemplate x:Key="listPanelTemplate">
-            <WrapPanel />
-        </ItemsPanelTemplate>
     </UserControl.Resources>
     
     <Grid x:Name="TabGrid" ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource CurrentTaskTabTaskDescLabel}"></Label>
         <Label Grid.Row="0" Grid.Column="1" Content="{DynamicResource CurrentTaskTabTaskDateLabel}"></Label>
-        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" x:Name="tasksGrid"
-                 ItemsSource="{Binding values}"
-                 ItemTemplate="{StaticResource gridTemplate}"
-                 ItemsPanel="{StaticResource listPanelTemplate}"/>
+        <ListBox Grid.Row="1" Grid.Column="0" x:Name="tasksGrid" Grid.ColumnSpan="3" SelectionMode="Single"
+                 ItemsSource="{Binding Source={StaticResource vm}, Path=values}"
+                 ItemTemplate="{StaticResource gridTemplate}"/>
     </Grid>
 </UserControl>
