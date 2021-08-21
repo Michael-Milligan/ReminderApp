@@ -20,8 +20,6 @@ namespace ReminderAppReD.Models
             Context.SaveChanges();
 
             Application.Current.Windows.Cast<Window>().Where(item => item.Title == "AddCurrentTaskView").First().Close();
-
-            Methods.RefreshCurrentTasksGrid();
         }
     }
 }

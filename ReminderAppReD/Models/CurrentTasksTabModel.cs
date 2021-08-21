@@ -1,26 +1,29 @@
-﻿using ReminderAppReD.DB;
-using ReminderAppReD.Views;
-using ReminderAppReD.VMs;
-using System;
-using System.Collections.Generic;
+﻿using Prism.Mvvm;
+using Prism.Common;
+using ReminderAppReD.DB;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace ReminderAppReD.Models
 {
-    class CurrentTasksTabModel
+    class CurrentTasksTabModel : BindableBase
     {
         //TODO: Implement actual MVVM by using notifiable properties
-        public static void RemoveTask(string nameToDelete)
+        private ObservableCollection<CurrentTask> _CurrentTasks { get
+            {
+                TasksContext Context = new TasksContext();
+                return new(Context.CurrentTasks);
+            }}
+        public ReadOnlyObservableCollection<CurrentTask> CurrentTasks { get { return new(_CurrentTasks); } }
+        
+        public void RemoveTask(string nameToDelete)
         {
-            TasksContext Context = new TasksContext();
+            TasksContext Context = new TasksContext(); 
             Context.CurrentTasks.Remove(Context.CurrentTasks.Where(item => item.Task == nameToDelete).First());
             Context.SaveChanges();
-
-            Methods.RefreshCurrentTasksGrid();
+            RaisePropertyChanged(nameof(CurrentTasks));
         }
 
         public void OnMouseEnter(object sender, RoutedEventArgs args)

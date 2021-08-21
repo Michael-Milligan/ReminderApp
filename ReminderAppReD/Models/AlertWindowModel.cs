@@ -1,11 +1,16 @@
-﻿using ReminderAppReD.DB;
-using System;
-using System.Linq;
+﻿using Prism.Mvvm;
 
 namespace ReminderAppReD.Models
 {
-    class AlertWindowModel
+    class AlertWindowModel : BindableBase
     {
+        public int taskId { get; }
+        public string taskDateTime { get; }
+
+        private string _postponingTime;
+        public string postponingTime { get { return _postponingTime; } set { _postponingTime = value;
+                RaisePropertyChanged(nameof(_postponingTime));}}
+
         public static void PostponeAlert(int minutes)
         {
 

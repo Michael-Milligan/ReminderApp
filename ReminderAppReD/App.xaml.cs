@@ -61,11 +61,11 @@ namespace ReminderAppReD
                 ReminderAppReD.Properties.Settings.Default.defaultLanguage = language;
                 ReminderAppReD.Properties.Settings.Default.Save();
 
-                if (Application.Current.Windows.Count != 0)
-                {
-                    var CurrentTasksTab = (Application.Current.Windows[0] as MainWindow).CurrentTasksTab;
-                    if (CurrentTasksTab.isInitialised != false) Methods.RefreshCurrentTasksGrid();
-                }
+                //if (Application.Current.Windows.Count != 0)
+                //{
+                //    var CurrentTasksTab = (Application.Current.Windows[0] as MainWindow).CurrentTasksTab;
+                //    if (CurrentTasksTab.isInitialised != false) Methods.RefreshCurrentTasksGrid();
+                //}
             }
         }
     }

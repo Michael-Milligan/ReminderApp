@@ -217,38 +217,38 @@
           "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.Xaml.Behaviors.Wpf/1.1.19": {
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll": {}
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll": {}
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "Prism.Core/8.0.0.1909": {
+      "Prism.Core/8.1.97": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Prism.dll": {}
+          "lib/net5.0/Prism.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Prism.dll": {}
+          "lib/net5.0/Prism.dll": {}
         }
       },
-      "Prism.Wpf/8.0.0.1909": {
+      "Prism.Wpf/8.1.97": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Xaml.Behaviors.Wpf": "1.1.19",
-          "Prism.Core": "8.0.0.1909"
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.31",
+          "Prism.Core": "8.1.97"
         },
         "compile": {
-          "lib/netcoreapp3.1/Prism.Wpf.dll": {}
+          "lib/net5.0-windows7.0/Prism.Wpf.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/Prism.Wpf.dll": {}
+          "lib/net5.0-windows7.0/Prism.Wpf.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -399,7 +399,7 @@
         "dependencies": {
           "Microsoft.Data.Sqlite.Core": "5.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "5.0.4",
-          "Prism.Wpf": "8.0.0.1909"
+          "Prism.Wpf": "8.1.97"
         },
         "compile": {
           "bin/placeholder/ReminderAppReD.dll": {}
@@ -747,10 +747,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.Xaml.Behaviors.Wpf/1.1.19": {
-      "sha512": "5sPWkbqImc2t1aQwIfJcKsUo7tOg1Tr8+6xVzZJB56Nzt4u9NlpcLofgdX/aRYpPKdWDA3U23Akw1KQzU5e82g==",
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
+      "sha512": "LZpuf82ACZWldmfMuv3CTUMDh3o0xo0uHUaybR5HgqVLDBJJ9RZLykplQ/bTJd0/VDt3EhD4iDgUgbdIUAM+Kg==",
       "type": "package",
-      "path": "microsoft.xaml.behaviors.wpf/1.1.19",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.31",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -759,41 +759,49 @@
         "lib/net45/Microsoft.Xaml.Behaviors.dll",
         "lib/net45/Microsoft.Xaml.Behaviors.pdb",
         "lib/net45/Microsoft.Xaml.Behaviors.xml",
-        "lib/netcoreapp3.0/Design/Microsoft.Xaml.Behaviors.DesignTools.dll",
-        "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll",
-        "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.pdb",
-        "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.xml",
-        "microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
+        "lib/net5.0-windows7.0/Design/Microsoft.Xaml.Behaviors.DesignTools.dll",
+        "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll",
+        "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.pdb",
+        "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.xml",
+        "lib/netcoreapp3.1/Design/Microsoft.Xaml.Behaviors.DesignTools.dll",
+        "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.dll",
+        "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.pdb",
+        "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.xml",
+        "microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
         "microsoft.xaml.behaviors.wpf.nuspec",
         "tools/Install.ps1"
       ]
     },
-    "Prism.Core/8.0.0.1909": {
-      "sha512": "Ri+iSFvJiSKYdui7qtxi3uH9NImSZ8Jl/nOosxScSJseFwAc8Lz63JLXoqSAQglcX13DzZcAMzpKNuA9rCFiJg==",
+    "Prism.Core/8.1.97": {
+      "sha512": "EP5zrvWddw3eSq25Y7hHnDYdmLZEC2Z/gMrvmHzUuLbitmA1UaS7wQUlSwNr9Km8lzJNCvytFnaGBEFukHgoHg==",
       "type": "package",
-      "path": "prism.core/8.0.0.1909",
+      "path": "prism.core/8.1.97",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
-        "lib/net45/Prism.dll",
-        "lib/net45/Prism.pdb",
-        "lib/net45/Prism.xml",
+        "lib/net461/Prism.dll",
+        "lib/net461/Prism.pdb",
+        "lib/net461/Prism.xml",
         "lib/net47/Prism.dll",
         "lib/net47/Prism.pdb",
         "lib/net47/Prism.xml",
+        "lib/net5.0/Prism.dll",
+        "lib/net5.0/Prism.pdb",
+        "lib/net5.0/Prism.xml",
         "lib/netstandard2.0/Prism.dll",
         "lib/netstandard2.0/Prism.pdb",
         "lib/netstandard2.0/Prism.xml",
         "prism-logo.png",
-        "prism.core.8.0.0.1909.nupkg.sha512",
-        "prism.core.nuspec"
+        "prism.core.8.1.97.nupkg.sha512",
+        "prism.core.nuspec",
+        "readme.txt"
       ]
     },
-    "Prism.Wpf/8.0.0.1909": {
-      "sha512": "RAIMvKo/CMcyHqFKXuHk4sU3HpdZgzf3xh885VJQ3HzgY5g4NtRdZalvQr87tmJ8ptMY/e5PSZhiJ9RTcuXPpQ==",
+    "Prism.Wpf/8.1.97": {
+      "sha512": "ZEa6S1mK35h8/blyb0uR0ed3wkpHtPdhB4eniXINJnTiJMWlGl/As6SVlFFdOPD+qsEdWNYV3xgyQD/ue5cvBA==",
       "type": "package",
-      "path": "prism.wpf/8.0.0.1909",
+      "path": "prism.wpf/8.1.97",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -804,15 +812,16 @@
         "lib/net47/Prism.Wpf.dll",
         "lib/net47/Prism.Wpf.pdb",
         "lib/net47/Prism.Wpf.xml",
-        "lib/net48/Prism.Wpf.dll",
-        "lib/net48/Prism.Wpf.pdb",
-        "lib/net48/Prism.Wpf.xml",
+        "lib/net5.0-windows7.0/Prism.Wpf.dll",
+        "lib/net5.0-windows7.0/Prism.Wpf.pdb",
+        "lib/net5.0-windows7.0/Prism.Wpf.xml",
         "lib/netcoreapp3.1/Prism.Wpf.dll",
         "lib/netcoreapp3.1/Prism.Wpf.pdb",
         "lib/netcoreapp3.1/Prism.Wpf.xml",
         "prism-logo.png",
-        "prism.wpf.8.0.0.1909.nupkg.sha512",
-        "prism.wpf.nuspec"
+        "prism.wpf.8.1.97.nupkg.sha512",
+        "prism.wpf.nuspec",
+        "readme.txt"
       ]
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.0.4": {
@@ -1061,12 +1070,13 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "Prism.Wpf >= 8.1.97",
       "ReminderAppReD >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "D:\\SDK\\NuGetPackages": {}
+    "C:\\Users\\Laptop\\.nuget\\packages\\": {},
+    "D:\\VS\\SDK\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -1074,14 +1084,14 @@
       "projectUniqueName": "D:\\GitHub\\ReminderApp\\debug\\debug.csproj",
       "projectName": "debug",
       "projectPath": "D:\\GitHub\\ReminderApp\\debug\\debug.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Laptop\\.nuget\\packages\\",
       "outputPath": "D:\\GitHub\\ReminderApp\\debug\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\SDK\\NuGetPackages"
+        "D:\\VS\\SDK\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1112,6 +1122,12 @@
     "frameworks": {
       "net5.0-windows7.0": {
         "targetAlias": "net5.0-windows",
+        "dependencies": {
+          "Prism.Wpf": {
+            "target": "Package",
+            "version": "[8.1.97, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -1122,6 +1138,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.8, 5.0.8]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

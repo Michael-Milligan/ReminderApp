@@ -10,14 +10,14 @@
         "projectUniqueName": "D:\\GitHub\\ReminderApp\\debug\\debug.csproj",
         "projectName": "debug",
         "projectPath": "D:\\GitHub\\ReminderApp\\debug\\debug.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Laptop\\.nuget\\packages\\",
         "outputPath": "D:\\GitHub\\ReminderApp\\debug\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\SDK\\NuGetPackages"
+          "D:\\VS\\SDK\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -48,6 +48,12 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "Prism.Wpf": {
+              "target": "Package",
+              "version": "[8.1.97, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,6 +64,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.8, 5.0.8]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -73,14 +85,14 @@
         "projectUniqueName": "D:\\GitHub\\ReminderApp\\ReminderAppReD\\ReminderAppReD.csproj",
         "projectName": "ReminderAppReD",
         "projectPath": "D:\\GitHub\\ReminderApp\\ReminderAppReD\\ReminderAppReD.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Laptop\\.nuget\\packages\\",
         "outputPath": "D:\\GitHub\\ReminderApp\\ReminderAppReD\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\SDK\\NuGetPackages"
+          "D:\\VS\\SDK\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -130,7 +142,7 @@
             },
             "Prism.Wpf": {
               "target": "Package",
-              "version": "[8.0.0.1909, )"
+              "version": "[8.1.97, )"
             }
           },
           "imports": [
@@ -143,6 +155,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.8, 5.0.8]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
