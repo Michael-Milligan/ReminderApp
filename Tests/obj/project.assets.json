@@ -4919,8 +4919,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Laptop\\.nuget\\packages\\": {},
-    "D:\\VS\\SDK\\NuGetPackages": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "D:\\SDK\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -4928,14 +4928,14 @@
       "projectUniqueName": "D:\\GitHub\\ReminderApp\\Tests\\Tests.csproj",
       "projectName": "Tests",
       "projectPath": "D:\\GitHub\\ReminderApp\\Tests\\Tests.csproj",
-      "packagesPath": "C:\\Users\\Laptop\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "D:\\GitHub\\ReminderApp\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\VS\\SDK\\NuGetPackages"
+        "D:\\SDK\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

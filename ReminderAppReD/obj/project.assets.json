@@ -1226,8 +1226,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Laptop\\.nuget\\packages\\": {},
-    "D:\\VS\\SDK\\NuGetPackages": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "D:\\SDK\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -1235,14 +1235,14 @@
       "projectUniqueName": "D:\\GitHub\\ReminderApp\\ReminderAppReD\\ReminderAppReD.csproj",
       "projectName": "ReminderAppReD",
       "projectPath": "D:\\GitHub\\ReminderApp\\ReminderAppReD\\ReminderAppReD.csproj",
-      "packagesPath": "C:\\Users\\Laptop\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "D:\\GitHub\\ReminderApp\\ReminderAppReD\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\VS\\SDK\\NuGetPackages"
+        "D:\\SDK\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1305,12 +1305,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.8, 5.0.8]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

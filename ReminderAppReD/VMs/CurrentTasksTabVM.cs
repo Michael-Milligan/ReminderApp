@@ -9,8 +9,8 @@ namespace ReminderAppReD.VMs
     class CurrentTasksTabVM : BindableBase
     {
         readonly CurrentTasksTabModel model = new();
-        public DelegateCommand<object> RemoveCommand;
-        public ReadOnlyObservableCollection<CurrentTask> values => model.CurrentTasks;
+        public DelegateCommand<object> RemoveCommand { get; set; }
+        public ReadOnlyObservableCollection<CurrentTask> values {get; set;}
 
         public CurrentTasksTabVM()
         {
@@ -20,6 +20,7 @@ namespace ReminderAppReD.VMs
             });
 
             model.PropertyChanged += new((s, e) => { RaisePropertyChanged(e.PropertyName); });
+            values = model.CurrentTasks;
         }
     }
 }
