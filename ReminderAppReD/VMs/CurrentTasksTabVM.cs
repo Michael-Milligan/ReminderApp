@@ -10,7 +10,7 @@ namespace ReminderAppReD.VMs
     {
         readonly CurrentTasksTabModel model = new();
         public DelegateCommand<object> RemoveCommand { get; set; }
-        public ReadOnlyObservableCollection<CurrentTask> values {get; set;}
+        public ReadOnlyObservableCollection<CurrentTask> _CurrentTasks {get; set; }
 
         public CurrentTasksTabVM()
         {
@@ -20,7 +20,7 @@ namespace ReminderAppReD.VMs
             });
 
             model.PropertyChanged += new((s, e) => { RaisePropertyChanged(e.PropertyName); });
-            values = model.CurrentTasks;
+            _CurrentTasks = model.CurrentTasks;
         }
     }
 }

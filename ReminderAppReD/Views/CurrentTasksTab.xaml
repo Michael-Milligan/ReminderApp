@@ -44,7 +44,7 @@
         <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource CurrentTaskTabTaskDescLabel}"></Label>
         <Label Grid.Row="0" Grid.Column="1" Content="{DynamicResource CurrentTaskTabTaskDateLabel}"></Label>
         <ListView Grid.Row="1" Grid.Column="0" x:Name="tasksGrid" Grid.ColumnSpan="3" SelectionMode="Single"
-                 ItemsSource="{Binding Source={StaticResource vm}, Path=values, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                 ItemsSource="{Binding Source={StaticResource vm}, Path=_CurrentTasks}"
                  ItemTemplate="{StaticResource gridTemplate}"/>
     </Grid>
 </UserControl>

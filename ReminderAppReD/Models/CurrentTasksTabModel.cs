@@ -15,14 +15,18 @@ namespace ReminderAppReD.Models
                 TasksContext Context = new TasksContext();
                 return new(Context.CurrentTasks);
             }}
-        public ReadOnlyObservableCollection<CurrentTask> CurrentTasks { get { return new(_CurrentTasks); } }
-        
+        public ReadOnlyObservableCollection<CurrentTask> CurrentTasks;
+
+        public CurrentTasksTabModel()
+        {
+            CurrentTasks = new(_CurrentTasks);
+        }
         public void RemoveTask(string nameToDelete)
         {
             TasksContext Context = new TasksContext(); 
             Context.CurrentTasks.Remove(Context.CurrentTasks.Where(item => item.Task == nameToDelete).First());
             Context.SaveChanges();
-            RaisePropertyChanged(nameof(CurrentTasks));
+            RaisePropertyChanged(nameof(_CurrentTasks));
         }
 
         public void OnMouseEnter(object sender, RoutedEventArgs args)

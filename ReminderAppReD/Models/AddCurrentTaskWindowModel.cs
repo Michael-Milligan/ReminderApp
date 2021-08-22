@@ -20,7 +20,7 @@ namespace ReminderAppReD.Models
             Context.SaveChanges();
 
             Application.Current.Windows.Cast<Window>().First(item => item.Title == "AddCurrentTaskView").Close();
-            new CurrentTasksTabModel().PropertyChangedPublic("CurrentTasks");
+            new CurrentTasksTabModel().PropertyChangedPublic("_CurrentTasks");
         }
     }
 }
