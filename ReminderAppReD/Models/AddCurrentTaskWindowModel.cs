@@ -10,17 +10,6 @@ namespace ReminderAppReD.Models
 {
     class AddCurrentTaskWindowModel
     {
-        public static void AddNewTask(string TaskText, string TaskTime)
-        {
-            TasksContext Context = new TasksContext();
-            CurrentTask newTask = new CurrentTask();
-            newTask.Task = TaskText;
-            newTask.DateTime = TaskTime;
-            Context.CurrentTasks.Add(newTask);
-            Context.SaveChanges();
 
-            Application.Current.Windows.Cast<Window>().First(item => item.Title == "AddCurrentTaskView").Close();
-            new CurrentTasksTabModel().PropertyChangedPublic("_CurrentTasks");
-        }
     }
 }

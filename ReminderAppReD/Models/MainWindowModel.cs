@@ -3,10 +3,7 @@ using ReminderAppReD.Views;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -36,7 +33,7 @@ namespace ReminderAppReD.Models
         }
         public static void AddCurrentTask()
         {
-            new AddCurrentTaskView().Show();
+            CurrentTasksTabModel.AddCurrentTask();
         }
 
         public CurrentTaskWithSchedule alertTask { get; private set; }

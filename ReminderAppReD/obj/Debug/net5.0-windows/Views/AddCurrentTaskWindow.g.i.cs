@@ -40,7 +40,7 @@ namespace ReminderAppReD.Views {
     /// <summary>
     /// AddCurrentTaskView
     /// </summary>
-    public partial class AddCurrentTaskView : System.Windows.Window, System.Windows.Markup.IComponentConnector {
+    public partial class AddCurrentTaskWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
         #line 31 "..\..\..\..\Views\AddCurrentTaskWindow.xaml"
