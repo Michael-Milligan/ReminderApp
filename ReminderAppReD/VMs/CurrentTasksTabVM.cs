@@ -3,14 +3,15 @@ using Prism.Mvvm;
 using ReminderAppReD.DB;
 using ReminderAppReD.Models;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace ReminderAppReD.VMs
 {
     class CurrentTasksTabVM : BindableBase
     {
-        readonly CurrentTasksTabModel model = new();
+        public readonly CurrentTasksTabModel model = new();
         public DelegateCommand<object> RemoveCommand { get; set; }
-        public ReadOnlyObservableCollection<CurrentTask> _CurrentTasks {get; set; }
+        public ObservableCollection<CurrentTask> CurrentTasks {get; set; }
 
         public CurrentTasksTabVM()
         {
@@ -19,8 +20,18 @@ namespace ReminderAppReD.VMs
                 model.RemoveTask(parameter as string);
             });
 
-            model.PropertyChanged += new((s, e) => { RaisePropertyChanged(e.PropertyName); });
-            _CurrentTasks = model.CurrentTasks;
+            model.PropertyChanged += OnPropertyChanged;
+            CurrentTasks = model.CurrentTasks;
+        }
+
+        public void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
+        {
+            switch (args.PropertyName)
+            {
+                case "CurrentTasks":
+                    RaisePropertyChanged(nameof(CurrentTasks));
+                    break;
+            }
         }
     }
 }

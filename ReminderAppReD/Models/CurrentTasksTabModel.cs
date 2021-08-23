@@ -5,28 +5,50 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using ReminderAppReD.Views;
+using ReminderAppReD.VMs;
 
 namespace ReminderAppReD.Models
 {
     class CurrentTasksTabModel : BindableBase
     {
-        private ObservableCollection<CurrentTask> _CurrentTasks { get
-            {
-                TasksContext Context = new TasksContext();
-                return new(Context.CurrentTasks);
-            }}
-        public ReadOnlyObservableCollection<CurrentTask> CurrentTasks;
+        public ObservableCollection<CurrentTask> CurrentTasks;
+        AddCurrentTaskWindow window = new AddCurrentTaskWindow();
 
         public CurrentTasksTabModel()
         {
-            CurrentTasks = new(_CurrentTasks);
+            TasksContext Context = new TasksContext();
+            CurrentTasks = new(Context.CurrentTasks);
         }
+
         public void RemoveTask(string nameToDelete)
         {
-            TasksContext Context = new TasksContext(); 
+            TasksContext Context = new TasksContext();
             Context.CurrentTasks.Remove(Context.CurrentTasks.Where(item => item.Task == nameToDelete).First());
             Context.SaveChanges();
-            RaisePropertyChanged(nameof(_CurrentTasks));
+
+            CurrentTasks.Remove(CurrentTasks.First(item => item.Task == nameToDelete));
+            RaisePropertyChanged(nameof(CurrentTasks));
+        }
+
+        public void ShowAddCurrentTaskWindow()
+        {
+            window.Show();
+        }
+
+        public void AddCurrentTask()
+        {
+            TasksContext Context = new TasksContext();
+            CurrentTask newTask = new CurrentTask();
+            newTask.Task = window.NameTextBox.Text;
+            newTask.DateTime = window.DateTextBox.Text;
+            Context.CurrentTasks.Add(newTask);
+            Context.SaveChanges();
+
+            CurrentTasks.Add(newTask);
+            RaisePropertyChanged(nameof(CurrentTasks));
+
+            window.Close();
         }
 
         public void OnMouseEnter(object sender, RoutedEventArgs args)
@@ -38,7 +60,5 @@ namespace ReminderAppReD.Models
         {
             (sender as ScrollViewer).Opacity = 0;
         }
-
-        public void PropertyChangedPublic(string propertyName) => RaisePropertyChanged(propertyName);
     }
 }

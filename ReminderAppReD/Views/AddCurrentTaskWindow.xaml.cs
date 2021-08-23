@@ -17,9 +17,9 @@ namespace ReminderAppReD.Views
     /// <summary>
     /// Interaction logic for AddCurrentTaskView.xaml
     /// </summary>
-    public partial class AddCurrentTaskView : Window
+    public partial class AddCurrentTaskWindow : Window
     {
-        public AddCurrentTaskView()
+        public AddCurrentTaskWindow()
         {
             InitializeComponent();
         }

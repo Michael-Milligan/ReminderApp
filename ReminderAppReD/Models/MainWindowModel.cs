@@ -1,12 +1,11 @@
 ﻿using ReminderAppReD.DB;
 using ReminderAppReD.Views;
+using ReminderAppReD.VMs;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -36,9 +35,9 @@ namespace ReminderAppReD.Models
         }
         public static void AddCurrentTask()
         {
-            new AddCurrentTaskView().Show();
+            (((((Application.Current.Windows[0].Content as DockPanel).Children.Cast<UIElement>().ElementAt(1) as TabControl)
+                    .Items[0] as TabItem).Content as CurrentTasksTab).Resources["vm"] as CurrentTasksTabVM).model.ShowAddCurrentTaskWindow();
         }
-
         public CurrentTaskWithSchedule alertTask { get; private set; }
         public void CheckForTasksTime()
         {
