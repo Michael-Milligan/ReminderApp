@@ -9,22 +9,28 @@ namespace ReminderAppReD.VMs
 {
     class AddCurrentTaskVM
     {
-        AddCurrentTaskWindowModel model = new();
-        public DelegateCommand SendCommand { get; set; } = new DelegateCommand(() => 
+        public readonly AddCurrentTaskWindowModel model = new();
+        public DelegateCommand SendCommand { get; set; }
+
+        public AddCurrentTaskVM()
         {
-            AddCurrentTaskWindow window = Application.Current.Windows.Cast<Window>().First(item => item.Title == "AddCurrentTaskView") as AddCurrentTaskWindow;
-            string TaskName = window.NameTextBox.Text;
-            string TaskDate = window.DateTextBox.Text;
-            try
+            SendCommand = new DelegateCommand(() =>
             {
-                AddCurrentTaskWindowModel.AddNewTask(TaskName, TaskDate);
-            }
-            catch (FormatException)
-            {
-                if (MessageBox.Show("Please, enter a valid date and time in valid format", "Error",
-                    MessageBoxButton.OKCancel, MessageBoxImage.Error) == MessageBoxResult.Cancel)
-                    window.Close();
-            }
-        });
+                try
+                {
+                    model.AddTaskToList();
+                }
+                catch (FormatException)
+                {
+                    if (MessageBox.Show("Please, enter a valid date and time in valid format", "Error",
+                        MessageBoxButton.OKCancel, MessageBoxImage.Error) == MessageBoxResult.Cancel)
+                    {
+                        
+                        AddCurrentTaskWindow window = Application.Current.Windows.Cast<Window>().First(item => item.Title == "AddCurrentTaskView") as AddCurrentTaskWindow;
+                        window.Close(); 
+                    }
+                }
+            });
+        }
     }
 }

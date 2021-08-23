@@ -8,9 +8,10 @@
         xmlns:local="clr-namespace:ReminderAppReD.Views"
         mc:Ignorable="d"
         Title="AddCurrentTaskView" Height="200" Width="400">
-    <Window.DataContext>
-        <vms:AddCurrentTaskVM></vms:AddCurrentTaskVM>
-    </Window.DataContext>
+
+    <Window.Resources>
+        <vms:AddCurrentTaskVM x:Key="vm"></vms:AddCurrentTaskVM>
+    </Window.Resources>
     
     <Grid>
         <Grid.RowDefinitions>
@@ -31,6 +32,6 @@
         <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" x:Name="NameTextBox"></TextBox>
         <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="DateTextBox"></TextBox>
 
-        <Button Grid.Column="1" Grid.Row="2" Content="{DynamicResource ACTVSendButton}" Command="{Binding SendCommand}"></Button>
+        <Button Grid.Column="1" Grid.Row="2" Content="{DynamicResource ACTVSendButton}" Command="{Binding Source={StaticResource vm}, Path=SendCommand}"></Button>
     </Grid>
 </Window>

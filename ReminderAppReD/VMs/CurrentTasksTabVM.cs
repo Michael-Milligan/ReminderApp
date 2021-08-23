@@ -9,7 +9,7 @@ namespace ReminderAppReD.VMs
 {
     class CurrentTasksTabVM : BindableBase
     {
-        readonly CurrentTasksTabModel model = new();
+        public readonly CurrentTasksTabModel model = new();
         public DelegateCommand<object> RemoveCommand { get; set; }
         public ObservableCollection<CurrentTask> CurrentTasks {get; set; }
 

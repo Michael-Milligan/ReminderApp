@@ -6,12 +6,14 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using ReminderAppReD.Views;
+using ReminderAppReD.VMs;
 
 namespace ReminderAppReD.Models
 {
     class CurrentTasksTabModel : BindableBase
     {
         public ObservableCollection<CurrentTask> CurrentTasks;
+        AddCurrentTaskWindow window = new AddCurrentTaskWindow();
 
         public CurrentTasksTabModel()
         {
@@ -29,17 +31,22 @@ namespace ReminderAppReD.Models
             RaisePropertyChanged(nameof(CurrentTasks));
         }
 
-        public static void AddCurrentTask()
+        public void ShowAddCurrentTaskWindow()
         {
-            AddCurrentTaskWindow window = new AddCurrentTaskWindow();
             window.Show();
+        }
 
+        public void AddCurrentTask()
+        {
             TasksContext Context = new TasksContext();
             CurrentTask newTask = new CurrentTask();
-            newTask.Task = TaskText;
-            newTask.DateTime = TaskTime;
+            newTask.Task = window.NameTextBox.Text;
+            newTask.DateTime = window.DateTextBox.Text;
             Context.CurrentTasks.Add(newTask);
             Context.SaveChanges();
+
+            CurrentTasks.Add(newTask);
+            RaisePropertyChanged(nameof(CurrentTasks));
 
             window.Close();
         }
