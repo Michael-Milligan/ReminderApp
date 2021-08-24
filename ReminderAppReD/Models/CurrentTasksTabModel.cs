@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using ReminderAppReD.Views;
 using ReminderAppReD.VMs;
+using System;
 
 namespace ReminderAppReD.Models
 {
@@ -21,13 +22,14 @@ namespace ReminderAppReD.Models
             CurrentTasks = new(Context.CurrentTasks);
         }
 
-        public void RemoveTask(string nameToDelete)
+        public void RemoveTask(string _Id)
         {
+            int Id = Convert.ToInt32(_Id);
             TasksContext Context = new TasksContext();
-            Context.CurrentTasks.Remove(Context.CurrentTasks.Where(item => item.Task == nameToDelete).First());
+            Context.CurrentTasks.Remove(Context.CurrentTasks.Where(item => item.Id == Id).First());
             Context.SaveChanges();
 
-            CurrentTasks.Remove(CurrentTasks.First(item => item.Task == nameToDelete));
+            CurrentTasks.Remove(CurrentTasks.First(item => item.Id == Id));
             RaisePropertyChanged(nameof(CurrentTasks));
         }
 

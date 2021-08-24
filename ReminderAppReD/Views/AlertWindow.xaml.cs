@@ -9,7 +9,7 @@ namespace ReminderAppReD.Views
     public partial class AlertWindow : Window
     {
         public int taskId { get; set; }
-        public static DateTime taskDate { get; set; }
+        public DateTime taskDate { get; set; }
         public string postponeTimeProperty { get { return postponeTime.Text; }}
 
         public AlertWindow()

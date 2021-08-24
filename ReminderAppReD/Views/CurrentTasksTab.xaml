@@ -20,11 +20,12 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
 
+                <Label Visibility="Hidden" Content="{Binding Path=Id}" x:Name="TaskId"></Label>
                 <Label Grid.Row="0" Grid.Column="0" Content="{Binding Path=Task}" x:Name="TaskLabel"/>
                 <Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=DateTime}" x:Name="TaskDate"/>
                 <Button Grid.Row="0" Grid.Column="2" Command="{Binding Source={StaticResource vm}, 
                     Path=RemoveCommand}" 
-                        CommandParameter="{Binding ElementName=TaskLabel,Path=Content}" 
+                        CommandParameter="{Binding ElementName=TaskId,Path=Content}" 
                         x:Name="RemoveButton" Content="{DynamicResource CurrentTaskTabRemoveButtonContent}"/>
             </Grid>
         </DataTemplate>

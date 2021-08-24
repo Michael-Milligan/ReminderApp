@@ -2,6 +2,7 @@
 using Prism.Mvvm;
 using ReminderAppReD.DB;
 using ReminderAppReD.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -17,7 +18,7 @@ namespace ReminderAppReD.VMs
         {
             RemoveCommand = new DelegateCommand<object>((object parameter) =>
             {
-                model.RemoveTask(parameter as string);
+                model.RemoveTask(parameter.ToString());
             });
 
             model.PropertyChanged += OnPropertyChanged;
