@@ -4,6 +4,7 @@ using ReminderAppReD.DB;
 using ReminderAppReD.Models;
 using ReminderAppReD.Views;
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 
@@ -22,7 +23,7 @@ namespace ReminderAppReD.VMs
 
         public AlertWindowVM()
         {
-            model.PropertyChanged += (s, e) => { RaisePropertyChanged(nameof(postponingTime)); };
+            model.PropertyChanged += OnPropertyChanged;
             PostponeCommand = new(() =>
             {
                 AlertWindowModel.PostponeAlert(alertTask.task.Id, Convert.ToInt32(postponingTime));
@@ -36,5 +37,15 @@ namespace ReminderAppReD.VMs
         public DelegateCommand PostponeCommand { get; set; }
         public DelegateCommand DoneCommand { get; set; }
         public DelegateCommand OkCommand { get; set; }
+
+        public void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
+        {
+            switch(args.PropertyName)
+            {
+                case "postponingTime":
+                    RaisePropertyChanged(nameof(postponingTime));
+                    break;
+            }
+        }
     }
 }
