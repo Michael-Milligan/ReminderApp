@@ -1,13 +1,11 @@
 ﻿using Prism.Mvvm;
+using ReminderAppReD.DB;
 
 namespace ReminderAppReD.Models
 {
     class AlertWindowModel : BindableBase
     {
-        public int taskId { get; }
-
-        public string taskName { get; }
-        public string taskDateTime { get; }
+        public static CurrentTaskWithSchedule alertTask {  get; set; }
 
         private string _postponingTime;
         public string postponingTime { get { return _postponingTime; } set { _postponingTime = value;
@@ -18,7 +16,7 @@ namespace ReminderAppReD.Models
 
         }
 
-        public static void Done(int taskId)
+        public static void Done()
         {
             //TasksContext context = new();
             //CurrentTask task = context.CurrentTasks.Where(item => item.Id == taskId).First();
