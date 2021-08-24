@@ -9,9 +9,9 @@
         mc:Ignorable="d"
         Title="AlertWindow" Height="300" Width="540">
 
-    <Window.DataContext>
-        <vms:AlertWindowVM></vms:AlertWindowVM>
-    </Window.DataContext>
+    <Window.Resources>
+        <vms:AlertWindowVM x:Key="vm"></vms:AlertWindowVM>
+    </Window.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -32,15 +32,18 @@
         <Label Grid.Row="1" Grid.Column="0" Content="{DynamicResource AlertWindowTaskNameLabel}"></Label>
         <Label Grid.Row="2" Grid.Column="0" Content="{DynamicResource AlertWindowTaskDateLabel}"></Label>
 
-        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="{Binding taskId}"></Label>
-        <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="{Binding taskDate}"></Label>
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" DataContext="{Binding RelativeSource={RelativeSource, 
+            Mode=FindAncestor, AncestorType={x:Type local:AlertWindow}}}" Content="{Binding taskDate}"></Label>
+
+        <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" DataContext="{Binding RelativeSource={RelativeSource, 
+            Mode=FindAncestor, AncestorType={x:Type local:AlertWindow}}}" Content="{Binding taskId}"></Label>
 
         <Button Grid.Row="3" Grid.Column="0" 
-                Content="{DynamicResource AlertWindowPostponeButtonContent}" Command="{Binding PostponeCommand}"></Button>
+                Content="{DynamicResource AlertWindowPostponeButtonContent}" Command="{Binding Source={StaticResource vm}, Path=PostponeCommand}"></Button>
         
         <TextBox Grid.Row="3" Grid.Column="1" x:Name="postponeTime"></TextBox>
         
         <Button Grid.Row="3" Grid.Column="2" 
-                Content="{DynamicResource AlertWindowDoneButtonContent}" Command="{Binding DoneCommand}"></Button>
+                Content="{DynamicResource AlertWindowDoneButtonContent}" Command="{Binding Source={StaticResource vm}, Path=DoneCommand}"></Button>
     </Grid>
 </Window>
