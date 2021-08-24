@@ -25,14 +25,16 @@ namespace ReminderAppReD.VMs
             model.PropertyChanged += (s, e) => { RaisePropertyChanged(nameof(postponingTime)); };
             PostponeCommand = new(() =>
             {
-                AlertWindowModel.PostponeAlert(Convert.ToInt32(postponingTime));
+                AlertWindowModel.PostponeAlert(alertTask.task.Id, Convert.ToInt32(postponingTime));
             });
-            DoneCommand = new(() => { AlertWindowModel.Done(); });
+            DoneCommand = new(() => { AlertWindowModel.Done(alertTask.task.Id); });
+            OkCommand = new(() => { AlertWindowModel.Ok(); });
             alertTask = AlertWindowModel.alertTask;
             taskNextTime = alertTask.schedule.NextEvent(DateTime.Now);
         }
 
         public DelegateCommand PostponeCommand { get; set; }
         public DelegateCommand DoneCommand { get; set; }
+        public DelegateCommand OkCommand { get; set; }
     }
 }
