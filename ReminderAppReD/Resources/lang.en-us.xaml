@@ -30,5 +30,6 @@
     <s:String x:Key="AlertWindowTaskDateLabel">Task date:</s:String>
     <s:String x:Key="AlertWindowPostponeButtonContent">Postpone for(minutes)</s:String>
     <s:String x:Key="AlertWindowDoneButtonContent">Done</s:String>
+    <s:String x:Key="AlertWindowOkButtonContent">Ok</s:String>
 
 </ResourceDictionary>

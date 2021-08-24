@@ -29,4 +29,5 @@
     <s:String x:Key="AlertWindowTaskDateLabel">Время начала:</s:String>
     <s:String x:Key="AlertWindowPostponeButtonContent">Отложить на(время в минутах)</s:String>
     <s:String x:Key="AlertWindowDoneButtonContent">Готово</s:String>
+    <s:String x:Key="AlertWindowOkButtonContent">Ок</s:String>
 </ResourceDictionary>

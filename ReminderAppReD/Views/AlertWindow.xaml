@@ -7,7 +7,7 @@
         xmlns:vms="clr-namespace:ReminderAppReD.VMs"
         xmlns:views="clr-namespace:ReminderAppReD.Views"
         mc:Ignorable="d"
-        Title="AlertWindow" Height="300" Width="540">
+        Title="AlertWindow" Height="300" Width="720">
 
     <Window.Resources>
         <vms:AlertWindowVM x:Key="vm"></vms:AlertWindowVM>
@@ -15,6 +15,7 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -27,21 +28,23 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" Content="{DynamicResource AlertWindowMessageLabel}"></Label>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalContentAlignment="Center" Content="{DynamicResource AlertWindowMessageLabel}"></Label>
 
         <Label Grid.Row="1" Grid.Column="0" Content="{DynamicResource AlertWindowTaskNameLabel}"></Label>
         <Label Grid.Row="2" Grid.Column="0" Content="{DynamicResource AlertWindowTaskDateLabel}"></Label>
 
 
-        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Content="{Binding Source={StaticResource vm}, Path=alertTask.task.Task}"></Label>
-        <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="{Binding Source={StaticResource vm}, Path=taskNextTime}"></Label>
+        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Content="{Binding Source={StaticResource vm}, Path=alertTask.task.Task}"></Label>
+        <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Content="{Binding Source={StaticResource vm}, Path=taskNextTime}"></Label>
 
-        <Button Grid.Row="3" Grid.Column="0" 
+        <Button Grid.Row="3" Grid.Column="0"
                 Content="{DynamicResource AlertWindowPostponeButtonContent}" Command="{Binding Source={StaticResource vm}, Path=PostponeCommand}"></Button>
         
         <TextBox Grid.Row="3" Grid.Column="1" x:Name="postponeTime"></TextBox>
         
         <Button Grid.Row="3" Grid.Column="2" 
                 Content="{DynamicResource AlertWindowDoneButtonContent}" Command="{Binding Source={StaticResource vm}, Path=DoneCommand}"></Button>
+        <Button Grid.Row="3" Grid.Column="3" 
+                Content="{DynamicResource AlertWindowOkButtonContent}" Command="{Binding Source={StaticResource vm}, Path=OkCommand}"></Button>
     </Grid>
 </Window>
