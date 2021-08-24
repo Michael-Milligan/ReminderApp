@@ -27,14 +27,14 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource AlertWindowMessageLabel}"></Label>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" Content="{DynamicResource AlertWindowMessageLabel}"></Label>
 
         <Label Grid.Row="1" Grid.Column="0" Content="{DynamicResource AlertWindowTaskNameLabel}"></Label>
         <Label Grid.Row="2" Grid.Column="0" Content="{DynamicResource AlertWindowTaskDateLabel}"></Label>
 
-        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:AlertWindow}}}" Content="{Binding taskDate}"></Label>
 
-        <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:AlertWindow}}}" Content="{Binding taskId}"></Label>
+        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:AlertWindow}}}" Content="{Binding taskName}"></Label>
+        <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:AlertWindow}}}" Content="{Binding taskDate}"></Label>
 
         <Button Grid.Row="3" Grid.Column="0" 
                 Content="{DynamicResource AlertWindowPostponeButtonContent}" Command="{Binding Source={StaticResource vm}, Path=PostponeCommand}"></Button>

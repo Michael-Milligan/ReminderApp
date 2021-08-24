@@ -48,7 +48,7 @@ namespace ReminderAppReD.Models
             {
                 alertTask = tasks.First(item => CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now));
                 AlertWindow alertWindow = new AlertWindow();
-                alertWindow.Fill(alertTask.task.Id, alertTask.schedule.NextEvent(DateTime.Now));
+                alertWindow.Fill(alertTask.task.Id, alertTask.schedule.NextEvent(DateTime.Now), alertTask.task.Task);
                 alertWindow.Show();
                 System.Windows.Threading.Dispatcher.Run();
             }

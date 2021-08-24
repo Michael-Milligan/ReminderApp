@@ -25,7 +25,7 @@
     <s:String x:Key="ACTVDateLabel">Date of the task: </s:String>
     <s:String x:Key="ACTVSendButton">Send</s:String>
 
-    <s:String x:Key="AlertWindowMessageLabel">Time to make a planned task</s:String>
+    <s:String x:Key="AlertWindowMessageLabel">Time to prepare for a planned task</s:String>
     <s:String x:Key="AlertWindowTaskNameLabel">Task name:</s:String>
     <s:String x:Key="AlertWindowTaskDateLabel">Task date:</s:String>
     <s:String x:Key="AlertWindowPostponeButtonContent">Postpone for(minutes)</s:String>

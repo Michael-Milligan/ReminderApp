@@ -5,6 +5,8 @@ namespace ReminderAppReD.Models
     class AlertWindowModel : BindableBase
     {
         public int taskId { get; }
+
+        public string taskName { get; }
         public string taskDateTime { get; }
 
         private string _postponingTime;
