@@ -1,10 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using ReminderAppReD.Models;
-using ReminderAppReD.Views;
 using System;
-using System.Linq;
-using System.Windows;
 
 namespace ReminderAppReD.VMs
 {
@@ -12,7 +9,7 @@ namespace ReminderAppReD.VMs
     {
         private AlertWindowModel model = new();
         public int taskId => model.taskId;
-        public string taskDateTime => model.taskDateTime;
+        public string taskDateTime { get; set; }
         public string postponingTime => model.postponingTime;
 
         public AlertWindowVM()
@@ -23,6 +20,7 @@ namespace ReminderAppReD.VMs
                 AlertWindowModel.PostponeAlert(Convert.ToInt32(postponingTime));
             });
             DoneCommand = new(() => { AlertWindowModel.Done(model.taskId); });
+            taskDateTime = model.taskDateTime;
         }
 
         public DelegateCommand PostponeCommand { get; set; }

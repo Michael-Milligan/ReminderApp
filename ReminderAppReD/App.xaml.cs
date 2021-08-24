@@ -14,9 +14,10 @@ namespace ReminderAppReD
     public partial class App : Application
     {
         DispatcherTimer timer;
-
+        static int ID;
         public App()
         {
+            ID = 0;
             MainWindowModel model= new MainWindowModel();
             model.languages.Clear();
             model.languages.Add(new CultureInfo("en-US"));
@@ -28,6 +29,7 @@ namespace ReminderAppReD
                 (sender, args) =>
                 {
                     Thread thread = new(new MainWindowModel().CheckForTasksTime);
+                    thread.Name = $"{ID++}";
                     thread.SetApartmentState(ApartmentState.STA);
                     thread.IsBackground = true;
                     thread.Start();
