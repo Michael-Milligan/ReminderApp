@@ -8,8 +8,6 @@ namespace ReminderAppReD.Views
     /// </summary>
     public partial class AlertWindow : Window
     {
-        public string postponeTimeProperty { get { return postponeTime.Text; }}
-
         public AlertWindow()
         {
             InitializeComponent();
