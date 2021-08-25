@@ -44,16 +44,11 @@ namespace ReminderAppReD.Models
             TasksContext context = new TasksContext();
             CurrentTaskWithSchedule[] tasks = context.CurrentTasks.Select(item => new CurrentTaskWithSchedule(item, item.DateTime)).ToArray();
 
-            try
-            {
-                alertTask = tasks.First(item => CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now));
-                AlertWindowModel.alertTask = alertTask;
-                AlertWindow alertWindow = new AlertWindow();
-                alertWindow.Show();
-                System.Windows.Threading.Dispatcher.Run();
-            }
-            catch (Exception) { }
-            
+            alertTask = tasks.First(item => CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now));
+            AlertWindowModel.alertTask = alertTask;
+            AlertWindow alertWindow = new AlertWindow();
+            alertWindow.Show();
+            System.Windows.Threading.Dispatcher.Run();
         }
 
         /// <summary>
