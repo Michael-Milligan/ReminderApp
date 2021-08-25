@@ -15,11 +15,7 @@ namespace ReminderAppReD.VMs
         private AlertWindowModel model = new();
         public CurrentTaskWithSchedule alertTask { get; set; }
         public DateTime taskNextTime { get; set; }
-        public string postponingTime
-        {
-            get { return (Application.Current.Windows.Cast<Window>().First(item => item.Title == "AlertWindow") as AlertWindow).postponeTime.Text; }
-            set { postponingTime = value; } 
-        }
+        public string postponingTime { get; set; }
 
         public AlertWindowVM()
         {

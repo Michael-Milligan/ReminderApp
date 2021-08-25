@@ -40,8 +40,9 @@
         <Button Grid.Row="3" Grid.Column="0"
                 Content="{DynamicResource AlertWindowPostponeButtonContent}" Command="{Binding Source={StaticResource vm}, Path=PostponeCommand}"></Button>
         
-        <TextBox Grid.Row="3" Grid.Column="1" x:Name="postponeTime"></TextBox>
-        
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="postponeTime" 
+                 Text="{Binding Source={StaticResource vm}, Path=postponingTime, Mode=OneWayToSource}"></TextBox>
+         
         <Button Grid.Row="3" Grid.Column="2" 
                 Content="{DynamicResource AlertWindowDoneButtonContent}" Command="{Binding Source={StaticResource vm}, Path=DoneCommand}"></Button>
         <Button Grid.Row="3" Grid.Column="3" 
