@@ -2,6 +2,7 @@
 using ReminderAppReD.DB;
 using ReminderAppReD.Views;
 using ReminderAppReD.VMs;
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,7 +31,7 @@ namespace ReminderAppReD.Models
 
         public static void Ok()
         {
-            (Application.Current.Windows.Cast<Window>().First(item => item.Title == "AlertWindow") as AlertWindow).Close();
+            Application.Current.Dispatcher.BeginInvoke(new Action(() => (Application.Current.Windows.Cast<Window>().First(item => item.Title == "AlertWindow") as AlertWindow).Close()));
         }
     }
 }
