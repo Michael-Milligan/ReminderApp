@@ -13,7 +13,7 @@ namespace ReminderAppReD.Models
 {
     class CurrentTasksTabModel : BindableBase
     {
-        public ObservableCollection<CurrentTask> currentTasks;
+        public static ObservableCollection<CurrentTask> currentTasks;
         AddCurrentTaskWindow window = new AddCurrentTaskWindow();
 
         public CurrentTasksTabModel()
@@ -53,23 +53,26 @@ namespace ReminderAppReD.Models
             window.Close();
         }
 
-        public void MoveCurrentToCompleted(int Id)
+        public static void MoveCurrentToCompleted(int Id)
         {
             TasksContext context = new();
             CurrentTask task = context.CurrentTasks.First(item => item.Id == Id);
-            //CompletedTasksTabModel.AddNew(new() { CompletionDateTime = DateTime.Now, TaskId = task.Id });
+            //TODO: CompletedTasksTabModel.AddNew(new() { CompletionDateTime = DateTime.Now, TaskId = task.Id });
             context.CurrentTasks.Remove(task);
-            currentTasks.Remove(task);
+            Func<CurrentTask, bool> action = currentTasks.Remove;
+            Application.Current.Dispatcher.BeginInvoke(action, task);
             context.SaveChanges();
         }
 
-        public void PostponeTask(int Id, int minutes)
+        public static void PostponeTask(int Id, int minutes)
         {
             TasksContext context = new();
             CurrentTask task = context.CurrentTasks.First(item => item.Id == Id);
-            CurrentTask newTask= new CurrentTask() { Task = task.Task, DateTime = task.DateTime + new DateTime(0, 0, 0, 0, minutes, 0) };
+            DateTime time = DateTime.Now.AddMinutes(minutes);
+            CurrentTask newTask = new CurrentTask() { Task = task.Task, DateTime = $"{time.Year}.{time.Month}.{time.Day} {time.Hour}:{time.Minute}:00.0"};
             context.CurrentTasks.Add(newTask);
-            currentTasks.Add(newTask);
+            Action<CurrentTask> action = currentTasks.Add;
+            Application.Current.Dispatcher.BeginInvoke(action, newTask);
             context.SaveChanges();
         }
 

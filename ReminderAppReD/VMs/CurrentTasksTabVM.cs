@@ -22,7 +22,7 @@ namespace ReminderAppReD.VMs
             });
 
             model.PropertyChanged += OnPropertyChanged;
-            CurrentTasks = model.currentTasks;
+            CurrentTasks = CurrentTasksTabModel.currentTasks;
         }
 
         public void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
