@@ -48,6 +48,7 @@ namespace ReminderAppReD.Models
             AlertWindowModel.alertTask = alertTask;
             AlertWindow alertWindow = new AlertWindow();
             alertWindow.Show();
+            alertWindow.Activate();
             System.Windows.Threading.Dispatcher.Run();
         }
 

@@ -18,15 +18,13 @@ namespace ReminderAppReD.Models
 
         public static void PostponeAlert(int Id, int minutes)
         {
-            (((((Application.Current.Windows[0].Content as DockPanel).Children.Cast<UIElement>().ElementAt(1) as TabControl)
-                    .Items[0] as TabItem).Content as CurrentTasksTab).Resources["vm"] as CurrentTasksTabVM).model.PostponeTask(Id, minutes);
+            CurrentTasksTabModel.PostponeTask(Id, minutes);
             Ok();
         }
 
         public static void Done(int Id)
         {
-            (((((Application.Current.Windows[0].Content as DockPanel).Children.Cast<UIElement>().ElementAt(1) as TabControl)
-                    .Items[0] as TabItem).Content as CurrentTasksTab).Resources["vm"] as CurrentTasksTabVM).model.MoveCurrentToCompleted(Id);
+            CurrentTasksTabModel.MoveCurrentToCompleted(Id);
             Ok();
         }
 
