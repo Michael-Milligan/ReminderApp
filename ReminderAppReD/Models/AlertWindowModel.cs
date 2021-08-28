@@ -31,7 +31,7 @@ namespace ReminderAppReD.Models
 
         public static void Ok()
         {
-            Application.Current.Dispatcher.BeginInvoke(new Action(() => (Application.Current.Windows.Cast<Window>().First(item => item.Title == "AlertWindow") as AlertWindow).Close()));
+            (Application.Current.Resources["alertWindow"] as AlertWindow).Close();
         }
     }
 }
