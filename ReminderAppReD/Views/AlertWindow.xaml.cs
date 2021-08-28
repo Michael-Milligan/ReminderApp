@@ -11,6 +11,7 @@ namespace ReminderAppReD.Views
         public AlertWindow()
         {
             InitializeComponent();
+            Application.Current.Resources["alertWindow"] = this;
         }
     }
 }
