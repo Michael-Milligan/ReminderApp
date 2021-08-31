@@ -20,6 +20,8 @@
 
 
     <s:String x:Key="TabsCompletedTasksTab">Completed tasks</s:String>
+    <s:String x:Key="CompletedTasksTabTaskLabelContent">Task</s:String>
+    <s:String x:Key="CompletedTasksTabCompletionDateTimeLabelContent">Completion date and time</s:String>
 
     <s:String x:Key="ACTVNameLabel">Enter the task name: </s:String>
     <s:String x:Key="ACTVDateLabel">Date of the task: </s:String>

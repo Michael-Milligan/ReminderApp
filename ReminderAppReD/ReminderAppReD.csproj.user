@@ -13,6 +13,9 @@
     <Compile Update="Views\AlertWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\CompletedTasksTab.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\CurrentTasksTab.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,6 +28,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\AlertWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CompletedTasksTab.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\CurrentTasksTab.xaml">
