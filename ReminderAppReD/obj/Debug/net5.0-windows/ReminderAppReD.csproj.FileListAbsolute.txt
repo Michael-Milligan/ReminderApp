@@ -138,4 +138,6 @@ D:\GitHub\ReminderApp\ReminderAppReD\bin\Debug\net5.0-windows\DB\Tasks.sqlite
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\ReminderAppReD.csproj.AssemblyReference.cache
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\Views\AlertWindow.g.cs
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\Views\AlertWindow.baml
+D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\Views\CompletedTasksTab.g.cs
+D:\GitHub\ReminderApp\ReminderAppReD\obj\Debug\net5.0-windows\Views\CompletedTasksTab.baml
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Debug\net5.0-windows\ref\ReminderAppReD.dll

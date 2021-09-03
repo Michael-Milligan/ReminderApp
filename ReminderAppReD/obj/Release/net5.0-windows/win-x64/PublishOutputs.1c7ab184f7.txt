@@ -1,0 +1,4 @@
+C:\Users\User\Desktop\Reminder\ReminderAppReD.pdb
+C:\Users\User\Desktop\Reminder\DB\Tasks.sqlite
+C:\Users\User\Desktop\Reminder\e_sqlite3.dll
+C:\Users\User\Desktop\Reminder\ReminderAppReD.exe

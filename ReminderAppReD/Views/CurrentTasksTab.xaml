@@ -16,13 +16,10 @@
                     <ColumnDefinition Width="350"></ColumnDefinition>
                     <ColumnDefinition Width="120"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
 
-                <Label Visibility="Hidden" Content="{Binding Path=Id}" x:Name="TaskId"></Label>
-                <Label Grid.Row="0" Grid.Column="0" Content="{Binding Path=Task}" x:Name="TaskLabel"/>
-                <Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=DateTime}" x:Name="TaskDate"/>
+                <Label Visibility="Hidden" Content="{Binding Path=id}" x:Name="TaskId"></Label>
+                <Label Grid.Row="0" Grid.Column="0" Content="{Binding Path=task}" x:Name="TaskLabel"/>
+                <Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=dateTime}" x:Name="TaskDate"/>
                 <Button Grid.Row="0" Grid.Column="2" Command="{Binding Source={StaticResource vm}, 
                     Path=RemoveCommand}" 
                         CommandParameter="{Binding ElementName=TaskId,Path=Content}" 

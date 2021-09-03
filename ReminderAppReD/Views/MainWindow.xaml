@@ -30,7 +30,7 @@
             </TabItem>
 
             <TabItem Header="{DynamicResource TabsCompletedTasksTab}">
-
+                <views:CompletedTasksTab TabIndex="1" x:Name="CompletedTasksTab"></views:CompletedTasksTab>
             </TabItem>
         </TabControl>
     </DockPanel>

@@ -26,10 +26,10 @@ namespace ReminderAppReD.Models
         {
             int Id = Convert.ToInt32(_Id);
             TasksContext Context = new TasksContext();
-            Context.CurrentTasks.Remove(Context.CurrentTasks.Where(item => item.Id == Id).First());
+            Context.CurrentTasks.Remove(Context.CurrentTasks.Where(item => item.id == Id).First());
             Context.SaveChanges();
 
-            currentTasks.Remove(currentTasks.First(item => item.Id == Id));
+            currentTasks.Remove(currentTasks.First(item => item.id == Id));
             RaisePropertyChanged(nameof(currentTasks));
         }
 
@@ -40,12 +40,14 @@ namespace ReminderAppReD.Models
 
         public void AddCurrentTask()
         {
-            TasksContext Context = new TasksContext();
-            CurrentTask newTask = new CurrentTask();
-            newTask.Task = window.NameTextBox.Text;
-            newTask.DateTime = window.DateTextBox.Text;
-            Context.CurrentTasks.Add(newTask);
-            Context.SaveChanges();
+            TasksContext context = new TasksContext();
+            CurrentTask newTask = new CurrentTask
+            {
+                task = window.NameTextBox.Text,
+                dateTime = window.DateTextBox.Text
+            };
+            context.CurrentTasks.Add(newTask);
+            context.SaveChanges();
 
             currentTasks.Add(newTask);
             RaisePropertyChanged(nameof(currentTasks));
@@ -56,8 +58,10 @@ namespace ReminderAppReD.Models
         public static void MoveCurrentToCompleted(int Id)
         {
             TasksContext context = new();
-            CurrentTask task = context.CurrentTasks.First(item => item.Id == Id);
-            //TODO: CompletedTasksTabModel.AddNew(new() { CompletionDateTime = DateTime.Now, TaskId = task.Id });
+            CurrentTask task = context.CurrentTasks.First(item => item.id == Id);
+            if (CompletedTasksTabModel.completedTasks == null) CompletedTasksTabModel.completedTasks = new();
+            CompletedTasksTabModel.completedTasks.Add(new(){completionDateTime = DateTime.Now, 
+                taskId = task.id});
             context.CurrentTasks.Remove(task);
             Func<CurrentTask, bool> action = currentTasks.Remove;
             Application.Current.Dispatcher.BeginInvoke(action, task);
@@ -67,9 +71,9 @@ namespace ReminderAppReD.Models
         public static void PostponeTask(int Id, int minutes)
         {
             TasksContext context = new();
-            CurrentTask task = context.CurrentTasks.First(item => item.Id == Id);
+            CurrentTask task = context.CurrentTasks.First(item => item.id == Id);
             DateTime time = DateTime.Now.AddMinutes(minutes);
-            CurrentTask newTask = new CurrentTask() { Task = task.Task, DateTime = $"{time.Year}.{time.Month}.{time.Day} {time.Hour}:{time.Minute}:00.0"};
+            CurrentTask newTask = new CurrentTask() { task = task.task, dateTime = $"{time.Year}.{time.Month}.{time.Day} {time.Hour}:{time.Minute}:00.0"};
             context.CurrentTasks.Add(newTask);
             Action<CurrentTask> action = currentTasks.Add;
             Application.Current.Dispatcher.BeginInvoke(action, newTask);

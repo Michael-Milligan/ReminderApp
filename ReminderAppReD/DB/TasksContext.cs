@@ -33,31 +33,31 @@ namespace ReminderAppReD.DB
         {
             modelBuilder.Entity<CompletedTask>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.id).ValueGeneratedNever();
 
-                entity.Property(e => e.CompletionDateTime)
+                entity.Property(e => e.completionDateTime)
                     .IsRequired()
                     .HasColumnType("DATETIME");
 
-                entity.Property(e => e.TaskId)
+                entity.Property(e => e.taskId)
                 .IsRequired()
                 .HasColumnName("TaskID");
 
-                entity.HasOne(d => d.Task)
-                    .WithMany(p => p.CompletedTasks)
-                    .HasForeignKey(d => d.TaskId);
+                entity.HasOne(d => d.task)
+                    .WithMany(p => p.completedTasks)
+                    .HasForeignKey(d => d.taskId);
             });
 
             modelBuilder.Entity<CurrentTask>(entity =>
             {
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.id).HasColumnName("ID");
 
-                entity.Property(e => e.DateTime)
+                entity.Property(e => e.dateTime)
                     .IsRequired()
                     .HasColumnType("String")
                     .HasColumnName("DateTime");
 
-                entity.Property(e => e.Task)
+                entity.Property(e => e.task)
                     .IsRequired()
                     .HasColumnType("String");
             });

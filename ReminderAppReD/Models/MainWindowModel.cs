@@ -39,17 +39,23 @@ namespace ReminderAppReD.Models
                     .Items[0] as TabItem).Content as CurrentTasksTab).Resources["vm"] as CurrentTasksTabVM).model.ShowAddCurrentTaskWindow();
         }
         public CurrentTaskWithSchedule alertTask { get; private set; }
+
         public void CheckForTasksTime()
         {
             TasksContext context = new TasksContext();
-            CurrentTaskWithSchedule[] tasks = context.CurrentTasks.Select(item => new CurrentTaskWithSchedule(item, item.DateTime)).ToArray();
+            CurrentTaskWithSchedule[] tasks = context.CurrentTasks.Select(item => new CurrentTaskWithSchedule(item, item.dateTime)).ToArray();
 
-            alertTask = tasks.First(item => CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now));
-            AlertWindowModel.alertTask = alertTask;
-            AlertWindow alertWindow = new AlertWindow();
-            alertWindow.Show();
-            alertWindow.Activate();
-            System.Windows.Threading.Dispatcher.Run();
+            try
+            {
+                alertTask = tasks.First(item => CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now));
+                AlertWindowModel.alertTask = alertTask;
+                AlertWindow alertWindow = new AlertWindow();
+                alertWindow.Topmost = true;
+                alertWindow.Show();
+                alertWindow.Focus();
+                System.Windows.Threading.Dispatcher.Run();
+            }
+            catch (Exception) { }
         }
 
         /// <summary>

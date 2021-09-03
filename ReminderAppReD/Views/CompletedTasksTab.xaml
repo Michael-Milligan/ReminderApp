@@ -4,29 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ReminderAppReD.Views"
+             xmlns:vms="clr-namespace:ReminderAppReD.VMs"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.Resources>
+        <vms:CompletedTasksTabVM x:Key="vm"></vms:CompletedTasksTabVM>
+        <DataTemplate x:Key="gridTemplate" x:Name="DataElementGrid">
+            <Grid ShowGridLines="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="{Binding Path=Task.task}" x:Name="TaskLabel"/>
+                <Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=completionDateTime}" x:Name="TaskDate"/>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    
     <Grid>
-        <UserControl.Resources>
-            <vms:CompletedTasksTabVM x:Key="vm"></vms:CompletedTasksTabVM>
-            <DataTemplate x:Key="gridTemplate" x:Name="DataElementGrid">
-                <Grid ShowGridLines="True">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="250"></ColumnDefinition>
-                        <ColumnDefinition Width="350"></ColumnDefinition>
-                        <ColumnDefinition Width="120"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-
-                    <Label Visibility="Hidden" Content="{Binding Path=Id}" x:Name="TaskId"></Label>
-                    <Label Grid.Row="0" Grid.Column="0" Content="{Binding Path=Task}" x:Name="TaskLabel"/>
-                    <Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=DateTime}" x:Name="TaskDate"/>
-                </Grid>
-            </DataTemplate>
-        </UserControl.Resources>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -38,8 +35,8 @@
 
         <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource CompletedTasksTabTaskLabelContent}"></Label>
         <Label Grid.Row="0" Grid.Column="1" Content="{DynamicResource CompletedTasksTabDateTimeLabelContent}"></Label>
-        <ListView Grid.Row="1" Grid.Column="0" x:Name="tasksGrid" Grid.ColumnSpan="3" SelectionMode="Single"
-                 ItemsSource="{Binding Source={StaticResource vm}, Path=CurrentTasks}"
+        <ListView Grid.Row="1" Grid.Column="0" x:Name="tasksGrid" Grid.ColumnSpan="2" SelectionMode="Single"
+                 ItemsSource="{Binding Source={StaticResource vm}, Path=completedTasks}"
                  ItemTemplate="{StaticResource gridTemplate}"/>
     </Grid>
 </UserControl>

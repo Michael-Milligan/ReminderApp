@@ -9,13 +9,13 @@ namespace ReminderAppReD.DB
     {
         public CurrentTask()
         {
-            CompletedTasks = new HashSet<CompletedTask>();
+            completedTasks = new HashSet<CompletedTask>();
         }
 
-        public int Id { get; set; }
-        public string Task { get; set; }
-        public string DateTime { get; set; }
+        public int id { get; set; }
+        public string task { get; set; }
+        public string dateTime { get; set; }
 
-        public virtual ICollection<CompletedTask> CompletedTasks { get; set; }
+        public virtual ICollection<CompletedTask> completedTasks { get; set; }
     }
 }

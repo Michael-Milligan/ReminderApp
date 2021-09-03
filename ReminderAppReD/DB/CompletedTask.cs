@@ -7,10 +7,10 @@ namespace ReminderAppReD.DB
 {
     public partial class CompletedTask
     {
-        public int TaskId { get; set; }
-        public DateTime CompletionDateTime { get; set; }
-        public int Id { get; set; }
+        public int taskId { get; set; }
+        public DateTime completionDateTime { get; set; }
+        public int id { get; set; }
 
-        public virtual CurrentTask Task { get; set; }
+        public virtual CurrentTask task { get; set; }
     }
 }
