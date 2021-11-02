@@ -1,4 +1,3 @@
-D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\DB\Tasks.sqlite
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\ReminderAppReD.exe
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\ReminderAppReD.deps.json
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\ReminderAppReD.runtimeconfig.json
@@ -71,3 +70,4 @@ D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\ReminderAppReD.d
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\ref\ReminderAppReD.dll
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\ReminderAppReD.pdb
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\ReminderAppReD.genruntimeconfig.cache
+D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\DB\Tasks.sqlite

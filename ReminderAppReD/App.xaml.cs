@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
+using System.Diagnostics;
 
 namespace ReminderAppReD
 {
@@ -26,7 +27,7 @@ namespace ReminderAppReD
 
             language = ReminderAppReD.Properties.Settings.Default.defaultLanguage;
 
-            timer = new DispatcherTimer(new TimeSpan(0, 5, 0), DispatcherPriority.Background,
+            timer = new DispatcherTimer(new TimeSpan(0, 1, 0), DispatcherPriority.Background,
                 (sender, args) =>
                 {
                     Thread thread = new(new MainWindowModel().CheckForTasksTime);
@@ -36,6 +37,7 @@ namespace ReminderAppReD
                     thread.Start();
                 }, Current.Dispatcher);
             timer.Start();
+            Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.Idle;
         }
 
         public static CultureInfo language

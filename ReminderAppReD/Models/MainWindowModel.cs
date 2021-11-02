@@ -7,7 +7,9 @@ using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Windows;
+using System.IO;
 using System.Windows.Controls;
+using System.Diagnostics;
 
 namespace ReminderAppReD.Models
 {
@@ -16,6 +18,7 @@ namespace ReminderAppReD.Models
         public readonly List<CultureInfo> languages = new List<CultureInfo>();
         public static void Exit()
         {
+            File.AppendAllText("D:\\12.txt", Process.GetCurrentProcess().Threads.Count.ToString() + "\n");
             Application.Current.Shutdown();
         }
         public static void SwitchTo(string name)
@@ -40,6 +43,7 @@ namespace ReminderAppReD.Models
         }
         public CurrentTaskWithSchedule alertTask { get; private set; }
 
+        //TODO: Bottleneck
         public void CheckForTasksTime()
         {
             TasksContext context = new TasksContext();
@@ -69,7 +73,7 @@ namespace ReminderAppReD.Models
         private bool CompareDates(DateTime time1, DateTime time2)
         {
             TimeSpan difference = time1.Subtract(time2);
-            return difference.Days == 0 && difference.Hours == 0 && difference.Minutes < 10;
+            return difference.Days == 0 && difference.Hours == 0 && difference.Minutes < 1;
 
         }
     }

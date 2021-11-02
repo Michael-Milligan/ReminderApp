@@ -53,6 +53,7 @@ namespace ReminderAppReD.Models
             RaisePropertyChanged(nameof(currentTasks));
 
             window.Close();
+            window = new();
         }
 
         public static void MoveCurrentToCompleted(int Id)

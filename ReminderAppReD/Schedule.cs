@@ -81,7 +81,7 @@ namespace ReminderAppReD
         public Schedule(string scheduleString)
         {
             Regex date = new(@"^(.+)\.(.+)\.([^\s]+)\s.*\s?");
-            Regex time = new(@"\s.*\s?([^s]+):(.+):(.+)\.(.+)$");
+            Regex time = new(@"\s.*?\s?([^\s]+):(.+):(.+)\.(.+)$");
             Regex weekDay = new(@"\s(.*)\s");
             MatchCollection dateMatches = date.Matches(scheduleString);
             MatchCollection timeMatches = time.Matches(scheduleString);
@@ -243,44 +243,58 @@ namespace ReminderAppReD
             time.millisecond = Next(t1.Millisecond, milliseconds).value;
             
             bool[] overflowBits = new bool[6]; overflowBits.Initialize();
+            int[] sizes = new int[7] { years.Count(), months.Count(), days.Count(), hours.Count(), minutes.Count(), seconds.Count(), milliseconds.Count() };
 
-            while (time.year <= years.Last())
-            {
-                while (time.month <= months.Last())
+            do {
+                do
                 {
-                    while (time.day <= days.Last())
+                    do
                     {
                         if (time.day > DateTime.DaysInMonth(time.year, time.month))
-                            time.IncreaseProperty("day");
-                        if (!weekDays.Contains((int)new DateTime(time.year, time.month, time.day).DayOfWeek))
-                            time.IncreaseProperty("day");
-                        while (time.hour <= hours.Last())
                         {
-                            while (time.minute <= minutes.Last())
+                            time.IncreaseProperty("day");
+                            continue;
+                        }
+                        if (!weekDays.Contains((int)new DateTime(time.year, time.month, time.day).DayOfWeek))
+                        {
+                            time.IncreaseProperty("day");
+                            continue;
+                        }
+                        do
+                        {
+                            do
                             {
-                                while (time.second <= seconds.Last())
+                                do
                                 {
-                                    while (time.millisecond <= milliseconds.Last())
+                                    do
                                     {
-                                        DateTime result = new(time.year, time.month, time.day, time.hour, time.minute, time.second, time.millisecond);
+                                        DateTime result = new(time.year, time.month, time.day,
+                                            time.hour, time.minute, time.second, time.millisecond);
                                         if (IsValid(result))
                                         {
                                             return result;
                                         }
-                                        time.IncreaseProperty("millisecond");
+                                        if (sizes[6] != 1) time.IncreaseProperty("millisecond");
                                     }
-                                    time.IncreaseProperty("second");
+                                    while (sizes[6] != 1 && time.millisecond <= milliseconds.Last());
+                                    if (sizes[5] != 1) time.IncreaseProperty("second");
                                 }
-                                time.IncreaseProperty("minute");
+                                while (sizes[5] != 1 && time.second <= seconds.Last());
+                                if (sizes[4] != 1) time.IncreaseProperty("minute");
                             }
-                            time.IncreaseProperty("hour");
+                            while (sizes[4] != 1 && time.minute <= minutes.Last());
+                            if (sizes[3] != 1) time.IncreaseProperty("hour");
                         }
-                        time.IncreaseProperty("day");
+                        while (sizes[3] != 1 && time.hour <= hours.Last());
+                        if (sizes[2] != 1) time.IncreaseProperty("day");
                     }
-                    time.IncreaseProperty("month");
+                    while (sizes[2] != 1 && time.day <= days.Last());
+                    if (sizes[1] != 1) time.IncreaseProperty("month");
                 }
-                time.IncreaseProperty("year");
+                while (sizes[1] != 1 && time.month <= months.Last());
+                if (sizes[0] != 1) time.IncreaseProperty("year");
             }
+            while (sizes[0] != 1 && time.year <= years.Last());
             throw new Exception("Next event couldn't be found");
         }
 
@@ -289,7 +303,7 @@ namespace ReminderAppReD
             int i = 0;
             try
             {
-                while (listToSearch[i] < data) { ++i; }
+                while (listToSearch[i] <= data) { ++i; }
                 return (listToSearch[i], false);
 
             }
