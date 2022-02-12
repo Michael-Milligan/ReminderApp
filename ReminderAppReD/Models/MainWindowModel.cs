@@ -58,13 +58,14 @@ namespace ReminderAppReD.Models
                 alertWindow.Show();
                 alertWindow.Focus();
                 System.Windows.Threading.Dispatcher.Run();
+                File.AppendAllText("d:\\1.txt", $"{alertTask}: {DateTime.Now}");
             }
             catch (Exception) { }
         }
 
         /// <summary>
         /// Checks whether the given times are equal in terms of year, month, 
-        /// day and hour parameters while giving 10 minutes of space for minutes 
+        /// day and hour parameters while giving 1 minute of space for minutes 
         /// parameter
         /// </summary>
         /// <param name="time1"></param>

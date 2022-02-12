@@ -5,7 +5,12 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <NeutralLanguage>en</NeutralLanguage>
+    <ApplicationIcon>bell-vector-icon-toller-flat-260nw-1136004323.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="bell-vector-icon-toller-flat-260nw-1136004323.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="5.0.4" />

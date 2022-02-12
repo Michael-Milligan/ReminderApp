@@ -71,3 +71,5 @@ D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\ref\ReminderAppR
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\ReminderAppReD.pdb
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\ReminderAppReD.genruntimeconfig.cache
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\DB\Tasks.sqlite
+D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\ReminderAppReD_Content.g.cs
+D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\ReminderAppReD.csproj.CopyComplete
