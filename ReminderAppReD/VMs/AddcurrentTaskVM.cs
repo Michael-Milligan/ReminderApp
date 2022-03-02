@@ -20,12 +20,11 @@ namespace ReminderAppReD.VMs
                 {
                     model.AddTaskToList();
                 }
-                catch (FormatException)
+                catch (FormatException e)
                 {
-                    if (MessageBox.Show("Please, enter a valid date and time in valid format", "Error",
+                    if (MessageBox.Show($"%Please, enter a valid date and time in valid format% \n{e}", "Error",
                         MessageBoxButton.OKCancel, MessageBoxImage.Error) == MessageBoxResult.Cancel)
                     {
-                        
                         AddCurrentTaskWindow window = Application.Current.Windows.Cast<Window>().First(item => item.Title == "AddCurrentTaskView") as AddCurrentTaskWindow;
                         window.Close(); 
                     }
