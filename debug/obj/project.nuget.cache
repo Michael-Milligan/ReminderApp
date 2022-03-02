@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ViibDus2nRtcOQtX7p3aqoV47LxqrmhYxqjnxUMIlQUENxGXY0ashPrc2d5Zk879F75lVcPHEbYd+cnHYacycA==",
+  "dgSpecHash": "epfeOmmnnU5fCZG3jf/WhM8WWkhBYwlZmOYhVdzi0n1kcjfcesKJNsIrIUpp0QAi/D3mqz88vXaPiOJh9hLjtQ==",
   "success": true,
   "projectFilePath": "D:\\GitHub\\ReminderApp\\debug\\debug.csproj",
   "expectedPackageFiles": [
@@ -32,8 +32,7 @@
     "C:\\Users\\User\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+    "C:\\Users\\User\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
   "logs": []
 }

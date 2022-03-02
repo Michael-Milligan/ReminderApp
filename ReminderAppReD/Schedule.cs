@@ -106,20 +106,20 @@ namespace ReminderAppReD
 
         public void FillWithInParameter(string scheduleString)
 		{
-            int _minutes = new Regex(@"in (\d+) minutes").Match(scheduleString).Groups[1].Value;
-            int _hours = new Regex(@"in (\d+) hours").Match(scheduleString).Groups[1].Value;
-            int _days = new Regex(@"in (\d+) days").Match(scheduleString).Groups[1].Value;
+            //int _minutes = new Regex(@"in (\d+) minutes").Match(scheduleString).Groups[1].Value;
+            //int _hours = new Regex(@"in (\d+) hours").Match(scheduleString).Groups[1].Value;
+            //int _days = new Regex(@"in (\d+) days").Match(scheduleString).Groups[1].Value;
 
-            DateTime date = DateTime.Now;
+            //DateTime date = DateTime.Now;
 
-            years = date.Year;
-            months = date.Month;
-            days = date.Day + _days;
-            hours = date.Hour + _hours;
-            minutes = date.Minute + _minutes;
-            seconds = date.Second;
-            milliseconds = date.Millisecond;
-            weekDays = { 1, 2, 3, 4, 5, 6, 7};
+            //years = date.Year;
+            //months = date.Month;
+            //days = date.Day + _days;
+            //hours = date.Hour + _hours;
+            //minutes = date.Minute + _minutes;
+            //seconds = date.Second;
+            //milliseconds = date.Millisecond;
+            //weekDays = { 1, 2, 3, 4, 5, 6, 7};
         }
 
         private void FillList(string data, ref List<int> listToFill, int beginNumber, int defaultCapacity)
