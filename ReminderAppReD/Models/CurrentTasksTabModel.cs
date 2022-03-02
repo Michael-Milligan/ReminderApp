@@ -108,9 +108,9 @@ namespace ReminderAppReD.Models
 
 			int year = date.Year;
 			int month = date.Month;
-			int day = _day != "" ? date.Day + Convert.ToInt32(_day) : date.Day;
-			int hour = _hour != "" ? date.Hour + Convert.ToInt32(_hour) : date.Hour;
-			int minute = _minute != "" ? date.Minute + Convert.ToInt32(_minute) : date.Minute;
+			int day = !string.IsNullOrEmpty(_day) ? date.Day + Convert.ToInt32(_day) : date.Day;
+			int hour = !string.IsNullOrEmpty(_hour) ? date.Hour + Convert.ToInt32(_hour) : date.Hour;
+			int minute = !string.IsNullOrEmpty(_minute) ? date.Minute + Convert.ToInt32(_minute) : date.Minute;
 
 			return $"{year}.{month}.{day} {hour}:{minute}:00.00";
 		}
