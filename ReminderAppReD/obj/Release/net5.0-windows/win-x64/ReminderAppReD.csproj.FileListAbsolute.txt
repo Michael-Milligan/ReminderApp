@@ -3,7 +3,6 @@ D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\win-x64\Reminder
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\win-x64\ReminderAppReD.runtimeconfig.json
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\win-x64\ReminderAppReD.runtimeconfig.dev.json
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\win-x64\ReminderAppReD.dll
-D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\win-x64\ref\ReminderAppReD.dll
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\win-x64\ReminderAppReD.pdb
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\win-x64\Humanizer.dll
 D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\win-x64\Microsoft.Data.Sqlite.dll
@@ -57,6 +56,7 @@ D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\win-x64\Reminder
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\win-x64\ref\ReminderAppReD.dll
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\win-x64\ReminderAppReD.pdb
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\win-x64\ReminderAppReD.genruntimeconfig.cache
-D:\GitHub\ReminderApp\ReminderAppReD\bin\Release\net5.0-windows\win-x64\DB\Tasks.sqlite
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\win-x64\ReminderAppReD_Content.g.cs
 D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\win-x64\ReminderAppReD.csproj.CopyComplete
+D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\win-x64\ReminderAppReD.csproj.AssemblyReference.cache
+D:\GitHub\ReminderApp\ReminderAppReD\obj\Release\net5.0-windows\win-x64\refint\ReminderAppReD.dll

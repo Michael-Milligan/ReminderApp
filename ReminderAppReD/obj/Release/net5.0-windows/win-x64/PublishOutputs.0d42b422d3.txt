@@ -1,4 +1,3 @@
 C:\Program Files\ReD\ReminderAppReD.pdb
-C:\Program Files\ReD\DB\Tasks.sqlite
 C:\Program Files\ReD\e_sqlite3.dll
 C:\Program Files\ReD\ReminderAppReD.exe
