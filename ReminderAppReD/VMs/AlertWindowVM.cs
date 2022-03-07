@@ -20,19 +20,19 @@ namespace ReminderAppReD.VMs
         public AlertWindowVM()
         {
             model.PropertyChanged += OnPropertyChanged;
-            PostponeCommand = new(() =>
+            PostponeCommand = new((string windowId) =>
             {
-                AlertWindowModel.PostponeAlert(alertTask.task.id, Convert.ToInt32(postponingTime));
+                AlertWindowModel.PostponeAlert(alertTask.task.id, Convert.ToInt32(postponingTime), windowId);
             });
-            DoneCommand = new(() => { AlertWindowModel.Done(alertTask.task.id); });
-            OkCommand = new(() => { AlertWindowModel.Ok(); });
+            DoneCommand = new((string windowId) => { AlertWindowModel.Done(alertTask.task.id, windowId); });
+            OkCommand = new((string windowId) => { AlertWindowModel.Ok(windowId); });
             alertTask = AlertWindowModel.alertTask;
             taskNextTime = alertTask.schedule.NextEvent(DateTime.Now);
         }
 
-        public DelegateCommand PostponeCommand { get; set; }
-        public DelegateCommand DoneCommand { get; set; }
-        public DelegateCommand OkCommand { get; set; }
+        public DelegateCommand<string> PostponeCommand { get; set; }
+        public DelegateCommand<string> DoneCommand { get; set; }
+        public DelegateCommand<string> OkCommand { get; set; }
 
         public void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
         {

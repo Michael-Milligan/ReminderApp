@@ -14,27 +14,27 @@ namespace ReminderAppReD.Models
 {
 	class CurrentTasksTabModel : BindableBase
 	{
-		public static ObservableCollection<CurrentTask> currentTasks;
-		AddCurrentTaskWindow window = new AddCurrentTaskWindow();
+		public static ObservableCollection<CurrentTaskWithSchedule> currentTasks;
+		static AddCurrentTaskWindow window = new();
 
 		public CurrentTasksTabModel()
 		{
-			TasksContext Context = new TasksContext();
-			currentTasks = new(Context.CurrentTasks);
+			TasksContext context = new TasksContext();
+			currentTasks = new(context.CurrentTasks.Select(item => new CurrentTaskWithSchedule(item, item.dateTime))); ;
 		}
 
 		public void RemoveTask(string _Id)
 		{
 			int Id = Convert.ToInt32(_Id);
 			TasksContext Context = new TasksContext();
-			Context.CurrentTasks.Remove(Context.CurrentTasks.Where(item => item.id == Id).First());
+			Context.CurrentTasks.Remove(Context.CurrentTasks.First(item => item.id == Id));
 			Context.SaveChanges();
 
-			currentTasks.Remove(currentTasks.First(item => item.id == Id));
+			currentTasks.Remove(currentTasks.First(item => item.task.id == Id));
 			RaisePropertyChanged(nameof(currentTasks));
 		}
 
-		public void ShowAddCurrentTaskWindow()
+		public static void ShowAddCurrentTaskWindow()
 		{
 			window.Show();
 		}
@@ -52,7 +52,7 @@ namespace ReminderAppReD.Models
 			context.CurrentTasks.Add(newTask);
 			context.SaveChanges();
 
-			currentTasks.Add(newTask);
+			currentTasks.Add(new(newTask, newTask.dateTime));
 			RaisePropertyChanged(nameof(currentTasks));
 
 			window.Close();
@@ -70,7 +70,7 @@ namespace ReminderAppReD.Models
 				taskId = task.id
 			});
 			context.CurrentTasks.Remove(task);
-			Func<CurrentTask, bool> action = currentTasks.Remove;
+			Func<CurrentTaskWithSchedule, bool> action = currentTasks.Remove;
 			Application.Current.Dispatcher.BeginInvoke(action, task);
 			context.SaveChanges();
 		}
@@ -83,22 +83,22 @@ namespace ReminderAppReD.Models
 			CurrentTask newTask = new CurrentTask()
 				{task = task.task, dateTime = $"{time.Year}.{time.Month}.{time.Day} {time.Hour}:{time.Minute}:00.0"};
 			context.CurrentTasks.Add(newTask);
-			Action<CurrentTask> action = currentTasks.Add;
+			Action<CurrentTaskWithSchedule> action = currentTasks.Add;
 			Application.Current.Dispatcher.BeginInvoke(action, newTask);
 			context.SaveChanges();
 		}
 
-		public void OnMouseEnter(object sender, RoutedEventArgs args)
+		public static void OnMouseEnter(object sender, RoutedEventArgs args)
 		{
 			(sender as ScrollViewer).Opacity = 1;
 		}
 
-		public void OnMouseLeave(object sender, RoutedEventArgs args)
+		public static void OnMouseLeave(object sender, RoutedEventArgs args)
 		{
 			(sender as ScrollViewer).Opacity = 0;
 		}
 
-		public string FromRelativeToAbsoluteTime(string scheduleString)
+		public static string FromRelativeToAbsoluteTime(string scheduleString)
 		{
 			string _minute = new Regex(@"(\d+)\sminutes").Match(scheduleString).Groups[1].Value;
 			string _hour = new Regex(@"(\d+)\shours").Match(scheduleString).Groups[1].Value;

@@ -18,7 +18,6 @@ namespace ReminderAppReD.Models
         public readonly List<CultureInfo> languages = new List<CultureInfo>();
         public static void Exit()
         {
-            File.AppendAllText("D:\\12.txt", Process.GetCurrentProcess().Threads.Count.ToString() + "\n");
             Application.Current.Shutdown();
         }
         public static void SwitchTo(string name)
@@ -38,29 +37,26 @@ namespace ReminderAppReD.Models
         }
         public static void AddCurrentTask()
         {
-            (((((Application.Current.Windows[0].Content as DockPanel).Children.Cast<UIElement>().ElementAt(1) as TabControl)
-                    .Items[0] as TabItem).Content as CurrentTasksTab).Resources["vm"] as CurrentTasksTabVM).model.ShowAddCurrentTaskWindow();
+            CurrentTasksTabModel.ShowAddCurrentTaskWindow();
         }
-        public CurrentTaskWithSchedule alertTask { get; private set; }
-
-        //TODO: Bottleneck
-        public void CheckForTasksTime()
+        public static CurrentTaskWithSchedule alertTask { get; private set; }
+        
+        public static void CheckForTasksTime()
         {
-            TasksContext context = new TasksContext();
-            CurrentTaskWithSchedule[] tasks = context.CurrentTasks.Select(item => new CurrentTaskWithSchedule(item, item.dateTime)).ToArray();
-
             try
             {
-                alertTask = tasks.First(item => CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now));
-                AlertWindowModel.alertTask = alertTask;
-                AlertWindow alertWindow = new AlertWindow();
-                alertWindow.Topmost = true;
-                alertWindow.Show();
-                alertWindow.Focus();
-                System.Windows.Threading.Dispatcher.Run();
-                File.AppendAllText("d:\\1.txt", $"{alertTask}: {DateTime.Now}");
+	            alertTask = CurrentTasksTabModel.currentTasks.First(item => CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now));
+	            AlertWindowModel.alertTask = alertTask;
+				AlertWindow alertWindow = new AlertWindow
+				{
+					Topmost = true
+				};
+				alertWindow.Show();
+	            alertWindow.Focus();
+	            System.Windows.Threading.Dispatcher.Run();
             }
-            catch (Exception) { }
+            catch (Exception)
+            { }
         }
 
         /// <summary>
@@ -71,7 +67,7 @@ namespace ReminderAppReD.Models
         /// <param name="time1"></param>
         /// <param name="time2"></param>
         /// <returns></returns>
-        private bool CompareDates(DateTime time1, DateTime time2)
+        private static bool CompareDates(DateTime time1, DateTime time2)
         {
             TimeSpan difference = time1.Subtract(time2);
             return difference.Days == 0 && difference.Hours == 0 && difference.Minutes < 1;

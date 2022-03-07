@@ -13,8 +13,7 @@ namespace ReminderAppReD.Models
     {
         public void AddTaskToList()
         {
-            (((((Application.Current.Windows[0].Content as DockPanel).Children.Cast<UIElement>().ElementAt(1) as TabControl)
-                    .Items[0] as TabItem).Content as CurrentTasksTab).Resources["vm"] as CurrentTasksTabVM).model.AddCurrentTask();
+            new CurrentTasksTabModel().AddCurrentTask();
         }
 	}
 }

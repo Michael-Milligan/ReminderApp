@@ -38,14 +38,17 @@
         <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Content="{Binding Source={StaticResource vm}, Path=taskNextTime}"></Label>
 
         <Button Grid.Row="3" Grid.Column="0"
-                Content="{DynamicResource AlertWindowPostponeButtonContent}" Command="{Binding Source={StaticResource vm}, Path=PostponeCommand}"></Button>
+                Content="{DynamicResource AlertWindowPostponeButtonContent}" Command="{Binding Source={StaticResource vm}, Path=PostponeCommand}"
+                CommandParameter="{Binding ElementName=Id}"></Button>
         
         <TextBox Grid.Row="3" Grid.Column="1" x:Name="postponeTime" 
                  Text="{Binding Source={StaticResource vm}, Path=postponingTime, Mode=OneWayToSource}"></TextBox>
          
         <Button Grid.Row="3" Grid.Column="2" 
-                Content="{DynamicResource AlertWindowDoneButtonContent}" Command="{Binding Source={StaticResource vm}, Path=DoneCommand}"></Button>
+                Content="{DynamicResource AlertWindowDoneButtonContent}" Command="{Binding Source={StaticResource vm}, Path=DoneCommand}" 
+                CommandParameter="{Binding ElementName=Id}"></Button>
         <Button Grid.Row="3" Grid.Column="3" 
-                Content="{DynamicResource AlertWindowOkButtonContent}" Command="{Binding Source={StaticResource vm}, Path=OkCommand}"></Button>
+                Content="{DynamicResource AlertWindowOkButtonContent}" Command="{Binding Source={StaticResource vm}, Path=OkCommand}"
+                CommandParameter="{Binding ElementName=Id}"></Button>
     </Grid>
 </Window>

@@ -30,7 +30,7 @@ namespace ReminderAppReD
             timer = new DispatcherTimer(new TimeSpan(0, 1, 0), DispatcherPriority.Background,
                 (sender, args) =>
                 {
-                    Thread thread = new(new MainWindowModel().CheckForTasksTime);
+                    Thread thread = new(MainWindowModel.CheckForTasksTime);
                     thread.Name = $"{ID++}";
                     thread.SetApartmentState(ApartmentState.STA);
                     thread.IsBackground = true;

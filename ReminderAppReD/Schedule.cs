@@ -11,6 +11,7 @@ namespace ReminderAppReD
     /// </summary>
     public class Schedule
     {
+	    public string scheduleString { get; set; }  
         public readonly List<int> milliseconds = new();
         public readonly List<int> seconds = new();
         public readonly List<int> minutes = new();
@@ -80,6 +81,7 @@ namespace ReminderAppReD
         /// </param>
         public Schedule(string scheduleString)
         {
+	        this.scheduleString = scheduleString;
             Regex date = new(@"^(.+)\.(.+)\.([^\s]+)\s.*\s?");
             Regex time = new(@"\s.*?\s?([^\s]+):(.+):(.+)\.(.+)$");
             Regex weekDay = new(@"\s(.*)\s");
@@ -318,6 +320,11 @@ namespace ReminderAppReD
                 return milliseconds.Contains(time.Millisecond) && seconds.Contains(time.Second) &&
             minutes.Contains(time.Minute) && hours.Contains(time.Hour) && days.Contains(time.Day) && months.Contains(time.Month) &&
             years.Contains(time.Year) && weekDays.Contains((int)time.DayOfWeek);
+        }
+
+        public override string ToString()
+        {
+	        return scheduleString;
         }
     }
 }

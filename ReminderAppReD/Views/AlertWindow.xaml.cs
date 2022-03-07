@@ -8,10 +8,13 @@ namespace ReminderAppReD.Views
     /// </summary>
     public partial class AlertWindow : Window
     {
-        public AlertWindow()
+	    private static int _idFormer = 0;
+	    public readonly string Id;
+
+	    public AlertWindow()
         {
             InitializeComponent();
-            Application.Current.Resources["alertWindow"] = this;
+            Id = _idFormer++.ToString();
         }
     }
 }
