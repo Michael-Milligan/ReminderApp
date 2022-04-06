@@ -14,7 +14,7 @@ namespace ReminderAppReD.Models
     class AlertWindowModel : BindableBase
     {
         /// <summary>
-        /// The value will be overwritten by next task, but we use it only on creation on windows, so wouldn't hurt
+        /// The value will be overwritten by next task, but we use it only on creation of windows, so wouldn't hurt
         /// </summary>
         public static CurrentTaskWithSchedule alertTask {  get; set; }
 
@@ -27,7 +27,6 @@ namespace ReminderAppReD.Models
 		        _postponingTime = value;
                 RaisePropertyChanged(nameof(_postponingTime));
 	        }
-
         }
 
         public static void PostponeAlert(int Id, int minutes, string windowId)

@@ -22,9 +22,9 @@ namespace ReminderAppReD.VMs
             model.PropertyChanged += OnPropertyChanged;
             PostponeCommand = new((string windowId) =>
             {
-                AlertWindowModel.PostponeAlert(alertTask.task.id, Convert.ToInt32(postponingTime), windowId);
+                AlertWindowModel.PostponeAlert((int)alertTask.task.id, Convert.ToInt32(postponingTime), windowId);
             });
-            DoneCommand = new((string windowId) => { AlertWindowModel.Done(alertTask.task.id, windowId); });
+            DoneCommand = new((string windowId) => { AlertWindowModel.Done((int)alertTask.task.id, windowId); });
             OkCommand = new((string windowId) => { AlertWindowModel.Ok(windowId); });
             alertTask = AlertWindowModel.alertTask;
             taskNextTime = alertTask.schedule.NextEvent(DateTime.Now);

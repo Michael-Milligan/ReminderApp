@@ -3,8 +3,10 @@ using Prism.Mvvm;
 using ReminderAppReD.DB;
 using ReminderAppReD.Models;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 
 namespace ReminderAppReD.VMs
 {
@@ -22,7 +24,9 @@ namespace ReminderAppReD.VMs
             });
 
             model.PropertyChanged += OnPropertyChanged;
-            CurrentTasks = CurrentTasksTabModel.currentTasks;
+
+            var temp = CurrentTasksTabModel.currentTasks.Select(item => item.task);
+            CurrentTasks = new(temp);
         }
 
         public void OnPropertyChanged(object sender, PropertyChangedEventArgs args)

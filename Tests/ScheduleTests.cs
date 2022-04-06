@@ -51,11 +51,5 @@ namespace Tests
 
             Assert.AreEqual(Convert.ToDateTime("09/01/2021 10:00:00.0 AM"), schedule.NextEvent(DateTime.Now));
         }
-
-        [Test]
-        public void SchedulePrevEventTest()
-        {
-
-        }
     }
 }

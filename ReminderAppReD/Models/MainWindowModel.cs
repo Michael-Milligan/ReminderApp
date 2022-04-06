@@ -40,24 +40,33 @@ namespace ReminderAppReD.Models
             CurrentTasksTabModel.ShowAddCurrentTaskWindow();
         }
         public static CurrentTaskWithSchedule alertTask { get; private set; }
-        
-        public static void CheckForTasksTime()
-        {
-            try
-            {
-	            alertTask = CurrentTasksTabModel.currentTasks.First(item => CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now));
-	            AlertWindowModel.alertTask = alertTask;
+
+		/// <summary>
+		/// Gets every task's nextEvent and compares it's to current time
+		/// </summary>
+		public static void CheckForTasksTime()
+		{
+			try
+			{
+				alertTask = CurrentTasksTabModel.currentTasks.First(item =>
+					CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now));
+				AlertWindowModel.alertTask = alertTask;
 				AlertWindow alertWindow = new AlertWindow
 				{
 					Topmost = true
 				};
 				alertWindow.Show();
-	            alertWindow.Focus();
-	            System.Windows.Threading.Dispatcher.Run();
-            }
-            catch (Exception)
-            { }
-        }
+				alertWindow.Focus();
+				System.Windows.Threading.Dispatcher.Run();
+			}
+			catch (InvalidOperationException)
+			{
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show(e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+		}
 
         /// <summary>
         /// Checks whether the given times are equal in terms of year, month, 

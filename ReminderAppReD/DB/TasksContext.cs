@@ -1,8 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-
-#nullable disable
 
 namespace ReminderAppReD.DB
 {
@@ -24,7 +23,7 @@ namespace ReminderAppReD.DB
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlite(ReminderAppReD.Properties.Resources.ConnectionString);
+                optionsBuilder.UseSqlite("Data Source=file:C:\\Users\\User\\Documents\\ReD\\Tasks.sqlite");
             }
         }
 
@@ -38,12 +37,10 @@ namespace ReminderAppReD.DB
                     .IsRequired()
                     .HasColumnType("DATETIME");
 
-                entity.Property(e => e.taskId)
-                .IsRequired()
-                .HasColumnName("TaskID");
+                entity.Property(e => e.taskId).HasColumnName("TaskID");
 
-                entity.HasOne(d => d.task)
-                    .WithMany(p => p.completedTasks)
+                entity.HasOne(d => d.Task)
+                    .WithMany(p => p.CompletedTasks)
                     .HasForeignKey(d => d.taskId);
             });
 
@@ -53,8 +50,7 @@ namespace ReminderAppReD.DB
 
                 entity.Property(e => e.dateTime)
                     .IsRequired()
-                    .HasColumnType("String")
-                    .HasColumnName("DateTime");
+                    .HasColumnType("String");
 
                 entity.Property(e => e.task)
                     .IsRequired()

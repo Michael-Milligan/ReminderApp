@@ -18,8 +18,8 @@ namespace ReminderAppReD
             if (grid.ColumnDefinitions.Count < 4) grid.ColumnDefinitions.Add(new() { Width = new GridLength(15, GridUnitType.Pixel) });
 
             ScrollViewer scroll = new();
-            scroll.MouseEnter += model.OnMouseEnter;
-            scroll.MouseLeave += model.OnMouseLeave;
+            scroll.MouseEnter += CurrentTasksTabModel.OnMouseEnter;
+            scroll.MouseLeave += CurrentTasksTabModel.OnMouseLeave;
 
             grid.Children.Add(scroll);
             Grid.SetColumn(scroll, column + 1);

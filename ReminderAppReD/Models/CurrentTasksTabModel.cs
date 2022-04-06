@@ -8,27 +8,38 @@ using System.Windows.Controls;
 using ReminderAppReD.Views;
 using ReminderAppReD.VMs;
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Windows.Documents;
 
 namespace ReminderAppReD.Models
 {
 	class CurrentTasksTabModel : BindableBase
 	{
+		/// <summary>
+		/// Observable collection for storing current tasks for view
+		/// </summary>
 		public static ObservableCollection<CurrentTaskWithSchedule> currentTasks;
 		static AddCurrentTaskWindow window = new();
 
-		public CurrentTasksTabModel()
+		/// <summary>
+		/// Initialises <see langword="currentTasks"/> list
+		/// </summary>
+		static CurrentTasksTabModel()
 		{
-			TasksContext context = new TasksContext();
-			currentTasks = new(context.CurrentTasks.Select(item => new CurrentTaskWithSchedule(item, item.dateTime))); ;
+			currentTasks = new(new TasksContext().CurrentTasks.Select(item => new CurrentTaskWithSchedule(item, item.dateTime)));
 		}
 
+		/// <summary>
+		/// Removes task from database and from currently existing list <see langword="currentTasks"/> while updating the view
+		/// </summary>
+		/// <param name="_Id">Identifier of task to remove</param>
 		public void RemoveTask(string _Id)
 		{
 			int Id = Convert.ToInt32(_Id);
-			TasksContext Context = new TasksContext();
-			Context.CurrentTasks.Remove(Context.CurrentTasks.First(item => item.id == Id));
-			Context.SaveChanges();
+			TasksContext context = new TasksContext();
+			context.CurrentTasks.Remove(context.CurrentTasks.First(item => item.id == Id));
+			context.SaveChanges();
 
 			currentTasks.Remove(currentTasks.First(item => item.task.id == Id));
 			RaisePropertyChanged(nameof(currentTasks));
@@ -39,6 +50,9 @@ namespace ReminderAppReD.Models
 			window.Show();
 		}
 
+		/// <summary>
+		/// Adds task to database and to currently existing list <see langword="currentTasks"/> while updating the view and closing AddCurrentTaskWindow <see langword="window"/>
+		/// </summary>
 		public void AddCurrentTask()
 		{
 			TasksContext context = new TasksContext();
@@ -59,14 +73,18 @@ namespace ReminderAppReD.Models
 			window = new();
 		}
 
+		/// <summary>
+		/// Removes task from database's CurrentTasks table and from currently existing list <see langword="currentTasks"/> and adds it
+		/// to database's CompletedTasks table while updating the view
+		/// </summary>
+		/// <param name="_Id">Identifier of task to remove</param>
 		public static void MoveCurrentToCompleted(int Id)
 		{
 			TasksContext context = new();
 			CurrentTask task = context.CurrentTasks.First(item => item.id == Id);
-			if (CompletedTasksTabModel.completedTasks == null) CompletedTasksTabModel.completedTasks = new();
 			CompletedTasksTabModel.completedTasks.Add(new()
 			{
-				completionDateTime = DateTime.Now,
+				completionDateTime = DateTime.Now.ToString(),
 				taskId = task.id
 			});
 			context.CurrentTasks.Remove(task);

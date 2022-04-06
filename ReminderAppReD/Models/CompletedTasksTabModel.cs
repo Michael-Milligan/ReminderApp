@@ -11,7 +11,7 @@ namespace ReminderAppReD.Models
 	class CompletedTasksTabModel
 	{
 		public static ObservableCollection<CompletedTask> completedTasks;
-		public CompletedTasksTabModel()
+		static CompletedTasksTabModel()
 		{
 			TasksContext context = new();
 			completedTasks = new(context.CompletedTasks);

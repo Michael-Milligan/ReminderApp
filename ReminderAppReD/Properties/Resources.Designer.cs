@@ -61,7 +61,7 @@ namespace ReminderAppReD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Data Source=C:\\Users\\User\\Documents\\ReD\\Tasks.sqlite&quot;.
+        ///   Looks up a localized string similar to &quot;Data Source=file:C:\\Users\\User\\Documents\\ReD\\Tasks.sqlite&quot;.
         /// </summary>
         internal static string ConnectionString {
             get {
