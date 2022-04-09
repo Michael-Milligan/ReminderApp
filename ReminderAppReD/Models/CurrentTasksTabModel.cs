@@ -19,7 +19,8 @@ namespace ReminderAppReD.Models
 		/// <summary>
 		/// Observable collection for storing current tasks for view
 		/// </summary>
-		public static ObservableCollection<CurrentTaskWithSchedule> currentTasks;
+		public static ObservableCollection<CurrentTask> currentTasks { get; set; }
+
 		static AddCurrentTaskWindow window = new();
 
 		/// <summary>
@@ -27,7 +28,7 @@ namespace ReminderAppReD.Models
 		/// </summary>
 		static CurrentTasksTabModel()
 		{
-			currentTasks = new(new TasksContext().CurrentTasks.Select(item => new CurrentTaskWithSchedule(item, item.dateTime)));
+			currentTasks = new(new TasksContext().CurrentTasks);
 		}
 
 		/// <summary>
@@ -41,7 +42,7 @@ namespace ReminderAppReD.Models
 			context.CurrentTasks.Remove(context.CurrentTasks.First(item => item.id == Id));
 			context.SaveChanges();
 
-			currentTasks.Remove(currentTasks.First(item => item.task.id == Id));
+			currentTasks.Remove(currentTasks.First(item => item.id == Id));
 			RaisePropertyChanged(nameof(currentTasks));
 		}
 
@@ -66,7 +67,7 @@ namespace ReminderAppReD.Models
 			context.CurrentTasks.Add(newTask);
 			context.SaveChanges();
 
-			currentTasks.Add(new(newTask, newTask.dateTime));
+			currentTasks.Add(newTask);
 			RaisePropertyChanged(nameof(currentTasks));
 
 			window.Close();
@@ -74,7 +75,7 @@ namespace ReminderAppReD.Models
 		}
 
 		/// <summary>
-		/// Removes task from database's CurrentTasks table and from currently existing list <see langword="currentTasks"/> and adds it
+		/// Removes task from database's currentTasks table and from currently existing list <see langword="currentTasks"/> and adds it
 		/// to database's CompletedTasks table while updating the view
 		/// </summary>
 		/// <param name="_Id">Identifier of task to remove</param>
@@ -88,7 +89,7 @@ namespace ReminderAppReD.Models
 				taskId = task.id
 			});
 			context.CurrentTasks.Remove(task);
-			Func<CurrentTaskWithSchedule, bool> action = currentTasks.Remove;
+			Func<CurrentTask, bool> action = currentTasks.Remove;
 			Application.Current.Dispatcher.BeginInvoke(action, task);
 			context.SaveChanges();
 		}
@@ -101,7 +102,7 @@ namespace ReminderAppReD.Models
 			CurrentTask newTask = new CurrentTask()
 				{task = task.task, dateTime = $"{time.Year}.{time.Month}.{time.Day} {time.Hour}:{time.Minute}:00.0"};
 			context.CurrentTasks.Add(newTask);
-			Action<CurrentTaskWithSchedule> action = currentTasks.Add;
+			Action<CurrentTask> action = currentTasks.Add;
 			Application.Current.Dispatcher.BeginInvoke(action, newTask);
 			context.SaveChanges();
 		}

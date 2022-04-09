@@ -48,7 +48,7 @@ namespace ReminderAppReD.Models
 		{
 			try
 			{
-				alertTask = CurrentTasksTabModel.currentTasks.First(item =>
+				alertTask = CurrentTasksTabModel.currentTasks.Select(item => new CurrentTaskWithSchedule(item, item.dateTime)) .First(item =>
 					CompareDates(item.schedule.NextEvent(DateTime.Now), DateTime.Now));
 				AlertWindowModel.alertTask = alertTask;
 				AlertWindow alertWindow = new AlertWindow

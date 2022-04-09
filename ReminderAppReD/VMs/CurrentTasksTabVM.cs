@@ -14,7 +14,7 @@ namespace ReminderAppReD.VMs
     {
         public readonly CurrentTasksTabModel model = new();
         public DelegateCommand<object> RemoveCommand { get; set; }
-        public ObservableCollection<CurrentTask> CurrentTasks {get; set; }
+        public ObservableCollection<CurrentTask> currentTasks {get; set; }
 
         public CurrentTasksTabVM()
         {
@@ -24,17 +24,16 @@ namespace ReminderAppReD.VMs
             });
 
             model.PropertyChanged += OnPropertyChanged;
-
-            var temp = CurrentTasksTabModel.currentTasks.Select(item => item.task);
-            CurrentTasks = new(temp);
+            
+            currentTasks = new(CurrentTasksTabModel.currentTasks);
         }
 
         public void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
         {
             switch (args.PropertyName)
             {
-                case "CurrentTasks":
-                    RaisePropertyChanged(nameof(CurrentTasks));
+                case "currentTasks":
+                    RaisePropertyChanged(nameof(currentTasks));
                     break;
             }
         }
