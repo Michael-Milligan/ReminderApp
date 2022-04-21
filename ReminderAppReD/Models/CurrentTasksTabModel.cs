@@ -88,12 +88,12 @@ namespace ReminderAppReD.Models
 			context.SaveChanges();
 		}
 
-		public void OnMouseEnter(object sender, RoutedEventArgs args)
+		public static void OnMouseEnter(object sender, RoutedEventArgs args)
 		{
 			(sender as ScrollViewer).Opacity = 1;
 		}
 
-		public void OnMouseLeave(object sender, RoutedEventArgs args)
+		public static void OnMouseLeave(object sender, RoutedEventArgs args)
 		{
 			(sender as ScrollViewer).Opacity = 0;
 		}
