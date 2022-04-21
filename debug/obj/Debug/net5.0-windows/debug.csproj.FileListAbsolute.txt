@@ -1,7 +1,6 @@
 D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\ReminderAppReD.deps.json
 D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\ReminderAppReD.runtimeconfig.json
 D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\ReminderAppReD.runtimeconfig.dev.json
-D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\DB\Tasks.sqlite
 D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\ReminderAppReD.exe
 D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\debug.exe
 D:\GitHub\ReminderApp\debug\bin\Debug\net5.0-windows\debug.deps.json

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ReminderAppReD.DB
+namespace ReminderAppReD
 {
     public partial class CompletedTask
     {
@@ -11,6 +11,6 @@ namespace ReminderAppReD.DB
         public DateTime completionDateTime { get; set; }
         public int id { get; set; }
 
-        public virtual CurrentTask task { get; set; }
+        public virtual CurrentTask Task { get; set; }
     }
 }

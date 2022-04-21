@@ -8,7 +8,6 @@ D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\testhost.dll
 D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\ReminderAppReD.deps.json
 D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\ReminderAppReD.runtimeconfig.json
 D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\ReminderAppReD.runtimeconfig.dev.json
-D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\DB\Tasks.sqlite
 D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\ReminderAppReD.exe
 D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\testhost.exe
 D:\GitHub\ReminderApp\Tests\bin\Debug\net5.0-windows\Microsoft.TestPlatform.PlatformAbstractions.dll

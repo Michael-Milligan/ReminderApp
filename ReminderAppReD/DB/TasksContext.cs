@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace ReminderAppReD.DB
+namespace ReminderAppReD
 {
     public partial class TasksContext : DbContext
     {
@@ -24,8 +24,7 @@ namespace ReminderAppReD.DB
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlite("Data Source=C:\\Users\\User\\Documents\\ReD\\Tasks.sqlite");
+				optionsBuilder.UseSqlite("Data Source=C:\\Users\\User\\Documents\\ReD\\Tasks.sqlite");
             }
         }
 
@@ -39,12 +38,10 @@ namespace ReminderAppReD.DB
                     .IsRequired()
                     .HasColumnType("DATETIME");
 
-                entity.Property(e => e.taskId)
-                .IsRequired()
-                .HasColumnName("TaskID");
+                entity.Property(e => e.taskId).HasColumnName("TaskID");
 
-                entity.HasOne(d => d.task)
-                    .WithMany(p => p.completedTasks)
+                entity.HasOne(d => d.Task)
+                    .WithMany(p => p.CompletedTasks)
                     .HasForeignKey(d => d.taskId);
             });
 
@@ -54,8 +51,7 @@ namespace ReminderAppReD.DB
 
                 entity.Property(e => e.dateTime)
                     .IsRequired()
-                    .HasColumnType("String")
-                    .HasColumnName("DateTime");
+                    .HasColumnType("String");
 
                 entity.Property(e => e.task)
                     .IsRequired()
