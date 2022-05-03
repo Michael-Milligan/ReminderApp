@@ -83,9 +83,9 @@ namespace ReminderAppReD.Models
 			CurrentTask newTask = new CurrentTask()
 				{task = task.task, dateTime = $"{time.Year}.{time.Month}.{time.Day} {time.Hour}:{time.Minute}:00.0"};
 			context.CurrentTasks.Add(newTask);
+			context.SaveChanges();
 			Action<CurrentTask> action = currentTasks.Add;
 			Application.Current.Dispatcher.BeginInvoke(action, newTask);
-			context.SaveChanges();
 		}
 
 		public static void OnMouseEnter(object sender, RoutedEventArgs args)

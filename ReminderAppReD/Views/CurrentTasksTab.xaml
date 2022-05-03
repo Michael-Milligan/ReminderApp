@@ -10,21 +10,24 @@
     <UserControl.Resources>
         <vms:CurrentTasksTabVM x:Key="vm"></vms:CurrentTasksTabVM>
         <DataTemplate x:Key="gridTemplate" x:Name="DataElementGrid">
-            <Grid ShowGridLines="True">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="250"></ColumnDefinition>
-                    <ColumnDefinition Width="350"></ColumnDefinition>
-                    <ColumnDefinition Width="120"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+            <ScrollViewer>
+                <Grid ShowGridLines="True">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"></ColumnDefinition>
+                        <ColumnDefinition Width="350"></ColumnDefinition>
+                        <ColumnDefinition Width="120"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-                <Label Visibility="Hidden" Content="{Binding Path=id}" x:Name="TaskId"></Label>
-                <Label Grid.Row="0" Grid.Column="0" Content="{Binding Path=task}" x:Name="TaskLabel"/>
-                <Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=dateTime}" x:Name="TaskDate"/>
-                <Button Grid.Row="0" Grid.Column="2" Command="{Binding Source={StaticResource vm}, 
-                    Path=RemoveCommand}" 
-                        CommandParameter="{Binding ElementName=TaskId,Path=Content}" 
-                        x:Name="RemoveButton" Content="{DynamicResource CurrentTaskTabRemoveButtonContent}"/>
-            </Grid>
+                    
+                    <Label Visibility="Hidden" Content="{Binding Path=id}" x:Name="TaskId"></Label>
+                    <Label Grid.Row="0" Grid.Column="0" Content="{Binding Path=task}" x:Name="TaskLabel"/>
+                    <Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=dateTime}" x:Name="TaskDate"/>
+                    <Button Grid.Row="0" Grid.Column="2" Command="{Binding Source={StaticResource vm}, 
+                        Path=RemoveCommand}" 
+                            CommandParameter="{Binding ElementName=TaskId,Path=Content}" 
+                            x:Name="RemoveButton" Content="{DynamicResource CurrentTaskTabRemoveButtonContent}"/>
+                </Grid>
+            </ScrollViewer>
         </DataTemplate>
     </UserControl.Resources>
     

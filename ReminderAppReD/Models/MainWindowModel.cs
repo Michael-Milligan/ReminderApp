@@ -58,7 +58,6 @@ namespace ReminderAppReD.Models
                 alertWindow.Show();
                 alertWindow.Focus();
                 System.Windows.Threading.Dispatcher.Run();
-                File.AppendAllText("d:\\1.txt", $"{alertTask}: {DateTime.Now}");
             }
             catch (Exception) { }
         }
